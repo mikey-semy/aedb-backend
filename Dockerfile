@@ -9,8 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
-RUN apk update \
-    && apk add postgresql-client build-base postgresql-dev libpq-dev
+RUN apk update && apk add postgresql-client build-base postgresql-dev libpq-dev
 
 ENV POETRY_HOME="/opt/poetry"
 ENV POETRY_VERSION="1.8.3"
