@@ -15,8 +15,8 @@ EXPOSE 8000
 
 COPY . /usr/src/app
 
-RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /usr/src/app
-USER appuser
+# RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /usr/src/app
+# USER appuser
 
 COPY ./docker-entrypoint.sh /usr/src/app/docker-entrypoint.sh
 RUN chmod +x /usr/src/app/docker-entrypoint.sh
