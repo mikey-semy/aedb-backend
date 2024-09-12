@@ -1,8 +1,8 @@
 from typing import Final, Dict, Any
 from app.version import __version__
 from pathlib import Path
-from fastapi.staticfiles import StaticFiles
-from starlette.types import ASGIApp
+# from fastapi.staticfiles import StaticFiles
+# from starlette.types import ASGIApp
 
 # Application params
 app_title: Final[str] = "AEDB"
@@ -43,14 +43,14 @@ app_path:               Path    =   main_path / app_folder_name
 templates_path:         Path    =   app_path / templates_folder_name
 static_path:            Path    =   app_path / static_folder_name
 
-# Static params
+# # Static params
 
-static_path_str: str = "/static"
-static_app: ASGIApp = StaticFiles(directory=static_path)
-static_name: str = "static"
+# static_path_str: str = "/static"
+# static_app: ASGIApp = StaticFiles(directory=static_path)
+# static_name: str = "static"
 
-static_params: Final[Dict[str, Any]] = {
-    "path": static_path_str, 
-    "app": static_app, 
-    "name": static_name
-}
+# static_params: Final[Dict[str, Any]] = {
+#     "path": static_path_str, 
+#     "app": static_app, 
+#     "name": static_name
+# }
