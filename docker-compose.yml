@@ -1,10 +1,20 @@
-version: '3.4'
-
+version: "3.8"
 services:
-  workaedb:
-    image: workaedb
+  backend:
+    container_name: backend_aedb
     build:
       context: .
       dockerfile: ./Dockerfile
+    env_file:
+      - ./.env
     ports:
-      - 8000:8000
+      - "8000:8000"
+    restart: always
+    volumes:
+      - alembic_volume:/usr/src/app/migrations/versions
+      - static_volume:/usr/src/app/static
+      - ./docker-entrypoint.sh:/usr/src/app/docker-entrypoint.sh
+
+volumes:
+  static_volume:
+  alembic_volume:

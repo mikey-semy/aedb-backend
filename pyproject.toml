@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "app"
+name = "aedb"
 version = "0.1.0"
 description = ""
 authors = ["Mike <34812500+mikey-semy@users.noreply.github.com>"]
