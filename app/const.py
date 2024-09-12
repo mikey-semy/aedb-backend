@@ -13,7 +13,8 @@ app_params:   Final[Dict[str, Any]] = {
     "description": app_description,
     "version": __version__,
     "swagger_ui_parameters": {"defaultModelsExpandDepth": -1},
-    "root_path": ""
+    "root_path": "",
+    "proxy_headers":True
     }
 
 
