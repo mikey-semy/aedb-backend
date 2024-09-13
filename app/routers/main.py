@@ -18,3 +18,25 @@ async def homepage(request: Request):
         name="index.html",
         context=context
     )
+
+@router.get("/manuals", response_class=HTMLResponse)
+async def manuals(request: Request):
+    context = {
+        "title": "AEDB - Документация",
+        }
+    return templates.TemplateResponse(
+        request=request,
+        name="manuals.html",
+        context=context
+    )
+
+@router.get("/es", response_class=HTMLResponse)
+async def es(request: Request):
+    context = {
+        "title": "AEDB - Электробезопасность",
+        }
+    return templates.TemplateResponse(
+        request=request,
+        name="es.html",
+        context=context
+    )

@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <link rel="stylesheet" href="{{ url_for('static', path='styles/main.css') }}">
-    <title>{{ title }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}{{title}}{% endblock title %}
+
+{% block content %}
+
     <h1>AEDB</h1>
-    <script src="{{ url_for('static', path='scripts/main.js') }}"></script>
-</body>
-</html>
+
+{% endblock %}
