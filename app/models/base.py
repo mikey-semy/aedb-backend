@@ -1,3 +1,17 @@
+"""
+Модуль base.py содержит базовые классы и типы данных для работы с моделями SQLAlchemy.
+
+Этот модуль предоставляет:
+1. SQLModel - базовый класс для определения моделей SQLAlchemy с дополнительными методами.
+2. ArrayOfStrings - пользовательский тип данных для работы с массивами строк, 
+   обеспечивающий совместимость между различными диалектами баз данных.
+
+Классы:
+- SQLModel: Базовый класс для моделей с методами для работы со схемой, именем таблицы и полями.
+- ArrayOfStrings: Тип данных для хранения массивов строк, адаптирующийся под разные диалекты SQL.
+
+Модуль обеспечивает удобную работу с моделями данных и их преобразование в различные форматы.
+"""
 import json
 from typing import Any, Dict, List
 from sqlalchemy.types import ARRAY, TypeDecorator, Text, JSON
@@ -48,6 +62,7 @@ class SQLModel(DeclarativeBase):
         """
 
         return cls.__mapper__.selectable.c.keys()
+    
     @property
     def to_dict(self) -> Dict[str, Any]:
         """

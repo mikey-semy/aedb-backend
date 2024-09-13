@@ -1,18 +1,18 @@
-'''
-This module provides functionality for initializing and setting up database connections
-and ORM components using SQLAlchemy with asynchronous support.
+"""
+Модуль для работы с базой данных и сессиями SQLAlchemy.
 
-Note:
- - dsn
-https://docs.sqlalchemy.org/en/20/core/engines.html#sqlalchemy.engine.dsn.create
+Этот модуль предоставляет классы и функции для инициализации подключения к базе данных,
+создания асинхронных сессий и управления ими с использованием SQLAlchemy.
 
- - create_async_engine_params:
-https://docs.sqlalchemy.org/en/20/orm/extensions/asyncio.html#sqlalchemy.ext.asyncio.create_async_engine
+Основные компоненты:
+- DatabaseSession: Класс для настройки подключения к базе данных и создания фабрики сессий.
+- SessionContextManager: Контекстный менеджер для управления жизненным циклом сессий.
+- get_db_session: Асинхронный генератор для получения сессии базы данных.
 
- - session_maker_params: 
-https://docs.sqlalchemy.org/en/20/orm/session_api.html#sqlalchemy.orm.Session.__init__
+Модуль использует асинхронные возможности SQLAlchemy для эффективной работы с базой данных
+в асинхронных приложениях.
+"""
 
-'''
 from typing import Dict, Any
 from sqlalchemy.ext.asyncio import (
     AsyncSession,
@@ -52,7 +52,13 @@ class DatabaseSession():
 
     def __create_dsn(self, dsn_params: Dict[str, str]) -> URL:
         """
-        Create a SQLAlchemy dsn (data source name) object for database connection.
+        Создает объект SQLAlchemy dsn (data source name) для подключения к базе данных.
+
+        Аргументы:
+            dsn_params (Dict[str, str]): Параметры для создания dsn.
+
+        Возвращает:
+            URL: Объект SQLAlchemy URL.
         """
         dsn = URL.create(**dsn_params)
 
@@ -109,13 +115,13 @@ class DatabaseSession():
         session_factory = self.__precreate_async_session_factory(async_engine)
 
         return session_factory
-    
+
 
 class SessionContextManager():
     """
     Контекстный менеджер для управления сессиями базы данных.
     """
-    
+
     def __init__(self) -> None:
         """
         Инициализирует экземпляр SessionContextManager.
