@@ -3,21 +3,189 @@
       "id": 1,
       "title": "ASC800 Руководство по эксплуатации - 12.09 (русский)",
       "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/abb/asc800-m-1209-ru.pdf",
-      "group_id": 1,
+      "group_id": 15,
       "category_id": 1
     },
     {
       "id": 2,
       "title": "DC51 Руководство по эксплуатации - 12.14 (русский)",
       "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/danfoss/dc51-sm-1214_ru.pdf",
-      "group_id": 2,
-      "category_id": 1
+      "group_id": 1,
+      "category_id": 2
     },
     {
       "id": 3,
       "title": "FC51 Руководство по эксплуатации - 11.11 (русский)",
       "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/danfoss/fc51-pm-1111_ru.pdf",
       "group_id": 2,
-      "category_id": 1
+      "category_id": 2
+    },
+    {
+      "id": 4,
+      "title": "MCD3000 Руководство по эксплуатации - 10.03 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/danfoss/mcd3000-m-1003_ru.pdf",
+      "group_id": 3,
+      "category_id": 2
+    },
+    {
+      "id": 5,
+      "title": "Micromaster 440 Руководство по эксплуатации - 10.06 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/micromaster/440_m_1006_ru.pdf",
+      "group_id": 1,
+      "category_id": 3
+    },
+    {
+      "id": 6,
+      "title": "Micromaster 440 Параметрирование, функциональные схемы - 01.06 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/micromaster/440_pfm_0106_ru.pdf",
+      "group_id": 1,
+      "category_id": 3
+    },
+    {
+      "id": 7,
+      "title": "Simoreg DC Master Руководство по эксплуатации - 05.07 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/simoreg/dc-master_m_0507_ru.pdf",
+      "group_id": 2,
+      "category_id": 3
+    },
+    {
+      "id": 8,
+      "title": "Simoreg DC Master Руководство по эксплуатации, функциональные схемы - 09 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/simoreg/dc-master_mf_2009.pdf",
+      "group_id": 2,
+      "category_id": 3
+    },
+    {
+      "id": 9,
+      "title": "Simovert Masterdrives VC Руководство по эксплуатации - 05.03 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/simovert/masterdrives-vc_m_0503_ru.pdf",
+      "group_id": 3,
+      "category_id": 3
+    },
+    {
+      "id": 10,
+      "title": "Sinamics DCM Руководство по эксплуатации - 02.15 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/sinamics/dcm_m_0215_ru.pdf",
+      "group_id": 4,
+      "category_id": 3
+    },
+    {
+      "id": 11,
+      "title": "Sinamics DCM Параметрирование - 10.11 (английский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/sinamics/dcm_pm_1011_en.pdf",
+      "group_id": 4,
+      "category_id": 3
+    },
+    {
+      "id": 12,
+      "title": "Sinamics DCM Параметрирование - 10.11 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/sinamics/dcm_pm_1011_ru.pdf",
+      "group_id": 4,
+      "category_id": 3
+    },
+    {
+      "id": 13,
+      "title": "Sinamics S120 Начало эксплуатации - 01.12 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/sinamics/s120_gs_0112_ru.pdf",
+      "group_id": 4,
+      "category_id": 3
+    },
+    {
+      "id": 14,
+      "title": "Sinamics S120 Руководство по эксплуатации - 11.17 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/sinamics/s120_mf_1117_ru.pdf",
+      "group_id": 4,
+      "category_id": 3
+    },
+    {
+      "id": 15,
+      "title": "Sinamics S120 Справочник по функциям - 04.14 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/sinamics/s120_si_0414_ru.pdf",
+      "group_id": 4,
+      "category_id": 3
+    },
+    {
+      "id": 16,
+      "title": "Sinamics G120 (CU240S) Справочник по эксплуатации - 03.09 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/siemens/sinamics/g120_cu240s_m_0309_ru.pdf",
+      "group_id": 4,
+      "category_id": 3
+    },
+    {
+      "id": 17,
+      "title": "A1000 Руководство по эксплуатации (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/omron/a1000_m_ru.pdf",
+      "group_id": 1,
+      "category_id": 4
+    },
+    {
+      "id": 18,
+      "title": "3G3FV Руководство по эксплуатации (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/omron/3g3fv_m_ru.pdf",
+      "group_id": 2,
+      "category_id": 4
+    },
+    {
+      "id": 19,
+      "title": "3G3HV Руководство по эксплуатации (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/omron/3g3hv_m_ru.pdf",
+      "group_id": 2,
+      "category_id": 4
+    },
+    {
+      "id": 20,
+      "title": "3G3MV Руководство по эксплуатации (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/omron/3g3mv_m_ru.pdf",
+      "group_id": 2,
+      "category_id": 4
+    },
+    {
+      "id": 21,
+      "title": "3G3PV Руководство по эксплуатации (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/omron/3g3pv_m_ru.pdf",
+      "group_id": 2,
+      "category_id": 4
+    },
+    {
+      "id": 22,
+      "title": "3G3RV Руководство по эксплуатации (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/omron/3g3rv_m_ru.pdf",
+      "group_id": 2,
+      "category_id": 4
+    },
+    {
+      "id": 23,
+      "title": "3G3RX Руководство по эксплуатации (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/omron/3g3rx_m_ru.pdf",
+      "group_id": 2,
+      "category_id": 4
+    },
+    {
+      "id": 24,
+      "title": "CIMR-E7 Руководство по эксплуатации (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/omron/cimr-e7_m_ru.pdf",
+      "group_id": 3,
+      "category_id": 4
+    },
+    {
+      "id": 25,
+      "title": "CIMR-F7 Руководство по эксплуатации (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/omron/cimr-f7_m_ru.pdf",
+      "group_id": 3,
+      "category_id": 4
+    },
+    {
+      "id": 26,
+      "title": "910 Руководство по эксплуатации (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/tg/910_mm_ru.pdf",
+      "group_id": 1,
+      "category_id": 5
+    },
+    {
+      "id": 27,
+      "title": "ATV212 Руководство по эксплуатации - 08.11 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/se/atv212-mp-0811_ru.pdf",
+      "group_id": 2,
+      "category_id": 6
     }
   ]

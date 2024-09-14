@@ -43,7 +43,7 @@ class ManualModel(SQLModel):
     cover_image_url: Mapped[str] = mapped_column("cover_image_url")
     #category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
     #group_id: Mapped[int] = mapped_column(ForeignKey("groups.id"))
-    
+
     @declared_attr
     def category_id(cls):
         return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_manual_category"))
