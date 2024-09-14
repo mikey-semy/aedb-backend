@@ -6,6 +6,5 @@ docs
 __pycache__
 *.pyc
 .env
-data
 nginx
 *.db

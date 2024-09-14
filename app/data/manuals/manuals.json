@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "title": "ASC800 Руководство по эксплуатации - 12.09 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/abb/asc800-m-1209-ru.pdf",
+      "group_id": 1,
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "title": "DC51 Руководство по эксплуатации - 12.14 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/danfoss/dc51-sm-1214_ru.pdf",
+      "group_id": 2,
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "title": "FC51 Руководство по эксплуатации - 11.11 (русский)",
+      "file_url": "https://storage.yandexcloud.net/aepp.ru/data/manuals/danfoss/fc51-pm-1111_ru.pdf",
+      "group_id": 2,
+      "category_id": 1
+    }
+  ]

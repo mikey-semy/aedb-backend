@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "ABB",
+      "category_id": 1,
+      "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/abb.svg"
+    },
+    {
+      "id": 2,
+      "name": "Danfoss",
+      "category_id": 1,
+      "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/danfoss.svg"
+    },
+    {
+      "id": 3,
+      "name": "Siemens",
+      "category_id": 1,
+      "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/siemens.svg"
+    },
+    {
+      "id": 4,
+      "name": "Omron",
+      "category_id": 1,
+      "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/omron.svg"
+    },
+    {
+      "id": 5,
+      "name": "TG",
+      "category_id": 1,
+      "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/tg.svg"
+    },
+    {
+      "id": 6,
+      "name": "Schneider Electric",
+      "category_id": 1,
+      "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/schneider-electric.svg"
+    }
+  ]
