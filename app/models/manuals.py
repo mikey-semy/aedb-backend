@@ -17,8 +17,9 @@
 """
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import MetaData, String, ForeignKey
-
+from sqlalchemy.orm import declared_attr
 from app.models.base import SQLModel
+
 
 class ManualModel(SQLModel):
     """
@@ -40,9 +41,17 @@ class ManualModel(SQLModel):
     title: Mapped[str] = mapped_column("title", String(200))
     file_url: Mapped[str] = mapped_column("file_url")
     cover_image_url: Mapped[str] = mapped_column("cover_image_url")
-    category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
-    group_id: Mapped[int] = mapped_column(ForeignKey("groups.id"))
+    #category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
+    #group_id: Mapped[int] = mapped_column(ForeignKey("groups.id"))
+    
+    @declared_attr
+    def category_id(cls):
+        return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_manual_category"))
 
+
+    @declared_attr
+    def group_id(cls):
+        return mapped_column(ForeignKey("groups.id", use_alter=True, name="fk_manual_group"))
 
 class CategoryModel(SQLModel):
     """
@@ -77,4 +86,7 @@ class GroupModel(SQLModel):
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("group_name", String(100))
-    category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
+    #category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
+    @declared_attr
+    def category_id(cls):
+        return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_group_category"))

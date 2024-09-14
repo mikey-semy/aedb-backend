@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
 
-from app.models.manuals import ManualModel, CategoryModel, GroupModel
+from app.models.manuals import CategoryModel, GroupModel, ManualModel
 
 from app.core.config import config as settings
 
