@@ -41,7 +41,7 @@ async def homepage(request: Request):
         context=context
     )
 
-@router.get("/manuals", response_class=HTMLResponse)
+@router.get("/instructions", response_class=HTMLResponse)
 async def manuals(request: Request):
     """
     Обрабатывает запросы к странице документации.
