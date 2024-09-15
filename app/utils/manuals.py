@@ -4,9 +4,12 @@
 Этот модуль предоставляет класс PDFCoverExtractor, который позволяет
 извлекать первую страницу PDF-файла и сохранять ее как изображение.
 """
+import os
 from pdf2image import convert_from_bytes
 from PyPDF2 import PdfWriter, PdfReader
 import io
+
+from app.const import media_path
 
 class PDFCoverExtractor:
     """
@@ -46,14 +49,14 @@ class PDFCoverExtractor:
         # Конвертируем данные выходного PDF в изображение и сохраняем как PNG-файл
         images = convert_from_bytes(buffer.getvalue())
         
-        output_file = input_file[:-4] + ".png"
-        
-        s3_url = await upload_to_s3(images[0], output_file)
+        output_filename = f"{os.path.basename(input_file)[:-4]}.png"
+        output_path = media_path / output_filename
+        images[0].save(output_path)
 
         # Выводим сообщение о подтверждении
-        print(f"Готово, ваша обложка сохранена по адресу: {s3_url}")
+        print(f"Готово, ваша обложка сохранена по адресу: {output_path}")
 
         # Закрываем буфер памяти
         buffer.close()
 
-        return s3_url
+        return f"/media/{output_filename}"
