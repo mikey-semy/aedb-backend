@@ -18,7 +18,7 @@
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import MetaData, String, ForeignKey
 from sqlalchemy.orm import declared_attr
-from app.models.base import SQLModel
+from app.models.base import SQLModel, CoverURLType
 
 
 class ManualModel(SQLModel):
@@ -39,8 +39,8 @@ class ManualModel(SQLModel):
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     title: Mapped[str] = mapped_column("title", String(200))
-    file_url: Mapped[str] = mapped_column("file_url")
-    cover_image_url: Mapped[str] = mapped_column("cover_image_url")
+    file_url: Mapped[str] = mapped_column("file_url", default="#")
+    cover_image_url: Mapped[str] = mapped_column(CoverURLType, default="/media/manuals/default-cover.png")
     #category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
     #group_id: Mapped[int] = mapped_column(ForeignKey("groups.id"))
 
@@ -68,7 +68,7 @@ class CategoryModel(SQLModel):
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("category_name", String(100))
-    logo_url: Mapped[str] = mapped_column("logo_url")
+    logo_url: Mapped[str] = mapped_column("logo_url", default="/media/manuals/default-logo.png")
 
 
 class GroupModel(SQLModel):
