@@ -10,6 +10,7 @@ from typing import Sequence, Union
 from alembic import op
 import sqlalchemy as sa
 
+from app.models.base import CoverURLType
 
 # revision identifiers, used by Alembic.
 revision: str = 'ad8175353144'
@@ -31,9 +32,9 @@ def upgrade() -> None:
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=200), nullable=False),
     sa.Column('file_url', sa.String(), nullable=False),
-    sa.Column('cover_image_url', app.models.base.CoverURLType(), nullable=False),
-    sa.Column('category_id', sa.NullType(), nullable=False),
-    sa.Column('group_id', sa.NullType(), nullable=False),
+    sa.Column('cover_image_url', CoverURLType(), nullable=False),
+    sa.Column('category_id', sa.Integer(), nullable=False),
+    sa.Column('group_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['category_id'], ['categories.id'], ondelete='CASCADE', use_alter=True),
     sa.ForeignKeyConstraint(['group_id'], ['groups.id'], ondelete='CASCADE', use_alter=True),
     sa.PrimaryKeyConstraint('id')
@@ -42,7 +43,7 @@ def upgrade() -> None:
     op.create_table('groups',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('group_name', sa.String(length=100), nullable=False),
-    sa.Column('category_id', sa.NullType(), nullable=False),
+    sa.Column('category_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['category_id'], ['categories.id'], ondelete='CASCADE', use_alter=True),
     sa.PrimaryKeyConstraint('id')
     )
