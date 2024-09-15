@@ -32,8 +32,8 @@ def upgrade() -> None:
     sa.Column('title', sa.String(length=200), nullable=False),
     sa.Column('file_url', sa.String(), nullable=False),
     sa.Column('cover_image_url', sa.String(), nullable=False),
-    sa.Column('category_id', sa.NullType(), nullable=True),
-    sa.Column('group_id', sa.NullType(), nullable=True),
+    sa.Column('category_id', nullable=True),
+    sa.Column('group_id', nullable=True),
     sa.ForeignKeyConstraint(['category_id'], ['category.id'], name='fk_manual_category', use_alter=True),
     sa.ForeignKeyConstraint(['group_id'], ['groups.id'], name='fk_manual_group', use_alter=True),
     sa.PrimaryKeyConstraint('id')
@@ -42,7 +42,7 @@ def upgrade() -> None:
     op.create_table('groups',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('group_name', sa.String(length=100), nullable=False),
-    sa.Column('category_id', sa.NullType(), nullable=True),
+    sa.Column('category_id', nullable=True),
     sa.ForeignKeyConstraint(['category_id'], ['category.id'], name='fk_group_category', use_alter=True),
     sa.PrimaryKeyConstraint('id')
     )
