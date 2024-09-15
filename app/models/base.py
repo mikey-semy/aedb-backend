@@ -156,9 +156,9 @@ class CoverURLType(TypeDecorator):
     impl = String
     
     def process_bind_param(self, value, dialect):
-        if value is None:
-            return PDFCoverExtractor.create_url(self.file_url)
-        return value
+        #if value is None:
+        return PDFCoverExtractor.create_url(self.file_url)
+        #return value
     
     def copy(self, **kw):
         return CoverURLType(self.impl.length)
