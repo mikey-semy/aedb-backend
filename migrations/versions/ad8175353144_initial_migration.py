@@ -1,8 +1,8 @@
 """Initial migration
 
-Revision ID: b277795f48aa
+Revision ID: ad8175353144
 Revises: 
-Create Date: 2024-09-14 08:04:17.470489
+Create Date: 2024-09-15 22:13:54.125499
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'b277795f48aa'
+revision: str = 'ad8175353144'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -31,19 +31,19 @@ def upgrade() -> None:
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=200), nullable=False),
     sa.Column('file_url', sa.String(), nullable=False),
-    sa.Column('cover_image_url', sa.String(), nullable=False),
-    sa.Column('category_id', nullable=True),
-    sa.Column('group_id', nullable=True),
-    sa.ForeignKeyConstraint(['category_id'], ['category.id'], name='fk_manual_category', use_alter=True),
-    sa.ForeignKeyConstraint(['group_id'], ['groups.id'], name='fk_manual_group', use_alter=True),
+    sa.Column('cover_image_url', app.models.base.CoverURLType(), nullable=False),
+    sa.Column('category_id', sa.NullType(), nullable=False),
+    sa.Column('group_id', sa.NullType(), nullable=False),
+    sa.ForeignKeyConstraint(['category_id'], ['categories.id'], ondelete='CASCADE', use_alter=True),
+    sa.ForeignKeyConstraint(['group_id'], ['groups.id'], ondelete='CASCADE', use_alter=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_manuals_id'), 'manuals', ['id'], unique=False)
     op.create_table('groups',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('group_name', sa.String(length=100), nullable=False),
-    sa.Column('category_id', nullable=True),
-    sa.ForeignKeyConstraint(['category_id'], ['category.id'], name='fk_group_category', use_alter=True),
+    sa.Column('category_id', sa.NullType(), nullable=False),
+    sa.ForeignKeyConstraint(['category_id'], ['categories.id'], ondelete='CASCADE', use_alter=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_groups_id'), 'groups', ['id'], unique=False)

@@ -41,10 +41,8 @@ class ManualModel(SQLModel):
     title: Mapped[str] = mapped_column("title", String(200))
     file_url: Mapped[str] = mapped_column("file_url", default="#")
     cover_image_url: Mapped[str] = mapped_column(CoverURLType, default="/media/manuals/default-cover.png")
-    #category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
-    #group_id: Mapped[int] = mapped_column(ForeignKey("groups.id"))
-    category_id: Mapped[int] = mapped_column(Integer, ForeignKey("category.id", use_alter=True, name="fk_manual_category"))
-    group_id: Mapped[int] = mapped_column(Integer, ForeignKey("group_id", use_alter=True, name="fk_manual_group"))
+    category_id: Mapped[int] = mapped_column(ForeignKey("categories.id", ondelete="CASCADE", use_alter=True))
+    group_id: Mapped[int] = mapped_column(ForeignKey("groups.id", ondelete="CASCADE", use_alter=True))
     # @declared_attr
     # def category_id(cls):
     #     return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_manual_category"))
@@ -85,8 +83,7 @@ class GroupModel(SQLModel):
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("group_name", String(100))
-    #category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
-    category_id: Mapped[int] = mapped_column(Integer, ForeignKey("category.id", use_alter=True, name="fk_group_category"))
+    category_id: Mapped[int] = mapped_column(ForeignKey("categories.id", ondelete="CASCADE", use_alter=True))
     # @declared_attr
     # def category_id(cls):
     #     return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_group_category"))
