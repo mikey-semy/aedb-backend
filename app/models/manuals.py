@@ -16,7 +16,7 @@
 для выполнения операций с базой данных, связанных с инструкциями по эксплуатации.
 """
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import MetaData, String, ForeignKey
+from sqlalchemy import MetaData, String, ForeignKey, Integer
 from sqlalchemy.orm import declared_attr
 from app.models.base import SQLModel, CoverURLType
 
@@ -43,15 +43,14 @@ class ManualModel(SQLModel):
     cover_image_url: Mapped[str] = mapped_column(CoverURLType, default="/media/manuals/default-cover.png")
     #category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
     #group_id: Mapped[int] = mapped_column(ForeignKey("groups.id"))
-
-    @declared_attr
-    def category_id(cls):
-        return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_manual_category"))
-
-
-    @declared_attr
-    def group_id(cls):
-        return mapped_column(ForeignKey("groups.id", use_alter=True, name="fk_manual_group"))
+    category_id: Mapped[int] = mapped_column(Integer, ForeignKey("category.id", use_alter=True, name="fk_manual_category"))
+    group_id: Mapped[int] = mapped_column(Integer, ForeignKey("group_id", use_alter=True, name="fk_manual_group"))
+    # @declared_attr
+    # def category_id(cls):
+    #     return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_manual_category"))
+    # @declared_attr
+    # def group_id(cls):
+    #     return mapped_column(ForeignKey("groups.id", use_alter=True, name="fk_manual_group"))
 
 class CategoryModel(SQLModel):
     """
@@ -87,6 +86,7 @@ class GroupModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("group_name", String(100))
     #category_id: Mapped[int] = mapped_column(ForeignKey("categories.id"))
-    @declared_attr
-    def category_id(cls):
-        return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_group_category"))
+    category_id: Mapped[int] = mapped_column(Integer, ForeignKey("category.id", use_alter=True, name="fk_group_category"))
+    # @declared_attr
+    # def category_id(cls):
+    #     return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_group_category"))
