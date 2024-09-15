@@ -51,7 +51,7 @@ class BaseDataManager(SessionMixin, Generic[T]):
         self.session.add(model)
         await self.session.commit()
         await self.session.refresh(model)
-        return T(**model.to_dict)
+        return self.schema(**model.to_dict)
 
     async def update_one(self, model_to_update, updated_model: Any) -> T | None:
         """

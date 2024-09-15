@@ -1,76 +1,61 @@
 [
     {
-      "id": 1,
       "name": "ASC800",
       "category_id": 1
     },
     {
-      "id": 2,
       "name": "DC51",
       "category_id": 2
     },
     {
-      "id": 3,
       "name": "FC51",
       "category_id": 2
     },
     {
-      "id": 4,
       "name": "MCD3000",
       "category_id": 2
     },
     {
-      "id": 5,
       "name": "Micromaster",
       "category_id": 3
     },
     {
-      "id": 6,
       "name": "Simoreg",
       "category_id": 3
     },
     {
-      "id": 7,
       "name": "Simovert",
       "category_id": 3
     },
     {
-      "id": 8,
       "name": "Sinamics S120",
       "category_id": 3
     },
     {
-      "id": 9,
       "name": "Sinamics G120",
       "category_id": 3
     },
     {
-      "id": 10,
       "name": "Sinamics DCM",
       "category_id": 3
     },
     {
-      "id": 11,
       "name": "A1000",
       "category_id": 4
     },
     {
-      "id": 12,
       "name": "3G3",
       "category_id": 4
     },
     {
-      "id": 13,
       "name": "CIMR",
       "category_id": 4
     },
     {
-      "id": 14,
       "name": "910",
       "category_id": 5
     },
     {
-      "id": 15,
       "name": "ATV",
       "category_id": 6
     }

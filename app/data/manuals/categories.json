@@ -1,31 +1,25 @@
 [
     {
-      "id": 1,
       "name": "ABB",
       "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/abb.svg"
     },
     {
-      "id": 2,
       "name": "Danfoss",
       "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/danfoss.svg"
     },
     {
-      "id": 3,
       "name": "Siemens",
       "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/siemens.svg"
     },
     {
-      "id": 4,
       "name": "Omron",
       "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/omron.svg"
     },
     {
-      "id": 5,
       "name": "TG",
       "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/tg.svg"
     },
     {
-      "id": 6,
       "name": "Schneider Electric",
       "logo_url": "https://storage.yandexcloud.net/aepp.ru/data/logos/schneider-electric.svg"
     }
