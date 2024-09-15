@@ -40,7 +40,7 @@ class ManualModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     title: Mapped[str] = mapped_column("title", String(200))
     file_url: Mapped[str] = mapped_column("file_url", default="#")
-    cover_image_url: Mapped[str] = mapped_column(CoverURLType, default="/media/manuals/default-cover.png")
+    cover_image_url: Mapped[str] = mapped_column(CoverURLType(file_url), default="/media/manuals/default-cover.png")
     category_id: Mapped[int] = mapped_column(ForeignKey("categories.id", ondelete="CASCADE", use_alter=True))
     group_id: Mapped[int] = mapped_column(ForeignKey("groups.id", ondelete="CASCADE", use_alter=True))
     # @declared_attr
