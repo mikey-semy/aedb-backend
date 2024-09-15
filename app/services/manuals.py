@@ -111,8 +111,7 @@ class ManualService(BaseService):
         with open(file_path, 'r', encoding='utf-8') as file:
             items = json.load(file)
         for item in items:
-            item_data = json.loads(list(item.values())[0])
-            new_item = manager.model(**item_data)
+            new_item = manager.model(**item)
             await manager.add_item(new_item)
 
     async def add_all_manuals(self) -> None:

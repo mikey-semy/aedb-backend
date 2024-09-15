@@ -48,13 +48,14 @@ class PDFCoverExtractor:
 
         # Конвертируем данные выходного PDF в изображение и сохраняем как PNG-файл
         images = convert_from_bytes(buffer.getvalue())
-        
+
         output_filename = f"{os.path.basename(input_file)[:-4]}.png"
         output_path = media_path / output_filename
+        print(output_path)
         images[0].save(output_path)
 
         # Выводим сообщение о подтверждении
-        print(f"Готово, ваша обложка сохранена по адресу: {output_path}")
+        print(f"Готово, ваша обложка сохранена по адресу: /media/{output_filename}")
 
         # Закрываем буфер памяти
         buffer.close()
