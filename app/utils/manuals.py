@@ -22,7 +22,7 @@ class PDFCoverExtractor:
         pass
 
     @staticmethod
-    async def create_url(input_file):
+    def create_url(input_file):
         """
         Извлекает обложку из PDF-файла и сохраняет ее как изображение.
 
@@ -55,9 +55,9 @@ class PDFCoverExtractor:
         images[0].save(output_path)
 
         # Выводим сообщение о подтверждении
-        print(f"Готово, ваша обложка сохранена по адресу: /media/{output_filename}")
+        print(f"Готово, ваша обложка сохранена по адресу: {output_filename}")
 
         # Закрываем буфер памяти
         buffer.close()
 
-        return f"/media/{output_filename}"
+        return f"{output_filename}"

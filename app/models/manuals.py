@@ -16,10 +16,9 @@
 для выполнения операций с базой данных, связанных с инструкциями по эксплуатации.
 """
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import MetaData, String, ForeignKey, Integer
-from sqlalchemy.orm import declared_attr
+from sqlalchemy import MetaData, String, ForeignKey#, event
 from app.models.base import SQLModel, CoverURLType
-
+from sqlalchemy import func
 
 class ManualModel(SQLModel):
     """
@@ -39,16 +38,17 @@ class ManualModel(SQLModel):
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     title: Mapped[str] = mapped_column("title", String(200))
-    file_url: Mapped[str] = mapped_column("file_url", default="#")
-    cover_image_url: Mapped[str] = mapped_column(CoverURLType(file_url), default="/media/manuals/default-cover.png")
+    file_url: Mapped[str] = mapped_column("file_url", String)
+    cover_image_url: Mapped[str] = mapped_column("cover_image_url", String, default=func.CoverURLType(file_url))
     category_id: Mapped[int] = mapped_column(ForeignKey("categories.id", ondelete="CASCADE", use_alter=True))
     group_id: Mapped[int] = mapped_column(ForeignKey("groups.id", ondelete="CASCADE", use_alter=True))
-    # @declared_attr
-    # def category_id(cls):
-    #     return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_manual_category"))
-    # @declared_attr
-    # def group_id(cls):
-    #     return mapped_column(ForeignKey("groups.id", use_alter=True, name="fk_manual_group"))
+
+    __table_args__ = {'schema': 'GroupModel'} if 'GroupModel' else {}
+
+    # @event.listens_for(ManualModel, 'before_insert')
+    # @event.listens_for(ManualModel, 'before_update')
+    # def generate_column(mapper, connection, target):
+    #     target.cover_image_url = CoverURLType(target.source_column)
 
 class CategoryModel(SQLModel):
     """
@@ -83,7 +83,9 @@ class GroupModel(SQLModel):
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("group_name", String(100))
-    category_id: Mapped[int] = mapped_column(ForeignKey("categories.id", ondelete="CASCADE", use_alter=True))
-    # @declared_attr
-    # def category_id(cls):
-    #     return mapped_column(ForeignKey("category.id", use_alter=True, name="fk_group_category"))
+    category_id: Mapped[int] = mapped_column(
+        ForeignKey("categories.id", 
+                        ondelete="CASCADE",
+                        use_alter=True)
+    )
+    __table_args__ = {'schema': 'CategoryModel'} if 'CategoryModel' else {}
