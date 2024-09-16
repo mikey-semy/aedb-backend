@@ -47,7 +47,7 @@ function getManuals() {
 
         success: function (data) {
             console.log('Данные получены!');
-            const html = `
+            let html = `
                 <table>
                     <thead>
                         <tr>
