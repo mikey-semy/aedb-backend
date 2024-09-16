@@ -18,7 +18,7 @@
 from typing import List
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import MetaData, String, ForeignKey
-from app.models.base import SQLModel
+from app.models.base import SQLModel, CoverURLType
 
 class CategoryModel(SQLModel):
     """
@@ -36,8 +36,8 @@ class CategoryModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("category_name", String(100))
     logo_url: Mapped[str] = mapped_column("logo_url", default="/media/manuals/default-logo.png")
-    
-    groups: Mapped[List["GroupModel"]] = relationship("categories")
+
+    groups: Mapped[List["GroupModel"]] = relationship("GroupModel")
 
 class GroupModel(SQLModel):
     """
@@ -53,10 +53,10 @@ class GroupModel(SQLModel):
     metadata = MetaData()
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
-    name: Mapped[str] = mapped_column("group_name", String(100))   
-    category_id: Mapped["int"] = mapped_column(ForeignKey("categories.id"))
-    
-    manuals: Mapped[List["ManualModel"]] = relationship("groups")
+    name: Mapped[str] = mapped_column("group_name", String(100))
+    category_id: Mapped["int"] = mapped_column(ForeignKey(CategoryModel.id, ondelete="CASCADE"))
+
+    manuals: Mapped[List["ManualModel"]] = relationship("ManualModel")
 
 class ManualModel(SQLModel):
     """
@@ -76,7 +76,6 @@ class ManualModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     title: Mapped[str] = mapped_column("title", String(200))
     file_url: Mapped[str] = mapped_column("file_url", String)
-    cover_image_url: Mapped[str] = mapped_column("cover_image_url", String, default="/media/manuals/default-cover.png")
-    
-    group_id: Mapped[int] = mapped_column(ForeignKey("groups.id"))
-    
+    cover_image_url: Mapped[str] = mapped_column("cover_image_url", CoverURLType)
+
+    group_id: Mapped[int] = mapped_column(ForeignKey(GroupModel.id, ondelete="CASCADE"))

@@ -5,6 +5,9 @@
 извлекать первую страницу PDF-файла и сохранять ее как изображение.
 """
 import os
+import requests
+import tempfile
+from tempfile import NamedTemporaryFile
 from pdf2image import convert_from_bytes
 from PyPDF2 import PdfWriter, PdfReader
 import io
@@ -22,7 +25,7 @@ class PDFCoverExtractor:
         pass
 
     @staticmethod
-    def create_url(input_file):
+    def create_url(input_url):
         """
         Извлекает обложку из PDF-файла и сохраняет ее как изображение.
 
@@ -32,11 +35,17 @@ class PDFCoverExtractor:
         Returns:
             None
         """
-        print(f"Извлечение обложки из {input_file}...")
-
-        # Открываем входной PDF-файл и извлекаем первую страницу
-        pdf_reader = PdfReader(input_file)
-        first_page = pdf_reader.pages[0]
+        response = requests.get(input_url, stream=True)
+        with NamedTemporaryFile(suffix='.pdf', dir='/tmp') as tmp:
+            for chunk in response.iter_content(1024):
+                tmp.write(chunk)
+            tmp.seek(0)
+            os.chmod(tmp.name, 0o666)
+            print(f"Извлечение обложки из {tmp.name}...")
+        
+            # Открываем входной PDF-файл и извлекаем первую страницу
+            pdf_reader = PdfReader(tmp.name)
+            first_page = pdf_reader.pages[0]
 
         # Создаем выходной PDF-writer и добавляем первую страницу
         pdf_writer = PdfWriter()
@@ -49,7 +58,7 @@ class PDFCoverExtractor:
         # Конвертируем данные выходного PDF в изображение и сохраняем как PNG-файл
         images = convert_from_bytes(buffer.getvalue())
 
-        output_filename = f"{os.path.basename(input_file)[:-4]}.png"
+        output_filename = f"{os.path.basename(tmp.name)[:-4]}.png"
         output_path = media_path / output_filename
         print(output_path)
         images[0].save(output_path)

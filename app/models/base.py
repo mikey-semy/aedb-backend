@@ -155,7 +155,5 @@ class ArrayOfStrings(TypeDecorator):
 class CoverURLType(TypeDecorator):
     impl = String
 
-    def process_bind_param(self, value, dialect):
-        if value is not None:
-            return PDFCoverExtractor.create_url(value)
-        return value
+    def process_result_value(self, value, dialect):
+        return PDFCoverExtractor.create_url(value)
