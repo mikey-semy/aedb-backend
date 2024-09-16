@@ -15,40 +15,10 @@
 Этот модуль предназначен для использования в сочетании с SQLAlchemy ORM
 для выполнения операций с базой данных, связанных с инструкциями по эксплуатации.
 """
-from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import MetaData, String, ForeignKey#, event
-from app.models.base import SQLModel, CoverURLType
-from sqlalchemy import func
-
-class ManualModel(SQLModel):
-    """
-    Модель для представления инструкции по эксплуатации.
-
-    Attributes:
-        id (int): Уникальный идентификатор инструкции.
-        title (str): Название инструкции.
-        file_url (str): URL для скачивания/открытия файла инструкции.
-        cover_image_url (str): URL изображения обложки инструкции.
-        category_id (int): ID категории, к которой относится инструкция.
-        group_id (int): ID группы, к которой относится инструкция.
-    """
-    __tablename__ = "manuals"
-
-    metadata = MetaData()
-
-    id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
-    title: Mapped[str] = mapped_column("title", String(200))
-    file_url: Mapped[str] = mapped_column("file_url", String)
-    cover_image_url: Mapped[str] = mapped_column("cover_image_url", String, default=func.CoverURLType(file_url))
-    category_id: Mapped[int] = mapped_column(ForeignKey("categories.id", ondelete="CASCADE", use_alter=True))
-    group_id: Mapped[int] = mapped_column(ForeignKey("groups.id", ondelete="CASCADE", use_alter=True))
-
-    __table_args__ = {'schema': 'GroupModel'} if 'GroupModel' else {}
-
-    # @event.listens_for(ManualModel, 'before_insert')
-    # @event.listens_for(ManualModel, 'before_update')
-    # def generate_column(mapper, connection, target):
-    #     target.cover_image_url = CoverURLType(target.source_column)
+from typing import List
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import MetaData, String, ForeignKey
+from app.models.base import SQLModel
 
 class CategoryModel(SQLModel):
     """
@@ -66,7 +36,8 @@ class CategoryModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("category_name", String(100))
     logo_url: Mapped[str] = mapped_column("logo_url", default="/media/manuals/default-logo.png")
-
+    
+    groups: Mapped[List["GroupModel"]] = relationship("categories")
 
 class GroupModel(SQLModel):
     """
@@ -82,10 +53,30 @@ class GroupModel(SQLModel):
     metadata = MetaData()
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
-    name: Mapped[str] = mapped_column("group_name", String(100))
-    category_id: Mapped[int] = mapped_column(
-        ForeignKey("categories.id", 
-                        ondelete="CASCADE",
-                        use_alter=True)
-    )
-    __table_args__ = {'schema': 'CategoryModel'} if 'CategoryModel' else {}
+    name: Mapped[str] = mapped_column("group_name", String(100))   
+    category_id: Mapped["int"] = mapped_column(ForeignKey("categories.id"))
+    
+    manuals: Mapped[List["ManualModel"]] = relationship("groups")
+
+class ManualModel(SQLModel):
+    """
+    Модель для представления инструкции по эксплуатации.
+
+    Attributes:
+        id (int): Уникальный идентификатор инструкции.
+        title (str): Название инструкции.
+        file_url (str): URL для скачивания/открытия файла инструкции.
+        cover_image_url (str): URL изображения обложки инструкции.
+        group_id (int): ID группы, к которой относится инструкция.
+    """
+    __tablename__ = "manuals"
+
+    metadata = MetaData()
+
+    id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
+    title: Mapped[str] = mapped_column("title", String(200))
+    file_url: Mapped[str] = mapped_column("file_url", String)
+    cover_image_url: Mapped[str] = mapped_column("cover_image_url", String, default="/media/manuals/default-cover.png")
+    
+    group_id: Mapped[int] = mapped_column(ForeignKey("groups.id"))
+    
