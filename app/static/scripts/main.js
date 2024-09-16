@@ -52,7 +52,6 @@ function getManuals() {
                     <thead>
                         <tr>
                             <th>Title</th>
-                            <th>Description</th>
                             <th>Download</th>
                         </tr>
                     </thead>
@@ -62,8 +61,7 @@ function getManuals() {
                 html += `
                         <tr>
                             <td>${manual.title}</td>
-                            <td>${manual.description}</td>
-                            <td><a href="${manual.url}" target="_blank">Download</a></td>
+                            <td><a href="${manual.file_url}" target="_blank">Download</a></td>
                         </tr>
                 `;
             });
