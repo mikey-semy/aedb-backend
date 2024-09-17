@@ -49,7 +49,6 @@ class ManualSchema(BaseSchema):
     id: Optional[int] = None
     title: str
     file_url: str
-    cover_image_url: str | None
     group_id: int
 
     class Config:

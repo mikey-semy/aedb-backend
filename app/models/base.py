@@ -152,8 +152,3 @@ class ArrayOfStrings(TypeDecorator):
     def python_type(self):
         return list
 
-class CoverURLType(TypeDecorator):
-    impl = String
-
-    def process_result_value(self, value, dialect):
-        return PDFCoverExtractor.create_url(value)

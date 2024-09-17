@@ -1,18 +1,18 @@
 """Initial migration
 
-Revision ID: 88fbdf51c1c0
+Revision ID: 2e8c19e19452
 Revises: 
-Create Date: 2024-09-16 20:08:50.311792
+Create Date: 2024-09-17 21:50:57.643338
 
 """
 from typing import Sequence, Union
 
 from alembic import op
 import sqlalchemy as sa
-from app.models.base import CoverURLType
+
 
 # revision identifiers, used by Alembic.
-revision: str = '88fbdf51c1c0'
+revision: str = '2e8c19e19452'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -39,7 +39,7 @@ def upgrade() -> None:
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('title', sa.String(length=200), nullable=False),
     sa.Column('file_url', sa.String(), nullable=False),
-    sa.Column('cover_image_url', sa.String(), nullable=False),
+    sa.Column('cover_image_url', sa.String(), nullable=True),
     sa.Column('group_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['group_id'], ['groups.id'], ondelete='CASCADE'),
     sa.PrimaryKeyConstraint('id')

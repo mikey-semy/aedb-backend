@@ -18,8 +18,9 @@
 from typing import List
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import MetaData, String, ForeignKey
-from app.models.base import SQLModel, CoverURLType
-
+from sqlalchemy.ext.hybrid import hybrid_property
+from app.models.base import SQLModel
+from app.utils.manuals import PDFCoverExtractor
 class CategoryModel(SQLModel):
     """
     Модель для представления категории инструкций.
@@ -76,6 +77,13 @@ class ManualModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     title: Mapped[str] = mapped_column("title", String(200))
     file_url: Mapped[str] = mapped_column("file_url", String)
-    cover_image_url: Mapped[str] = mapped_column("cover_image_url", String, default="/media/manuals/default-cover.png")
 
     group_id: Mapped[int] = mapped_column(ForeignKey(GroupModel.id, ondelete="CASCADE"))
+
+    @hybrid_property
+    def cover_image_url(self):
+        return PDFCoverExtractor.create_url(self.file_url) if self.file_url else "/media/manuals/default-cover.png"
+    
+    @cover_image_url.expression
+    def cover_image_url(cls):
+        return PDFCoverExtractor.create_url(cls.file_url)
