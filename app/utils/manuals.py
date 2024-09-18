@@ -44,6 +44,9 @@ class PDFCoverExtractor:
         # Указываем путь для сохранения PDF-файла
         local_pdf_path = os.path.join(media_path, "manuals", "covers", file_name)
 
+        # Проверяем, существует ли директория, и создаем её, если нет
+        os.makedirs(os.path.dirname(local_pdf_path), exist_ok=True)
+
         # Сохраняем PDF-файл
         with open(local_pdf_path, 'wb') as f:
             for chunk in response.iter_content(1024):
