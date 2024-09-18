@@ -4,6 +4,7 @@ from sqlalchemy import select
 from app.models.manuals import ManualModel, CategoryModel, GroupModel
 from app.schemas.manuals import ManualSchema, CategorySchema, GroupSchema
 from app.services.base import BaseService, BaseDataManager
+from app.utils.manuals import PDFCoverExtractor
 
 T = TypeVar("T", ManualSchema, CategorySchema, GroupSchema)
 M = TypeVar("M", ManualModel, CategoryModel, GroupModel)
@@ -71,6 +72,9 @@ class ManualService(BaseService):
         :param manager: Менеджер данных для использования
         :return: Добавленный элемент
         """
+        if item.get('file_url'):
+            item['cover_image_url'] = await PDFCoverExtractor.create_url(item['file_url'])
+
         new_item = manager.model(**item.model_dump())
         return await manager.add_item(new_item)
 
@@ -111,6 +115,10 @@ class ManualService(BaseService):
         with open(file_path, 'r', encoding='utf-8') as file:
             items = json.load(file)
         for item in items:
+
+            if item.get('file_url'):
+                item['cover_image_url'] = await PDFCoverExtractor.create_url(item['file_url'])
+
             new_item = manager.model(**item)
             await manager.add_item(new_item)
 

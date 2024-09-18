@@ -17,10 +17,10 @@
 """
 from typing import List
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import MetaData, String, ForeignKey, event
+from sqlalchemy import MetaData, String, ForeignKey
 
 from app.models.base import SQLModel
-from app.utils.manuals import PDFCoverExtractor
+
 class CategoryModel(SQLModel):
     """
     Модель для представления категории инструкций.
@@ -37,7 +37,7 @@ class CategoryModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("category_name", String(100))
     logo_url: Mapped[str] = mapped_column("logo_url", default="/media/manuals/default-logo.png")
-    
+
     groups: Mapped[List["GroupModel"]] = relationship("GroupModel")
 
 class GroupModel(SQLModel):
@@ -77,14 +77,6 @@ class ManualModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     title: Mapped[str] = mapped_column("title", String(200))
     file_url: Mapped[str] = mapped_column("file_url", String)
-    cover_image_url: Mapped[str] = mapped_column("cover_image_url", default="/media/manuals/default-cover.png", nullable=True)
+    cover_image_url: Mapped[str] = mapped_column("cover_image_url", String, default="/media/manuals/default-cover.png")
+    
     group_id: Mapped[int] = mapped_column(ForeignKey(GroupModel.id, ondelete="CASCADE"))
-
-    @property
-    def computed_cover_image_url(self):
-        return PDFCoverExtractor.create_url(self.file_url) if self.file_url else "/media/manuals/default-cover.png"
-
-@event.listens_for(ManualModel, 'before_insert')
-@event.listens_for(ManualModel, 'before_update')
-def receive_before_insert(mapper, connection, target):
-    target.cover_image_url = target.computed_cover_image_url
