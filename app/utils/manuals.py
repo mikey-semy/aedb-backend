@@ -11,7 +11,7 @@ from pdf2image import convert_from_bytes
 from PyPDF2 import PdfWriter, PdfReader
 import io
 
-from app.const import media_path
+from app.const import media_path, media_folder_name
 
 class PDFCoverExtractor:
     """
@@ -36,14 +36,13 @@ class PDFCoverExtractor:
         """
         # Получаем PDF-файл
         response = requests.get(input_url, stream=True)
-        
+
         # Извлекаем имя файла из URL
         parsed_url = urlparse(input_url)
         file_name = os.path.basename(parsed_url.path)
 
         # Указываем путь для сохранения PDF-файла
-        local_pdf_path = os.path.join(media_path, file_name)
-        print(f"local_pdf_path: {local_pdf_path}")
+        local_pdf_path = os.path.join(media_path, "manuals", "covers", file_name)
 
         # Сохраняем PDF-файл
         with open(local_pdf_path, 'wb') as f:
@@ -70,14 +69,24 @@ class PDFCoverExtractor:
             images = convert_from_bytes(buffer.getvalue())
 
             output_filename = f"{os.path.basename(local_pdf_path)[:-4]}.png"
-            output_path = media_path / output_filename
-            print(output_path)
+
+            output_path = media_path / "manuals" / "covers" / output_filename
+
             images[0].save(output_path)
 
-            # Выводим сообщение о подтверждении
-            print(f"Готово, ваша обложка сохранена по адресу: {output_path}")
+            relative_path = media_folder_name / "manuals" / "covers" /  output_filename
 
+            # Выводим сообщение о подтверждении
+            print(f"Готово, обложка сохранена по адресу: {relative_path}")
+
+            # Удаляем файл PDF после использования
+            if os.path.exists(local_pdf_path):
+                os.remove(local_pdf_path)
+                print(f"Файл удален: {local_pdf_path}")
+            else:
+                print(f"Файл не найден для удаления: {local_pdf_path}")
+                
             # Закрываем буфер памяти
             buffer.close()
 
-        return f"{output_path}"
+        return f"{relative_path}"

@@ -15,9 +15,11 @@
                     data.forEach(manual => {
                         const listItem = document.createElement('li');
                         listItem.innerHTML = `
-                            <h2>${manual.title}</h2>
-                            <a href="${manual.file_url}" target="_blank">Смотреть файл</a>
-                            <img src="${manual.cover_image_url}" alt="Обложка ${manual.title}" style="width: 200px; height: auto;">
+                            
+                            <a href="${manual.file_url}" target="_blank">
+                                <img src="${manual.cover_image_url}" alt="Обложка ${manual.title}" style="width: 200px; height: auto;">
+                                <h3>${manual.title}</h3>
+                            </a>
                         `;
                         manualsList.appendChild(listItem);
                     });
