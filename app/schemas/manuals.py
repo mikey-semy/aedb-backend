@@ -1,7 +1,5 @@
 from typing import Optional
 from app.schemas.base import BaseSchema
-
-
 class CategorySchema(BaseSchema):
     """
     Схема для представления категории инструкций.
@@ -50,6 +48,7 @@ class ManualSchema(BaseSchema):
     title: str
     file_url: str
     group_id: int
-
+    cover_image_url: str
+    
     class Config:
         from_attributes = True

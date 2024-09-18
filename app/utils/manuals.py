@@ -6,8 +6,7 @@
 """
 import os
 import requests
-import tempfile
-from tempfile import NamedTemporaryFile
+
 from pdf2image import convert_from_bytes
 from PyPDF2 import PdfWriter, PdfReader
 import io
@@ -35,38 +34,46 @@ class PDFCoverExtractor:
         Returns:
             None
         """
+        # Получаем PDF-файл
         response = requests.get(input_url, stream=True)
-        with NamedTemporaryFile(suffix='.pdf', dir='/tmp') as tmp:
+
+        # Указываем путь для сохранения PDF-файла
+        local_pdf_path = os.path.join(media_path, "downloaded_file.pdf")
+        print(f"local_pdf_path: {local_pdf_path}")
+
+        # Сохраняем PDF-файл
+        with open(local_pdf_path, 'wb') as f:
             for chunk in response.iter_content(1024):
-                tmp.write(chunk)
-            tmp.seek(0)
-            os.chmod(tmp.name, 0o666)
-            print(f"Извлечение обложки из {tmp.name}...")
-        
-            # Открываем входной PDF-файл и извлекаем первую страницу
-            pdf_reader = PdfReader(tmp.name)
+                f.write(chunk)
+
+        # Извлекаем обложку из загруженного PDF-файла
+        print(f"Извлечение обложки из {local_pdf_path}...")
+
+        # Открываем входной PDF-файл и извлекаем первую страницу
+        with open(local_pdf_path, 'rb') as f:
+            pdf_reader = PdfReader(f)
             first_page = pdf_reader.pages[0]
 
-        # Создаем выходной PDF-writer и добавляем первую страницу
-        pdf_writer = PdfWriter()
-        pdf_writer.add_page(first_page)
+            # Создаем выходной PDF-writer и добавляем первую страницу
+            pdf_writer = PdfWriter()
+            pdf_writer.add_page(first_page)
 
-        # Записываем данные выходного PDF в буфер памяти
-        buffer = io.BytesIO()
-        pdf_writer.write(buffer)
+            # Записываем данные выходного PDF в буфер памяти
+            buffer = io.BytesIO()
+            pdf_writer.write(buffer)
 
-        # Конвертируем данные выходного PDF в изображение и сохраняем как PNG-файл
-        images = convert_from_bytes(buffer.getvalue())
+            # Конвертируем данные выходного PDF в изображение и сохраняем как PNG-файл
+            images = convert_from_bytes(buffer.getvalue())
 
-        output_filename = f"{os.path.basename(tmp.name)[:-4]}.png"
-        output_path = media_path / output_filename
-        print(output_path)
-        images[0].save(output_path)
+            output_filename = f"{os.path.basename(local_pdf_path)[:-4]}.png"
+            output_path = media_path / output_filename
+            print(output_path)
+            images[0].save(output_path)
 
-        # Выводим сообщение о подтверждении
-        print(f"Готово, ваша обложка сохранена по адресу: {output_filename}")
+            # Выводим сообщение о подтверждении
+            print(f"Готово, ваша обложка сохранена по адресу: {output_filename}")
 
-        # Закрываем буфер памяти
-        buffer.close()
+            # Закрываем буфер памяти
+            buffer.close()
 
         return f"{output_filename}"

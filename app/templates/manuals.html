@@ -4,11 +4,24 @@
 
 {% block content %}
 
-<div id="manuals-container"></div>
-
-<script>
-    window.onload = function() {
-        getManuals();
-    };
-</script>
+<h1>Список инструкций</h1>
+        <ul id="manuals-list"></ul>
+        <script>
+            fetch('/manuals')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    const manualsList = document.getElementById('manuals-list');
+                    data.forEach(manual => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `
+                            <h2>${manual.title}</h2>
+                            <a href="${manual.file_url}" target="_blank">Смотреть файл</a>
+                            <img src="${manual.cover_image_url}" alt="Обложка ${manual.title}" style="width: 200px; height: auto;">
+                        `;
+                        manualsList.appendChild(listItem);
+                    });
+                })
+                .catch(error => console.error('Ошибка:', error));
+        </script>
 {% endblock %}

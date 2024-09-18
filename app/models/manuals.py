@@ -17,8 +17,8 @@
 """
 from typing import List
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import MetaData, String, ForeignKey
-from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy import MetaData, String, ForeignKey, event
+
 from app.models.base import SQLModel
 from app.utils.manuals import PDFCoverExtractor
 class CategoryModel(SQLModel):
@@ -37,7 +37,7 @@ class CategoryModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("category_name", String(100))
     logo_url: Mapped[str] = mapped_column("logo_url", default="/media/manuals/default-logo.png")
-
+    
     groups: Mapped[List["GroupModel"]] = relationship("GroupModel")
 
 class GroupModel(SQLModel):
@@ -77,13 +77,14 @@ class ManualModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     title: Mapped[str] = mapped_column("title", String(200))
     file_url: Mapped[str] = mapped_column("file_url", String)
-
+    cover_image_url: Mapped[str] = mapped_column("cover_image_url", default="/media/manuals/default-cover.png", nullable=True)
     group_id: Mapped[int] = mapped_column(ForeignKey(GroupModel.id, ondelete="CASCADE"))
 
-    @hybrid_property
-    def cover_image_url(self):
+    @property
+    def computed_cover_image_url(self):
         return PDFCoverExtractor.create_url(self.file_url) if self.file_url else "/media/manuals/default-cover.png"
-    
-    @cover_image_url.expression
-    def cover_image_url(cls):
-        return PDFCoverExtractor.create_url(cls.file_url)
+
+@event.listens_for(ManualModel, 'before_insert')
+@event.listens_for(ManualModel, 'before_update')
+def receive_before_insert(mapper, connection, target):
+    target.cover_image_url = target.computed_cover_image_url
