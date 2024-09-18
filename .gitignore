@@ -8,3 +8,4 @@ __pycache__
 .env
 nginx
 *.db
+app/media/manuals/covers/*

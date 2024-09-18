@@ -79,12 +79,12 @@ class PDFCoverExtractor:
             # Выводим сообщение о подтверждении
             print(f"Готово, обложка сохранена по адресу: {relative_path}")
 
-            # Удаляем файл PDF после использования
-            if os.path.exists(local_pdf_path):
-                os.remove(local_pdf_path)
-                print(f"Файл удален: {local_pdf_path}")
-            else:
-                print(f"Файл не найден для удаления: {local_pdf_path}")
+            # # Удаляем файл PDF после использования
+            # if os.path.exists(local_pdf_path):
+            #     os.remove(local_pdf_path)
+            #     print(f"Файл удален: {local_pdf_path}")
+            # else:
+            #     print(f"Файл не найден для удаления: {local_pdf_path}")
                 
             # Закрываем буфер памяти
             buffer.close()
