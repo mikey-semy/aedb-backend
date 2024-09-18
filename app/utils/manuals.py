@@ -6,7 +6,7 @@
 """
 import os
 import requests
-
+from urllib.parse import urlparse
 from pdf2image import convert_from_bytes
 from PyPDF2 import PdfWriter, PdfReader
 import io
