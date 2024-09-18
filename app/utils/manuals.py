@@ -36,9 +36,13 @@ class PDFCoverExtractor:
         """
         # Получаем PDF-файл
         response = requests.get(input_url, stream=True)
+        
+        # Извлекаем имя файла из URL
+        parsed_url = urlparse(input_url)
+        file_name = os.path.basename(parsed_url.path)
 
         # Указываем путь для сохранения PDF-файла
-        local_pdf_path = os.path.join(media_path, "downloaded_file.pdf")
+        local_pdf_path = os.path.join(media_path, file_name)
         print(f"local_pdf_path: {local_pdf_path}")
 
         # Сохраняем PDF-файл
@@ -71,9 +75,9 @@ class PDFCoverExtractor:
             images[0].save(output_path)
 
             # Выводим сообщение о подтверждении
-            print(f"Готово, ваша обложка сохранена по адресу: {output_filename}")
+            print(f"Готово, ваша обложка сохранена по адресу: {output_path}")
 
             # Закрываем буфер памяти
             buffer.close()
 
-        return f"{output_filename}"
+        return f"{output_path}"

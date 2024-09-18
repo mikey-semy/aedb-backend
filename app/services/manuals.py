@@ -75,7 +75,7 @@ class ManualService(BaseService):
         print(f"Проверка наличия file_url: {item.get('file_url')}")
         if item.get('file_url'):
             print(f"Был item['cover_image_url']: {item['cover_image_url']}")
-            item['cover_image_url'] = await PDFCoverExtractor.create_url(item['file_url'])
+            item['cover_image_url'] = PDFCoverExtractor.create_url(item['file_url'])
             print(f"Стал item['cover_image_url']: {item['cover_image_url']}")
         new_item = manager.model(**item.model_dump())
         return await manager.add_item(new_item)
@@ -119,7 +119,7 @@ class ManualService(BaseService):
         for item in items:
 
             if item.get('file_url'):
-                item['cover_image_url'] = await PDFCoverExtractor.create_url(item['file_url'])
+                item['cover_image_url'] = PDFCoverExtractor.create_url(item['file_url'])
 
             new_item = manager.model(**item)
             await manager.add_item(new_item)
