@@ -34,6 +34,11 @@ class GenericDataManager(BaseDataManager[T]):
         """
         return await self.add_one(new_item)
 
+    async def get_item(self, item_id: int) -> T | None:
+        statement = select(self.model).where(self.model.id == item_id)
+        schema: T = await self.get_one(statement)
+        return schema
+
     async def get_items(self, statement=None) -> List[T]:
         """
         Получает список элементов из базы данных.
@@ -48,6 +53,24 @@ class GenericDataManager(BaseDataManager[T]):
         for model in models:
             schemas.append(self.schema(**model.to_dict))
         return schemas
+
+    async def search_items(self, q: str) -> List[T]:
+
+        if hasattr(M, 'title'):
+            statement = select(self.model).where(self.model.title.ilike(f"%{q}%"))
+        elif hasattr(M, 'name'):
+            statement = select(self.model).where(self.model.name.ilike(f"%{q}%"))
+        else:
+            raise AttributeError("Модель не имеет атрибута 'title' или 'name'.")
+        return await self.get_items(statement)
+
+    async def update_item(self,
+                              item_id: int,
+                              updated_item: T) -> T | None:
+
+        old_item = await self.get_item(item_id)
+        schema: T = await self.update_one(old_item, updated_item)
+        return schema
 
 class ManualService(BaseService):
     """
@@ -160,3 +183,48 @@ class ManualService(BaseService):
         :return: Список групп
         """
         return await self.group_manager.get_items()
+
+    async def search_manuals(self, q: str) -> List[ManualSchema]:
+        return await self.manual_manager.search_items(q)
+
+    async def search_categories(self, q: str) -> List[CategorySchema]:
+        return await self.category_manager.search_items(q)
+
+    async def search_groups(self, q: str) -> List[GroupSchema]:
+        return await self.group_manager.search_items(q)
+
+    async def update_manual(self, item_id: int, updated_item: ManualSchema) -> ManualSchema:
+        updated_item = self.manual_manager.model(**updated_item.model_dump())
+        return await self.manual_manager.update_item(item_id, updated_item)
+
+    async def update_category(self, item_id: int, updated_item: CategorySchema) -> CategorySchema:
+        updated_item = self.category_manager.model(**updated_item.model_dump())
+        return await self.category_manager.update_item(item_id, updated_item)
+
+    async def update_group(self, item_id: int, updated_item: GroupSchema) -> GroupSchema:
+        updated_item = self.group_manager.model(**updated_item.model_dump())
+        return await self.group_manager.update_item(item_id, updated_item)
+
+# async def update_item(self, item_id: int, updated_item: T, manager) -> T:
+#     # Создаем экземпляр модели, используя атрибуты updated_item
+#     model_instance = manager.model(**updated_item.model_dump())
+#     return await manager.update_item(item_id, model_instance)
+
+# async def update_manual(self, item_id: int, updated_item: ManualSchema) -> ManualSchema:
+#     return await self.update_item(item_id, updated_item, self.manual_manager)
+
+# async def update_category(self, item_id: int, updated_item: CategorySchema) -> CategorySchema:
+#     return await self.update_item(item_id, updated_item, self.category_manager)
+
+# async def update_group(self, item_id: int, updated_item: GroupSchema) -> GroupSchema:
+#     return await self.update_item(item_id, updated_item, self.group_manager)
+
+# Объяснение:
+# Универсальный метод обновления: Метод update_item принимает дополнительный параметр manager, который позволяет передавать соответствующий менеджер для каждого типа элемента. Этот метод обрабатывает создание экземпляра модели и операцию обновления.
+# Создание модели: Экземпляр модели создается путем распаковки словаря, возвращаемого updated_item.model_dump(), что является чистым способом преобразования схемы в модель.
+# Специфические методы обновления: Специфические методы обновления (update_manual, update_category и update_group) просто вызывают универсальный метод update_item с соответствующим менеджером.
+# Преимущества:
+# Снижение избыточности: Этот подход минимизирует дублирование кода, централизуя логику создания экземпляра модели и выполнения обновления.
+# Гибкость: Если вам нужно добавить больше типов в будущем, вы можете легко это сделать, создав новый специфический метод обновления, который вызывает update_item с соответствующим менеджером.
+# Поддерживаемость: Изменения в логике обновления нужно вносить только в одном месте, что делает код более удобным для сопровождения.
+# Это чистый и эффективный способ обработки обновлений для различных схем и моделей в вашем приложении.
