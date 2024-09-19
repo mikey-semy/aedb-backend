@@ -1,6 +1,6 @@
 from typing import List, Type, TypeVar
 import json
-from sqlalchemy import select
+from sqlalchemy import select, delete
 from app.models.manuals import ManualModel, CategoryModel, GroupModel
 from app.schemas.manuals import ManualSchema, CategorySchema, GroupSchema
 from app.services.base import BaseService, BaseDataManager
@@ -67,10 +67,18 @@ class GenericDataManager(BaseDataManager[T]):
     async def update_item(self,
                               item_id: int,
                               updated_item: T) -> T | None:
-
         old_item = await self.get_item(item_id)
         schema: T = await self.update_one(old_item, updated_item)
         return schema
+    
+    async def delete_item(self, item_id: int) -> bool:
+        """
+        Удаляет элемент из базы данных.
+        :param item_id: Идентификатор элемента
+        :return: True, если элемент успешно удален, иначе False
+        """
+        statement = delete(self.model).where(self.model.id == item_id)
+        return await self.delete_one(statement)
 
 class ManualService(BaseService):
     """
@@ -205,26 +213,11 @@ class ManualService(BaseService):
         updated_item = self.group_manager.model(**updated_item.model_dump())
         return await self.group_manager.update_item(item_id, updated_item)
 
-# async def update_item(self, item_id: int, updated_item: T, manager) -> T:
-#     # Создаем экземпляр модели, используя атрибуты updated_item
-#     model_instance = manager.model(**updated_item.model_dump())
-#     return await manager.update_item(item_id, model_instance)
+    async def delete_manual(self, item_id: int) -> bool:
+        return await self.manual_manager.delete_item(item_id)
 
-# async def update_manual(self, item_id: int, updated_item: ManualSchema) -> ManualSchema:
-#     return await self.update_item(item_id, updated_item, self.manual_manager)
+    async def delete_category(self, item_id: int) -> bool:
+        return await self.category_manager.delete_item(item_id)
 
-# async def update_category(self, item_id: int, updated_item: CategorySchema) -> CategorySchema:
-#     return await self.update_item(item_id, updated_item, self.category_manager)
-
-# async def update_group(self, item_id: int, updated_item: GroupSchema) -> GroupSchema:
-#     return await self.update_item(item_id, updated_item, self.group_manager)
-
-# Объяснение:
-# Универсальный метод обновления: Метод update_item принимает дополнительный параметр manager, который позволяет передавать соответствующий менеджер для каждого типа элемента. Этот метод обрабатывает создание экземпляра модели и операцию обновления.
-# Создание модели: Экземпляр модели создается путем распаковки словаря, возвращаемого updated_item.model_dump(), что является чистым способом преобразования схемы в модель.
-# Специфические методы обновления: Специфические методы обновления (update_manual, update_category и update_group) просто вызывают универсальный метод update_item с соответствующим менеджером.
-# Преимущества:
-# Снижение избыточности: Этот подход минимизирует дублирование кода, централизуя логику создания экземпляра модели и выполнения обновления.
-# Гибкость: Если вам нужно добавить больше типов в будущем, вы можете легко это сделать, создав новый специфический метод обновления, который вызывает update_item с соответствующим менеджером.
-# Поддерживаемость: Изменения в логике обновления нужно вносить только в одном месте, что делает код более удобным для сопровождения.
-# Это чистый и эффективный способ обработки обновлений для различных схем и моделей в вашем приложении.
+    async def delete_group(self, item_id: int) -> bool:
+        return await self.group_manager.delete_item(item_id)

@@ -73,7 +73,12 @@ class BaseDataManager(SessionMixin, Generic[T]):
             return None
         await self.session.commit()
         await self.session.refresh(model_to_update)
-        return T(**model_to_update.to_dict)
+        return self.schema(**model_to_update.to_dict)
+
+    async def delete_one(self, delete_statement: Executable) -> bool:
+        result = await self.session.execute(delete_statement)
+        print(result)
+        return result.rowcount > 0
 
     async def get_one(self, select_statement: Executable) -> Any | None:
         """

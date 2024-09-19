@@ -67,13 +67,26 @@ async def put_category(
 ) -> CategorySchema:
     return await ManualService(session).update_category(category_id, category)
 
-# @router.delete("/{manual_id}")
-# async def delete_manual(
-#     manual_id: int,
-#     manual: ManualSchema,
-#     session: Session = Depends(get_db_session)
-# ) -> ManualSchema:
-#     return await ManualService(session).delete_manual(manual_id, manual)
+@router.delete("/{manual_id}")
+async def delete_manual(
+    manual_id: int,
+    session: Session = Depends(get_db_session)
+) -> bool:
+    return await ManualService(session).delete_manual(manual_id)
+
+@router.delete("/{group_id}")
+async def delete_group(
+    group_id: int,
+    session: Session = Depends(get_db_session)
+) -> bool:
+    return await ManualService(session).delete_group(group_id)
+
+@router.delete("/{category_id}")
+async def delete_category(
+    category_id: int,
+    session: Session = Depends(get_db_session)
+) -> bool:
+    return await ManualService(session).delete_category(category_id)
 
 @router.post("/group")
 async def post_group(
