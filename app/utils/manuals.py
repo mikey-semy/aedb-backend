@@ -49,7 +49,7 @@ class PDFCoverExtractor:
 
         # Сохраняем PDF-файл
         with open(local_pdf_path, 'wb') as f:
-            for chunk in response.iter_content(chunk_size=4096):
+            for chunk in response.iter_content(chunk_size=8192):
                 f.write(chunk)
 
         # Извлекаем обложку из загруженного PDF-файла
