@@ -35,7 +35,7 @@ class PDFCoverExtractor:
             None
         """
         # Получаем PDF-файл
-        response = requests.get(input_url, stream=True)
+        response = requests.get(input_url, stream=True, timeout=10)
 
         # Извлекаем имя файла из URL
         parsed_url = urlparse(input_url)
@@ -49,7 +49,7 @@ class PDFCoverExtractor:
 
         # Сохраняем PDF-файл
         with open(local_pdf_path, 'wb') as f:
-            for chunk in response.iter_content(1024):
+            for chunk in response.iter_content(chunk_size=4096):
                 f.write(chunk)
 
         # Извлекаем обложку из загруженного PDF-файла
