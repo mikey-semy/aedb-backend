@@ -1,4 +1,4 @@
-from typing import List, Type, TypeVar
+from typing import List, Type, TypeVar, Any
 import json
 from sqlalchemy import select, delete
 from sqlalchemy.orm import joinedload
@@ -40,13 +40,13 @@ class GenericDataManager(BaseDataManager[T]):
         schema: T = await self.get_one(statement)
         return schema
 
-    async def get_items_joined(self, statement=None) -> List[CategorySchema]:
+    async def get_items_joined(self, statement=None) -> List[Any]:
         if statement is None:
             statement = select(CategoryModel).options(
                             joinedload(CategoryModel.groups)
                             .joinedload(GroupModel.manuals)
 )
-        schemas: List[CategorySchema] = []
+        schemas: List[Any] = []
         models = await self.get_all(statement)
         for model in models:
             schemas.append(self.schema(**model.to_dict))

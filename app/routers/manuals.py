@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Any
 from fastapi import APIRouter, Query, Depends
 from sqlalchemy.orm import Session
 from app.schemas.manuals import ManualSchema, GroupSchema, CategorySchema
@@ -7,10 +7,10 @@ from app.database.session import get_db_session
 
 router = APIRouter()
 
-@router.get("/all", response_model=List[CategorySchema])
+@router.get("/all", response_model=List[Any])
 async def get_all_manuals(
     session: Session = Depends(get_db_session)
-) -> List[CategorySchema]:
+) -> List[Any]:
     return await ManualService(session).get_manuals_joined()
 
 @router.get("/manuals", response_model=List[ManualSchema])
