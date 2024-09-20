@@ -1,6 +1,7 @@
 from typing import List
 
-from app.services.base import BaseService
+from app.services.base import BaseService, GenericDataManager
+from app.models.api import MenuItemsModel
 from app.schemas.api import MenuItemsSchema
 
 class APIService(BaseService):
@@ -12,11 +13,12 @@ class APIService(BaseService):
         :param session: Сессия базы данных
         """
         super().__init__(session)
+        self.manual_manager = GenericDataManager(session, MenuItemsSchema, MenuItemsModel)
 
-    async def get_menu_items(self) -> List[MenuItemsSchema]:
+async def get_menu_items(self) -> List[MenuItemsSchema]:
         """
         Получает список меню.
 
         :return: Список меню
         """
-        return await MenuItemsSchema.get_all()
+        return await self.manual_manager.get_items()
