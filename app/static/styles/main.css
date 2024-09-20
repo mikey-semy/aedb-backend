@@ -156,6 +156,69 @@ main {
     padding: 20px;
 }
 
+ul {
+    list-style: none;
+}
+
+.category-caption {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.category-logo {
+    width: 100px; 
+    height: auto; 
+    object-fit: contain;
+}
+
+.manuals-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.manuals-item {
+    width: 200px;
+    position: relative;
+}
+
+.manuals-link {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.manuals-cover {
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 200px; 
+    height: 280px;
+    object-fit: contain;
+}
+
+.manuals-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    color: white;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        -2px -2px 4px rgba(0, 0, 0, 0.8),
+        2px -2px 4px rgba(0, 0, 0, 0.8),
+        -2px 2px 4px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    height: 80px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
 footer {
     flex-shrink: 0;
     text-align: center;
@@ -216,7 +279,7 @@ footer {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 36px;
         left: 0;
         width: 100%;
         background-color: var(--color-header-bg);
@@ -234,6 +297,24 @@ footer {
 
     nav ul li {
         margin: 10px 0;
+    }
+
+    .groups-list {
+        padding-left: 0;
+    }
+
+    .manuals-list {
+        padding-left: 0;
+    }
+
+    .manuals-item {
+        padding-left: 0;
+    }
+    .manuals-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding-left: 0;
     }
 }
 
@@ -432,3 +513,4 @@ a {
 a:hover {
     text-decoration: underline;
 }
+

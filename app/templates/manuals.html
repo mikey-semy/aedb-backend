@@ -9,23 +9,24 @@
     fetch('/nested_manuals')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             const categoriesList = document.getElementById('categories-list');
             data.forEach(category => {
                 const categoryItem = document.createElement('li');
                 categoryItem.innerHTML = `
-                    <h2>${category.name}</h2>
-                    <img src="${category.logo_url}" alt="${category.name} logo" style="width: 100px; height: auto;">
+                    <div class="category-caption">
+                        <img class="category-logo" src="${category.logo_url}" alt="${category.name} logo">
+                        <h2>${category.name}</h2>
+                    </div>
                     <ul class="groups-list">
                         ${category.groups.map(group => `
                             <li>
                                 <h3>${group.name}</h3>
                                 <ul class="manuals-list">
                                     ${group.manuals.map(manual => `
-                                        <li>
-                                            <a href="${manual.file_url}" target="_blank">
-                                                <img src="${manual.cover_image_url}" alt="Обложка ${manual.title}" style="width: 200px; height: auto;">
-                                                <h4>${manual.title}</h4>
+                                        <li class="manuals-item">
+                                            <a class="manuals-link" href="${manual.file_url}" target="_blank">
+                                                <img class="manuals-cover" src="${manual.cover_image_url}" alt="Обложка ${manual.title}">
+                                                <span class="manuals-title">${manual.title}</span>
                                             </a>
                                         </li>
                                     `).join('')}
