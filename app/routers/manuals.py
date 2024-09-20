@@ -1,4 +1,4 @@
-from typing import List, Any
+from typing import List
 from fastapi import APIRouter, Query, Depends
 from sqlalchemy.orm import Session
 from app.schemas.manuals import ManualSchema, GroupSchema, CategorySchema
