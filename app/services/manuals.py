@@ -1,6 +1,7 @@
 from typing import List, Type, TypeVar
 import json
 from sqlalchemy import select, delete
+from sqlalchemy.orm import joinedload
 from app.models.manuals import ManualModel, CategoryModel, GroupModel
 from app.schemas.manuals import ManualSchema, CategorySchema, GroupSchema
 from app.services.base import BaseService, BaseDataManager
@@ -39,6 +40,18 @@ class GenericDataManager(BaseDataManager[T]):
         schema: T = await self.get_one(statement)
         return schema
 
+    async def get_items_joined(self, statement=None) -> List[CategorySchema]:
+        if statement is None:
+            statement = select(CategoryModel).options(
+                            joinedload(CategoryModel.groups)
+                            .joinedload(GroupModel.manuals)
+)
+        schemas: List[CategorySchema] = []
+        models = await self.get_all(statement)
+        for model in models:
+            schemas.append(self.schema(**model.to_dict))
+        return schemas
+    
     async def get_items(self, statement=None) -> List[T]:
         """
         Получает список элементов из базы данных.
@@ -53,7 +66,7 @@ class GenericDataManager(BaseDataManager[T]):
         for model in models:
             schemas.append(self.schema(**model.to_dict))
         return schemas
-
+        
     async def search_items(self, q: str) -> List[T]:
 
         if hasattr(M, 'title'):
@@ -168,6 +181,14 @@ class ManualService(BaseService):
         """Добавляет все группы из JSON-файла."""
         await self.add_all_items('app/data/manuals/groups.json', self.group_manager)
 
+    async def get_manuals_joined(self) -> List[CategorySchema]:
+        """
+        Получает список всех инструкций c категориями и группами.
+
+        :return: Список инструкций
+        """
+        return await self.manual_manager.get_items_joined()
+    
     async def get_manuals(self) -> List[ManualSchema]:
         """
         Получает список всех инструкций.

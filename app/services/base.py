@@ -104,7 +104,7 @@ class BaseDataManager(SessionMixin, Generic[T]):
             List[Any]: Список полученных записей.
         """
         result = await self.session.execute(select_statement)
-        return list(result.scalars())
+        return list(result.unique().scalars().all())
 
 class ManualDataManager(BaseDataManager[ManualSchema]):
     """
