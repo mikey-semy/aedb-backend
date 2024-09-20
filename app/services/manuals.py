@@ -46,8 +46,9 @@ class GenericDataManager(BaseDataManager[T]):
                             joinedload(CategoryModel.groups)
                             .joinedload(GroupModel.manuals)
                         )
-        result: List[Any] = []
         categories = await self.get_all(statement)
+        
+        result: List[Any] = []
         for category in categories:
             category_dict = category.to_dict
             category_dict['groups'] = [
