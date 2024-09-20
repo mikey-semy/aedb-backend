@@ -41,7 +41,7 @@ class GenericDataManager(BaseDataManager[T]):
         schema: T = await self.get_one(statement)
         return schema
 
-    async def get_items_joined(self, statement=None) -> List[Any]:
+    async def get_nested_items(self, statement=None) -> List[Any]:
         if statement is None:
             statement = select(CategoryModel).options(
                             joinedload(CategoryModel.groups)
@@ -191,13 +191,13 @@ class ManualService(BaseService):
         """Добавляет все группы из JSON-файла."""
         await self.add_all_items('app/data/manuals/groups.json', self.group_manager)
 
-    async def get_manuals_joined(self) -> List[Any]:
+    async def get_nested_manuals(self) -> List[Any]:
         """
-        Получает список всех инструкций c категориями и группами.
+        Получает список всех инструкций, вложенных в категории и группы.
 
         :return: Список инструкций
         """
-        return await self.manual_manager.get_items_joined()
+        return await self.manual_manager.get_nested_items()
     
     async def get_manuals(self) -> List[ManualSchema]:
         """

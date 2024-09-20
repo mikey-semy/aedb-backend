@@ -7,11 +7,11 @@ from app.database.session import get_db_session
 
 router = APIRouter()
 
-@router.get("/all", response_model=List[Any])
-async def get_all_manuals(
+@router.get("/nested_manuals", response_model=List[Any])
+async def get_nested_manuals(
     session: Session = Depends(get_db_session)
 ) -> List[Any]:
-    return await ManualService(session).get_manuals_joined()
+    return await ManualService(session).get_nested_manuals()
 
 @router.get("/manuals", response_model=List[ManualSchema])
 async def get_manuals(

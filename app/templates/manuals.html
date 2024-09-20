@@ -4,26 +4,39 @@
 
 {% block content %}
 
-<h1>Список инструкций</h1>
-        <ul id="manuals-list"></ul>
-        <script>
-            fetch('/manuals')
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data)
-                    const manualsList = document.getElementById('manuals-list');
-                    data.forEach(manual => {
-                        const listItem = document.createElement('li');
-                        listItem.innerHTML = `
-                            
-                            <a href="${manual.file_url}" target="_blank">
-                                <img src="${manual.cover_image_url}" alt="Обложка ${manual.title}" style="width: 200px; height: auto;">
-                                <h3>${manual.title}</h3>
-                            </a>
-                        `;
-                        manualsList.appendChild(listItem);
-                    });
-                })
-                .catch(error => console.error('Ошибка:', error));
+<ul id="categories-list"></ul>
+<script>
+    fetch('/nested_manuals')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            const categoriesList = document.getElementById('categories-list');
+            data.forEach(category => {
+                const categoryItem = document.createElement('li');
+                categoryItem.innerHTML = `
+                    <h2>${category.name}</h2>
+                    <img src="${category.logo_url}" alt="${category.name} logo" style="width: 100px; height: auto;">
+                    <ul class="groups-list">
+                        ${category.groups.map(group => `
+                            <li>
+                                <h3>${group.name}</h3>
+                                <ul class="manuals-list">
+                                    ${group.manuals.map(manual => `
+                                        <li>
+                                            <a href="${manual.file_url}" target="_blank">
+                                                <img src="${manual.cover_image_url}" alt="Обложка ${manual.title}" style="width: 200px; height: auto;">
+                                                <h4>${manual.title}</h4>
+                                            </a>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+                categoriesList.appendChild(categoryItem);
+            });
+        })
+        .catch(error => console.error('Ошибка:', error));
         </script>
 {% endblock %}

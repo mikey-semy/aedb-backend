@@ -52,11 +52,16 @@ class ManualSchema(BaseSchema):
     class Config:
         from_attributes = True
 
-class ManualNestedSchema(ManualSchema):
-    pass
+class ManualNestedSchema(BaseSchema):
+    title: str
+    file_url: str
+    cover_image_url: str
 
-class GroupNestedSchema(GroupSchema):
+class GroupNestedSchema(BaseSchema):
+    name: str
     manuals: List[ManualNestedSchema]
 
-class CategoryNestedSchema(CategorySchema):
+class CategoryNestedSchema(BaseSchema):
+    name: str
+    logo_url: str
     groups: List[GroupNestedSchema]
