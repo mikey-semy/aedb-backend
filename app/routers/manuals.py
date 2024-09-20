@@ -32,19 +32,19 @@ async def get_categories(
     return await ManualService(session).get_categories()
 
 @router.get("/search_manuals", response_model=List[ManualSchema])
-async def search_questions(
+async def search_manuals(
     q: str = Query(..., min_length=3),
     session: Session = Depends(get_db_session)):
     return await ManualService(session).search_manuals(q)
 
 @router.get("/search_groups", response_model=List[ManualSchema])
-async def search_questions(
+async def search_groups(
     q: str = Query(..., min_length=3),
     session: Session = Depends(get_db_session)):
     return await ManualService(session).search_groups(q)
 
 @router.get("/search_categories", response_model=List[ManualSchema])
-async def search_questions(
+async def search_categories(
     q: str = Query(..., min_length=3),
     session: Session = Depends(get_db_session)):
     return await ManualService(session).search_categories(q)

@@ -13,6 +13,6 @@ class MenuItemsSchema(BaseSchema):
     id: Optional[int] = None
     title: str
     url: str
-    
+
     class Config:
         from_attributes = True
