@@ -4,6 +4,7 @@ from sqlalchemy import select, delete
 from sqlalchemy.orm import joinedload
 from app.models.manuals import ManualModel, CategoryModel, GroupModel
 from app.schemas.manuals import ManualSchema, CategorySchema, GroupSchema
+from app.schemas.manuals import ManualNestedSchema, CategoryNestedSchema, GroupNestedSchema
 from app.services.base import BaseService, BaseDataManager
 from app.utils.manuals import PDFCoverExtractor
 
@@ -47,21 +48,18 @@ class GenericDataManager(BaseDataManager[T]):
                             .joinedload(GroupModel.manuals)
                         )
         categories = await self.get_all(statement)
- 
         result: List[Any] = []
         for category in categories:
             category_dict = category.to_dict
-            
             category_dict['groups'] = [
-                GroupSchema(
+                GroupNestedSchema(
                     **group.to_dict,
                     manuals=[
-                        ManualSchema(**manual.to_dict) for manual in group.manuals
+                        ManualNestedSchema(**manual.to_dict) for manual in group.manuals
                     ]
                 ) for group in category.groups
-            ]
-            print(category_dict)
-            result.append(CategorySchema(**category_dict))
+            ]      
+            result.append(CategoryNestedSchema(**category_dict))
         return result
 
     async def get_items(self, statement=None) -> List[T]:

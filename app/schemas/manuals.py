@@ -1,5 +1,7 @@
-from typing import Optional
+from typing import Optional, List
 from app.schemas.base import BaseSchema
+
+
 class CategorySchema(BaseSchema):
     """
     Схема для представления категории инструкций.
@@ -12,7 +14,6 @@ class CategorySchema(BaseSchema):
     id: Optional[int] = None
     name: str
     logo_url: str
-
     class Config:
         from_attributes = True
 
@@ -28,7 +29,6 @@ class GroupSchema(BaseSchema):
     id: Optional[int] = None
     name: str
     category_id: int
-
     class Config:
         from_attributes = True
 
@@ -49,6 +49,14 @@ class ManualSchema(BaseSchema):
     file_url: str
     group_id: int
     cover_image_url: str
-    
     class Config:
         from_attributes = True
+
+class ManualNestedSchema(ManualSchema):
+    pass
+
+class GroupNestedSchema(GroupSchema):
+    manuals: List[ManualNestedSchema]
+
+class CategoryNestedSchema(CategorySchema):
+    groups: List[GroupNestedSchema]

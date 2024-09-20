@@ -38,7 +38,7 @@ class CategoryModel(SQLModel):
     name: Mapped[str] = mapped_column("category_name", String(100))
     logo_url: Mapped[str] = mapped_column("logo_url", default="/media/manuals/default-logo.png")
 
-    groups: Mapped[List["GroupModel"]] = relationship("GroupModel")
+    groups: Mapped[List["GroupModel"]] = relationship("GroupModel", back_populates="category")
 
 class GroupModel(SQLModel):
     """
@@ -56,8 +56,9 @@ class GroupModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("group_name", String(100))
     category_id: Mapped["int"] = mapped_column(ForeignKey(CategoryModel.id, ondelete="CASCADE"))
-
-    manuals: Mapped[List["ManualModel"]] = relationship("ManualModel")
+    
+    category: Mapped["CategoryModel"] = relationship("CategoryModel", back_populates="groups")
+    manuals: Mapped[List["ManualModel"]] = relationship("ManualModel", back_populates="groups")
 
 class ManualModel(SQLModel):
     """
@@ -78,5 +79,5 @@ class ManualModel(SQLModel):
     title: Mapped[str] = mapped_column("title", String(200))
     file_url: Mapped[str] = mapped_column("file_url", String)
     cover_image_url: Mapped[str] = mapped_column("cover_image_url", String, default="/media/manuals/default/default-cover.png")
-
+    groups: Mapped["GroupModel"] = relationship("GroupModel", back_populates="manuals")
     group_id: Mapped[int] = mapped_column(ForeignKey(GroupModel.id, ondelete="CASCADE"))
