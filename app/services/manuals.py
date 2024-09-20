@@ -47,10 +47,11 @@ class GenericDataManager(BaseDataManager[T]):
                             .joinedload(GroupModel.manuals)
                         )
         categories = await self.get_all(statement)
-        
+ 
         result: List[Any] = []
         for category in categories:
             category_dict = category.to_dict
+            
             category_dict['groups'] = [
                 GroupSchema(
                     **group.to_dict,
@@ -59,6 +60,7 @@ class GenericDataManager(BaseDataManager[T]):
                     ]
                 ) for group in category.groups
             ]
+            print(category_dict)
             result.append(CategorySchema(**category_dict))
         return result
 
