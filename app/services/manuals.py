@@ -45,13 +45,22 @@ class GenericDataManager(BaseDataManager[T]):
             statement = select(CategoryModel).options(
                             joinedload(CategoryModel.groups)
                             .joinedload(GroupModel.manuals)
-)
-        schemas: List[Any] = []
-        models = await self.get_all(statement)
-        for model in models:
-            schemas.append(self.schema(**model.to_dict))
-        return schemas
-    
+                        )
+        result: List[Any] = []
+        categories = await self.get_all(statement)
+        for category in categories:
+            category_dict = category.to_dict
+            category_dict['groups'] = [
+                GroupSchema(
+                    **group.to_dict,
+                    manuals=[
+                        ManualSchema(**manual.to_dict) for manual in group.manuals
+                    ]
+                ) for group in category.groups
+            ]
+            result.append(self.schema(**category_dict))
+        return result
+
     async def get_items(self, statement=None) -> List[T]:
         """
         Получает список элементов из базы данных.
