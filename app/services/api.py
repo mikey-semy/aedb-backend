@@ -19,4 +19,4 @@ class APIService(BaseService):
 
         :return: Список меню
         """
-        return await MenuItemsSchema.get_items()
+        return await MenuItemsSchema.get_all()
