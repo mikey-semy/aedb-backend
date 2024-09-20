@@ -181,7 +181,7 @@ class ManualService(BaseService):
         """Добавляет все группы из JSON-файла."""
         await self.add_all_items('app/data/manuals/groups.json', self.group_manager)
 
-    async def get_manuals_joined(self) -> List[CategorySchema]:
+    async def get_manuals_joined(self) -> List[Any]:
         """
         Получает список всех инструкций c категориями и группами.
 
