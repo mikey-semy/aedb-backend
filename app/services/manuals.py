@@ -58,7 +58,7 @@ class GenericDataManager(BaseDataManager[T]):
                     ]
                 ) for group in category.groups
             ]
-            result.append(self.schema(**category_dict))
+            result.append(CategorySchema(**category_dict))
         return result
 
     async def get_items(self, statement=None) -> List[T]:
