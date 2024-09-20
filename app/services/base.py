@@ -8,11 +8,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.schemas.manuals import BaseSchema, ManualSchema, CategorySchema, GroupSchema
 from app.schemas.manuals import ManualNestedSchema, CategoryNestedSchema, GroupNestedSchema
 from app.models.manuals import ManualModel, CategoryModel, GroupModel
-
 from app.schemas.api import MenuItemsSchema
 from app.models.api import MenuItemsModel
 
-T = TypeVar("T", ManualSchema, CategorySchema, GroupSchema, MenuItemsSchema, bound=BaseSchema)
+T = TypeVar('T', bound=BaseSchema)
+
+T = TypeVar("T", ManualSchema, CategorySchema, GroupSchema, MenuItemsSchema)
 M = TypeVar("M", ManualModel, CategoryModel, GroupModel, MenuItemsModel)
 class SessionMixin:
     """
