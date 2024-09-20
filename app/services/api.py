@@ -15,7 +15,7 @@ class APIService(BaseService):
         super().__init__(session)
         self.manual_manager = GenericDataManager(session, MenuItemsSchema, MenuItemsModel)
 
-async def get_menu_items(self) -> List[MenuItemsSchema]:
+    async def get_menu_items(self) -> List[MenuItemsSchema]:
         """
         Получает список меню.
 
