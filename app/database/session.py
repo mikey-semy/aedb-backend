@@ -53,9 +53,30 @@ class DatabaseSession():
     def __create_dsn(self, dsn_params: Dict[str, str]) -> URL:
         """
         Создает объект SQLAlchemy dsn (data source name) для подключения к базе данных.
-
+        
         Аргументы:
             dsn_params (Dict[str, str]): Параметры для создания dsn.
+        
+            Для создания dsn необходимы следующие параметры:
+                DIALECT:             str
+                DRIVERNAME:          str
+                USERNAME:            str
+                PASSWORD:            SecretStr
+                HOST:                str
+                PORT:                int
+                NAME:                str
+
+            Эти параметры необходимо передать следующим образом:
+                @property
+                def params(self) -> Dict[str, str]:
+                    return {
+                        "drivername": f"{self.DIALECT}+{self.DRIVERNAME}",
+                        "username": self.USERNAME,
+                        "password": urllib.parse.quote_plus(self.PASSWORD.get_secret_value()),
+                        "host": self.HOST,
+                        "port": self.PORT,
+                        "database": self.NAME
+                    }
 
         Возвращает:
             URL: Объект SQLAlchemy URL.
