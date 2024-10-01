@@ -48,7 +48,7 @@ class ManualSchema(BaseSchema):
     title: str
     file_url: str
     group_id: int
-    # cover_image_url: str
+    cover_image_url: str
     class Config:
         from_attributes = True
 
