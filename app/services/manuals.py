@@ -32,7 +32,7 @@ class ManualService(BaseService):
 
         if item.file_url:
 
-            item['cover_image_url'] = PDFCoverExtractor.create_url(item['file_url'])
+            item.cover_image_url = PDFCoverExtractor.create_url(item.file_url)
 
         new_item = manager.model(**item.model_dump())
         return await manager.add_item(new_item)
