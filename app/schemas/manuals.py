@@ -53,15 +53,18 @@ class ManualSchema(BaseSchema):
         from_attributes = True
 
 class ManualNestedSchema(BaseSchema):
+    id: Optional[int] = None
     title: str
     file_url: str
     cover_image_url: str
 
 class GroupNestedSchema(BaseSchema):
+    id: Optional[int] = None
     name: str
     manuals: List[ManualNestedSchema]
 
 class CategoryNestedSchema(BaseSchema):
+    id: Optional[int] = None
     name: str
     logo_url: str
     groups: List[GroupNestedSchema]
