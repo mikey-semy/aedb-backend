@@ -30,7 +30,7 @@ class ManualService(BaseService):
         :return: Добавленный элемент
         """
 
-        if item.get('file_url'):
+        if item.file_url:
 
             item['cover_image_url'] = PDFCoverExtractor.create_url(item['file_url'])
 
