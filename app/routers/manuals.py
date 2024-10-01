@@ -1,11 +1,15 @@
 from typing import List, Any
-from fastapi import APIRouter, Query, Depends
+from fastapi import APIRouter, Query, Depends, Request, Response
 from sqlalchemy.orm import Session
 from app.schemas.manuals import ManualSchema, GroupSchema, CategorySchema
 from app.services.manuals import ManualService
 from app.database.session import get_db_session
 
 router = APIRouter()
+
+@router.options("/{path:path}")
+async def options_handler(request: Request, path: str):
+    return Response(status_code=200)
 
 @router.get("/nested_manuals", response_model=List[Any])
 async def get_nested_manuals(

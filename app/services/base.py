@@ -48,7 +48,7 @@ class BaseDataManager(SessionMixin, Generic[T]):
         """
         super().__init__(session)
         self.schema = schema
-
+    
     async def add_one(self, model: Any) -> T:
         """
         Добавляет одну запись в базу данных.

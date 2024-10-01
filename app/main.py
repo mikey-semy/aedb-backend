@@ -10,6 +10,8 @@ app = FastAPI(**app_params)
 app.mount(**static_params)
 app.mount(**media_params)
 
+
+
 app.include_router(main.router)
 app.include_router(manuals.router)
 app.include_router(api.router)
