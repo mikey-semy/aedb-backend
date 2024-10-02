@@ -1,6 +1,6 @@
 from typing import List, Any
 import json
-
+from fastapi import UploadFile
 from app.models.manuals import ManualModel, CategoryModel, GroupModel
 from app.schemas.manuals import ManualSchema, CategorySchema, GroupSchema
 from app.services.base import BaseService, GenericDataManager, T
@@ -20,6 +20,23 @@ class ManualService(BaseService):
         self.manual_manager = GenericDataManager(session, ManualSchema, ManualModel)
         self.category_manager = GenericDataManager(session, CategorySchema, CategoryModel)
         self.group_manager = GenericDataManager(session, GroupSchema, GroupModel)
+
+    async def upload_files(self, manuals: list[UploadFile]):
+        results = []
+        for manual in manuals:
+            file_content = await manual.read()
+            file_name = manual.filename
+            file_url = await self.save_file(file_content, file_name)
+            manual_data = ManualSchema(title=file_name, file_url=file_url)
+            result = await self.add_manual(manual_data)
+            results.append(result)
+        return results
+
+    async def save_file(self, file_content: bytes, file_name: str) -> str:
+        file_path = f"media/manuals/{file_name}"
+        with open(file_path, "wb") as f:
+            f.write(file_content)
+        return f"/media/manuals/{file_name}"
 
     async def add_item(self, item: T, manager: GenericDataManager) -> T:
         """

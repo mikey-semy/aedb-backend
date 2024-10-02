@@ -1,5 +1,5 @@
 from typing import List, Any
-from fastapi import APIRouter, Query, Depends, Request, Response
+from fastapi import APIRouter, Query, Depends, Request, Response, File, UploadFile
 from sqlalchemy.orm import Session
 from app.schemas.manuals import ManualSchema, GroupSchema, CategorySchema
 from app.services.manuals import ManualService
@@ -10,6 +10,12 @@ router = APIRouter()
 @router.options("/{path:path}")
 async def options_handler(request: Request, path: str):
     return Response(status_code=200)
+
+@router.post("/upload_manuals")
+async def create_upload_manuals(
+    manuals: list[UploadFile],
+    session: Session = Depends(get_db_session)):
+    return await ManualService(session).upload_files(manuals)
 
 @router.get("/nested_manuals", response_model=List[Any])
 async def get_nested_manuals(
