@@ -35,7 +35,7 @@ class PDFCoverExtractor:
             None
         """
         # Получаем PDF-файл
-        response = requests.get(input_url, stream=True, timeout=10)
+        response = requests.get(input_url, stream=True, timeout=1000)
 
         # Извлекаем имя файла из URL
         parsed_url = urlparse(input_url)
