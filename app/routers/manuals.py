@@ -6,14 +6,13 @@ from sqlalchemy.orm import Session
 from app.schemas.manuals import ManualSchema, GroupSchema, CategorySchema
 from app.services.manuals import ManualService
 from app.database.session import get_db_session
-
+from app.const import media_path
 router = APIRouter()
 
 @router.get("/media/manuals/covers/{file_name}")
 async def get_manual_cover(file_name: str):
-    file_path = f"media/manuals/covers/{file_name}"
+    file_path = media_path / "manuals" / "covers" / file_name
     if os.path.exists(file_path):
-        print(f'file_path: {file_path}')
         return FileResponse(file_path, media_type="image/png", headers={"Content-Type": "image/png"})
     return Response(status_code=404)
 
