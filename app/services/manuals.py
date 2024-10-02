@@ -27,6 +27,7 @@ class ManualService(BaseService):
             file_content = await manual.read()
             file_name = manual.filename
             file_url = await self.save_file(file_content, file_name)
+            print(f"file_url: {file_url}")
             manual_data = ManualSchema(title=file_name, file_url=file_url)
             result = await self.add_manual(manual_data)
             results.append(result)
