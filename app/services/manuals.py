@@ -167,9 +167,12 @@ class ManualService(BaseService):
 
     async def delete_manual(self, item_id: int) -> bool:
         return await self.manual_manager.delete_item(item_id)
-
+    
     async def delete_category(self, item_id: int) -> bool:
         return await self.category_manager.delete_item(item_id)
 
     async def delete_group(self, item_id: int) -> bool:
         return await self.group_manager.delete_item(item_id)
+
+    async def delete_manuals(self) -> bool:
+        return await self.manual_manager.delete_items()

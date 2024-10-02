@@ -88,7 +88,10 @@ class BaseDataManager(SessionMixin, Generic[T]):
 
     async def delete_one(self, delete_statement: Executable) -> bool:
         result = await self.session.execute(delete_statement)
-        print(result)
+        return result.rowcount > 0
+    
+    async def delete_all(self, delete_statement: Executable) -> bool:
+        result = await self.session.execute(delete_statement)
         return result.rowcount > 0
 
     async def get_one(self, select_statement: Executable) -> Any | None:
@@ -252,3 +255,11 @@ class GenericDataManager(BaseDataManager[T]):
         """
         statement = delete(self.model).where(self.model.id == item_id)
         return await self.delete_one(statement)
+    
+    async def delete_items(self) -> bool:
+        """
+        Удаляет элементы из базы данных.
+        :return: True, если элементы успешно удалены, иначе False
+        """
+        statement = delete(self.model)
+        return await self.delete_all(statement)

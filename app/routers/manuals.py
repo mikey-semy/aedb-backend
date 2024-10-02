@@ -90,6 +90,12 @@ async def delete_manual(
 ) -> bool:
     return await ManualService(session).delete_manual(manual_id)
 
+@router.delete("/manuals")
+async def delete_manual(
+    session: Session = Depends(get_db_session)
+) -> bool:
+    return await ManualService(session).delete_manuals()
+
 @router.delete("/group/{group_id}")
 async def delete_group(
     group_id: int,
