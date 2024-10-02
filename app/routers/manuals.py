@@ -91,7 +91,7 @@ async def delete_manual(
     return await ManualService(session).delete_manual(manual_id)
 
 @router.delete("/manuals")
-async def delete_manual(
+async def delete_manuals(
     session: Session = Depends(get_db_session)
 ) -> bool:
     return await ManualService(session).delete_manuals()

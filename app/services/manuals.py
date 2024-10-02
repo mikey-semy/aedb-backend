@@ -176,3 +176,4 @@ class ManualService(BaseService):
 
     async def delete_manuals(self) -> bool:
         return await self.manual_manager.delete_items()
+    
