@@ -13,7 +13,7 @@ router = APIRouter()
 async def get_manual_cover(file_name: str):
     file_path = f"media/manuals/covers/{file_name}"
     if os.path.exists(file_path):
-        return FileResponse(file_path, media_type="image/png")
+        return FileResponse(file_path, media_type="image/png", headers={"Content-Type": "image/png"})
     return Response(status_code=404)
 
 @router.options("/{path:path}")
