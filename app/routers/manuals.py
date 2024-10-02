@@ -1,5 +1,7 @@
+import os
 from typing import List, Any
 from fastapi import APIRouter, Query, Depends, Request, Response, UploadFile
+from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 from app.schemas.manuals import ManualSchema, GroupSchema, CategorySchema
 from app.services.manuals import ManualService
@@ -10,7 +12,9 @@ router = APIRouter()
 @router.get("/media/manuals/covers/{file_name}")
 async def get_manual_cover(file_name: str):
     file_path = f"media/manuals/covers/{file_name}"
-    return Response(file_path, media_type="image/png")
+    if os.path.exists(file_path):
+        return FileResponse(file_path, media_type="image/png")
+    return Response(status_code=404)
 
 @router.options("/{path:path}")
 async def options_handler(request: Request, path: str):
