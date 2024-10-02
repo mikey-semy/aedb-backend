@@ -91,5 +91,12 @@ class PDFCoverExtractor:
                 
             # Закрываем буфер памяти
             buffer.close()
+            
+            # Удаляем файл PDF после использования
+            if os.path.exists(local_pdf_path):
+                os.remove(local_pdf_path)
+                print(f"Файл удален: {local_pdf_path}")
+            else:
+                print(f"Файл не найден для удаления: {local_pdf_path}")
 
         return f"{relative_path}"

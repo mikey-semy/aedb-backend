@@ -34,5 +34,3 @@ class Settings(BaseSettings):
 
 config = Settings()
 cors_params = config.cors_params
-
-print(f'cors: {config.cors_params}')
