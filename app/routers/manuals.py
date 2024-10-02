@@ -7,6 +7,11 @@ from app.database.session import get_db_session
 
 router = APIRouter()
 
+@router.get("/media/manuals/covers/{file_name}")
+async def get_manual_cover(file_name: str):
+    file_path = f"media/manuals/covers/{file_name}"
+    return Response(file_path, media_type="image/png")
+
 @router.options("/{path:path}")
 async def options_handler(request: Request, path: str):
     return Response(status_code=200)
