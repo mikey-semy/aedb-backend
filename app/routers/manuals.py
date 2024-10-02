@@ -1,5 +1,5 @@
 from typing import List, Any
-from fastapi import APIRouter, Query, Depends, Request, Response, File, UploadFile
+from fastapi import APIRouter, Query, Depends, Request, Response, UploadFile
 from sqlalchemy.orm import Session
 from app.schemas.manuals import ManualSchema, GroupSchema, CategorySchema
 from app.services.manuals import ManualService
