@@ -1,31 +1,11 @@
-import os
 from typing import List, Any
-from fastapi import APIRouter, Query, Depends, Request, Response, UploadFile
-from fastapi.responses import FileResponse
+from fastapi import APIRouter, Query, Depends, UploadFile, File
 from sqlalchemy.orm import Session
 from app.schemas.manuals import ManualSchema, GroupSchema, CategorySchema
 from app.services.manuals import ManualService
 from app.database.session import get_db_session
-from app.const import media_path
+
 router = APIRouter()
-
-@router.get("/media/manuals/covers/{file_name}")
-async def get_manual_cover(file_name: str):
-    file_path = media_path / "manuals" / "covers" / file_name
-    print(f"file_path: {file_path}")
-    if os.path.exists(file_path):
-        return FileResponse(file_path, media_type="image/png", headers={"Content-Type": "image/png"})
-    return Response(status_code=404)
-
-@router.options("/{path:path}")
-async def options_handler(request: Request, path: str):
-    return Response(status_code=200)
-
-@router.post("/upload_manuals")
-async def create_upload_manuals(
-    manuals: list[UploadFile],
-    session: Session = Depends(get_db_session)):
-    return await ManualService(session).upload_files(manuals)
 
 @router.get("/nested_manuals", response_model=List[Any])
 async def get_nested_manuals(
@@ -137,9 +117,19 @@ async def post_category(
 @router.post("/manual")
 async def post_manual(
     manual: ManualSchema,
+    file: UploadFile = File(None),
     session: Session = Depends(get_db_session)
 ) -> ManualSchema:
+    if file:
+        uploaded_manual = await ManualService(session).upload_file(file)
+        manual.file_url = uploaded_manual.file_url
     return await ManualService(session).add_manual(manual)
+
+@router.post("/upload_manual")
+async def create_upload_manuals(
+    manual: UploadFile,
+    session: Session = Depends(get_db_session)):
+    return await ManualService(session).upload_file(manual)
 
 @router.post("/add_groups")
 async def add_groups(

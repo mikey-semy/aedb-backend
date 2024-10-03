@@ -48,7 +48,6 @@ class ManualSchema(BaseSchema):
     title: str
     file_url: str
     group_id: int
-    cover_image_url: Optional[str] = None
     class Config:
         from_attributes = True
 
@@ -56,7 +55,6 @@ class ManualNestedSchema(BaseSchema):
     id: Optional[int] = None
     title: str
     file_url: str
-    cover_image_url: Optional[str] = None
 
 class GroupNestedSchema(BaseSchema):
     id: Optional[int] = None

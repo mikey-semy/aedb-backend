@@ -5,7 +5,8 @@ from app.models.manuals import ManualModel, CategoryModel, GroupModel
 from app.schemas.manuals import ManualSchema, CategorySchema, GroupSchema
 from app.services.base import BaseService, GenericDataManager, T
 from app.utils.manuals import PDFCoverExtractor
-
+from app.const import media_path
+import uuid
 class ManualService(BaseService):
     """
     Сервис для работы с инструкциями, категориями и группами.
@@ -21,23 +22,20 @@ class ManualService(BaseService):
         self.category_manager = GenericDataManager(session, CategorySchema, CategoryModel)
         self.group_manager = GenericDataManager(session, GroupSchema, GroupModel)
 
-    async def upload_files(self, manuals: list[UploadFile]):
-        results = []
-        for manual in manuals:
-            file_content = await manual.read()
-            file_name = manual.filename
-            file_url = await self.save_file(file_content, file_name)
-            print(f"file_url: {file_url}")
-            manual_data = ManualSchema(title=file_name, file_url=file_url)
-            result = await self.add_manual(manual_data)
-            results.append(result)
-        return results
+    async def upload_file(self, file: UploadFile) -> ManualSchema:
+        file_content = await file.read()
+        file_name = file.filename
+        file_url = await self.save_file(file_content, file_name)
+        return ManualSchema(title=file_name, file_url=file_url)
 
     async def save_file(self, file_content: bytes, file_name: str) -> str:
-        file_path = f"media/manuals/{file_name}"
+        unique_filename = f"{uuid.uuid4()}_{file_name}"
+        file_path = f"media/manuals/{unique_filename}"
         with open(file_path, "wb") as f:
             f.write(file_content)
-        return f"/media/manuals/{file_name}"
+        result_path = media_path / "manuals" / unique_filename
+        print(f"result_path: {result_path}")
+        return f"media/manuals/{unique_filename}"
 
     async def add_item(self, item: T, manager: GenericDataManager) -> T:
         """
@@ -47,11 +45,6 @@ class ManualService(BaseService):
         :param manager: Менеджер данных для использования
         :return: Добавленный элемент
         """
-
-        if item.file_url:
-
-            item.cover_image_url = PDFCoverExtractor.create_url(item.file_url)
-
         new_item = manager.model(**item.model_dump())
         return await manager.add_item(new_item)
 

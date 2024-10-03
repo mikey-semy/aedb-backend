@@ -78,6 +78,5 @@ class ManualModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     title: Mapped[str] = mapped_column("title", String(200))
     file_url: Mapped[str] = mapped_column("file_url", String)
-    cover_image_url: Mapped[str] = mapped_column("cover_image_url", String, default="/media/manuals/default/default-cover.png")
     groups: Mapped["GroupModel"] = relationship("GroupModel", back_populates="manuals")
     group_id: Mapped[int] = mapped_column(ForeignKey(GroupModel.id, ondelete="CASCADE"))
