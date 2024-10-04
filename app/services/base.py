@@ -5,15 +5,53 @@ from sqlalchemy.orm import joinedload
 from sqlalchemy.sql.expression import Executable
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.schemas.manuals import BaseSchema, ManualSchema, CategorySchema, GroupSchema
-from app.schemas.manuals import ManualNestedSchema, CategoryNestedSchema, GroupNestedSchema
-from app.models.manuals import ManualModel, CategoryModel, GroupModel
+from app.schemas.auth import (
+    CreateUserSchema, 
+    UserSchema, 
+    TokenSchema
+)
 
+from app.schemas.manuals import (
+    BaseSchema, 
+    ManualSchema, 
+    CategorySchema, 
+    GroupSchema,
+    ManualNestedSchema, 
+    CategoryNestedSchema, 
+    GroupNestedSchema
+)
+
+from app.schemas.posts import PostSchema
+
+from app.models.auth import UserModel
+
+from app.models.manuals import (
+    ManualModel, 
+    CategoryModel, 
+    GroupModel
+)
+
+from app.models.posts import PostModel
 
 T = TypeVar('T', bound=BaseSchema)
 
-T = TypeVar("T", ManualSchema, CategorySchema, GroupSchema)
-M = TypeVar("M", ManualModel, CategoryModel, GroupModel)
+T = TypeVar("T",
+            ManualSchema,
+            CategorySchema,
+            GroupSchema,
+            CreateUserSchema,
+            UserSchema,
+            TokenSchema,
+            PostSchema
+            )
+
+M = TypeVar("M",
+            ManualModel,
+            CategoryModel,
+            GroupModel,
+            UserModel,
+            PostModel
+            )
 class SessionMixin:
     """
     Миксин для предоставления экземпляра сессии базы данных.
