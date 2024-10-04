@@ -48,12 +48,12 @@ class AuthService(HashingMixin, BaseService):
             email=user.email,
             hashed_password=self.bcrypt(user.password)
         )
-        AuthDataManager(self.session).add_user(user_model)
+        AuthDataManager(self.session, UserSchema).add_user(user_model)
         
     def authenticate(
             self, login: OAuth2PasswordRequestForm = Depends()
     ):
-        user = AuthDataManager(self.session).get_user(login.username)
+        user = AuthDataManager(self.session, UserSchema).get_user(login.username)
 
         if user.hashed_password is None:
             raise_with_log(status.HTTP_401_UNAUTHORIZED, "Incorrect password")
