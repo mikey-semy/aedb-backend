@@ -3,10 +3,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models.base import SQLModel
 from app.models.posts import PostModel
-
-from typing import TYPE_CHECKING
-if TYPE_CHECKING:
-    from app.models.posts import PostModel
     
 class UserModel(SQLModel):
     __tablename__ = "users"
