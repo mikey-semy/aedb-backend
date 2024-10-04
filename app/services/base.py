@@ -6,18 +6,18 @@ from sqlalchemy.sql.expression import Executable
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.schemas.auth import (
-    CreateUserSchema, 
-    UserSchema, 
+    CreateUserSchema,
+    UserSchema,
     TokenSchema
 )
 
 from app.schemas.manuals import (
-    BaseSchema, 
-    ManualSchema, 
-    CategorySchema, 
+    BaseSchema,
+    ManualSchema,
+    CategorySchema,
     GroupSchema,
-    ManualNestedSchema, 
-    CategoryNestedSchema, 
+    ManualNestedSchema,
+    CategoryNestedSchema,
     GroupNestedSchema
 )
 
@@ -26,8 +26,8 @@ from app.schemas.posts import PostSchema
 from app.models.auth import UserModel
 
 from app.models.manuals import (
-    ManualModel, 
-    CategoryModel, 
+    ManualModel,
+    CategoryModel,
     GroupModel
 )
 
@@ -85,7 +85,7 @@ class BaseDataManager(SessionMixin, Generic[T]):
         """
         super().__init__(session)
         self.schema = schema
-    
+
     async def add_one(self, model: Any) -> T:
         """
         Добавляет одну запись в базу данных.
@@ -126,7 +126,7 @@ class BaseDataManager(SessionMixin, Generic[T]):
     async def delete_one(self, delete_statement: Executable) -> bool:
         result = await self.session.execute(delete_statement)
         return result.rowcount > 0
-    
+
     async def delete_all(self, delete_statement: Executable) -> bool:
         result = await self.session.execute(delete_statement)
         return result.rowcount > 0
@@ -266,7 +266,7 @@ class GenericDataManager(BaseDataManager[T]):
         for model in models:
             schemas.append(self.schema(**model.to_dict))
         return schemas
-        
+  
     async def search_items(self, q: str) -> List[T]:
 
         if hasattr(M, 'title'):
@@ -283,7 +283,7 @@ class GenericDataManager(BaseDataManager[T]):
         old_item = await self.get_item(item_id)
         schema: T = await self.update_one(old_item, updated_item)
         return schema
-    
+
     async def delete_item(self, item_id: int) -> bool:
         """
         Удаляет элемент из базы данных.
@@ -292,7 +292,7 @@ class GenericDataManager(BaseDataManager[T]):
         """
         statement = delete(self.model).where(self.model.id == item_id)
         return await self.delete_one(statement)
-    
+
     async def delete_items(self) -> bool:
         """
         Удаляет элементы из базы данных.

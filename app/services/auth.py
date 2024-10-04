@@ -18,7 +18,7 @@ from app.const import (
     token_algorithm,
     token_expire_minutes,
 )
-from app.core.config import settings
+from app.core.config import config
 
 oauth2_schema = OAuth2PasswordBearer(tokenUrl=auth_url, auto_error=False)
 
@@ -74,7 +74,7 @@ class AuthService(HashingMixin, BaseService):
         }
         
         return encode(payload=payload,
-                      key=settings.token_key.get_secret_value(),
+                      key=config.token_key.get_secret_value(),
                       algorithm=token_algorithm)
     
     @staticmethod
@@ -124,7 +124,7 @@ async def get_current_user(token: str = Depends(oauth2_schema)) -> UserSchema | 
     try:
         # decode token using secret token key provided by config
         payload = decode(jwt=token,
-                         key=settings.token_key.get_secret_value(),
+                         key=config.token_key.get_secret_value(),
                          algorithms=[token_algorithm])
 
         # extract encoded information

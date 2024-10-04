@@ -57,6 +57,13 @@ auth_params:   Final[Dict[str, Any]] = {
     "tags": auth_tags
     }
 
+
+# Token constants
+token_type: Final = "bearer"
+token_algorithm: Final = "HS256"
+token_expire_minutes: Final = 60
+
+
 # Posts service constants
 post_tags: Final[List[str | Enum] | None] = ["Posts"]
 post_url: Final = "posts"
