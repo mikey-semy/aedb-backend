@@ -14,10 +14,9 @@
 """
 import json
 from typing import Any, Dict, List
-from sqlalchemy.types import ARRAY, TypeDecorator, Text, JSON, String
+from sqlalchemy.types import ARRAY, TypeDecorator, Text, JSON
 from sqlalchemy.orm import DeclarativeBase
 
-from app.utils.manuals import PDFCoverExtractor
 class SQLModel(DeclarativeBase):
     """
     Базовый класс, используемый для определения моделей.

@@ -1,4 +1,5 @@
-from typing import Final, Dict, Any
+from enum import Enum
+from typing import Final, Dict, Any, List
 from app.version import __version__
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
@@ -46,7 +47,25 @@ app_path:               Path    =   main_path / app_folder_name
 templates_path:         Path    =   app_path / templates_folder_name
 static_path:            Path    =   app_path / static_folder_name
 media_path:             Path    =   app_path / media_folder_name
-    
+
+# Authentication service constants
+auth_tags: Final[List[str | Enum] | None] = ["Authentication"]
+auth_url: Final = "token"
+
+auth_params:   Final[Dict[str, Any]] = {
+    "prefix": "/" + auth_url, 
+    "tags": auth_tags
+    }
+
+# Posts service constants
+post_tags: Final[List[str | Enum] | None] = ["Posts"]
+post_url: Final = "posts"
+
+post_params:   Final[Dict[str, Any]] = {
+    "prefix": "/" + post_url, 
+    "tags": post_tags
+    }
+
 # Static params
 static_path_str: str = "/static"
 static_app: ASGIApp = StaticFiles(directory=static_path)
