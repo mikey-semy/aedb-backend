@@ -26,7 +26,7 @@ uvicorn_params:   Final[Dict[str, Any]] = {
     "host": host, 
     "port": port,
     "proxy_headers": True,
-    "forwarded-allow-ips": "*"
+    # "forwarded-allow-ips": "*"
     }
 
 # Paths params
