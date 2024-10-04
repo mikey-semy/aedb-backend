@@ -1,5 +1,5 @@
 from datetime import datetime
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import ForeignKey, String, Text
 
 from app.models.base import SQLModel
@@ -15,5 +15,6 @@ class PostModel(SQLModel):
     title: Mapped[str] = mapped_column("title", String(100))
     description: Mapped[str] = mapped_column("description", Text())
 
+    author: Mapped["UserModel"] = relationship(back_populates="posts")
     def __repr__(self) -> str:
         return f"Post(id={self.id!r}, title={self.title!r}, description={self.description!r})"
