@@ -7,6 +7,7 @@ from app.services.base import BaseService, GenericDataManager, T
 from app.utils.manuals import PDFCoverExtractor
 from app.const import media_path
 import uuid
+
 class ManualService(BaseService):
     """
     Сервис для работы с инструкциями, категориями и группами.

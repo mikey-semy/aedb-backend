@@ -117,12 +117,8 @@ async def post_category(
 @router.post("/manual")
 async def post_manual(
     manual: ManualSchema,
-    file: UploadFile = File(None),
     session: Session = Depends(get_db_session)
 ) -> ManualSchema:
-    if file:
-        uploaded_manual = await ManualService(session).upload_file(file)
-        manual.file_url = uploaded_manual.file_url
     return await ManualService(session).add_manual(manual)
 
 @router.post("/upload_manual")
