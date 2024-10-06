@@ -55,6 +55,7 @@ class ManualNestedSchema(BaseSchema):
     id: Optional[int] = None
     title: str
     file_url: str
+    group_id: int
 
 class GroupNestedSchema(BaseSchema):
     id: Optional[int] = None
