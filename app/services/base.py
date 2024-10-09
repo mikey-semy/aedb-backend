@@ -1,5 +1,5 @@
 from typing import TypeVar, Generic, Type, Any, List
-
+import logging
 from sqlalchemy import select, delete
 from sqlalchemy.orm import joinedload
 from sqlalchemy.sql.expression import Executable
@@ -123,9 +123,18 @@ class BaseDataManager(SessionMixin, Generic[T]):
         await self.session.refresh(model_to_update)
         return self.schema(**model_to_update.to_dict)
 
+    #async def delete_one(self, delete_statement: Executable) -> bool:
+        #result = await self.session.execute(delete_statement)
+        #return result.rowcount > 0
     async def delete_one(self, delete_statement: Executable) -> bool:
-        result = await self.session.execute(delete_statement)
-        return result.rowcount > 0
+        try:
+            result = await self.session.execute(delete_statement)
+            await self.session.commit()  # Фиксация изменений
+            return result.rowcount > 0
+        except Exception as e:
+            await self.session.rollback()  # Откат при ошибке
+            logging.error(f"Ошибка при удалении: {e}")
+            return False
 
     async def delete_all(self, delete_statement: Executable) -> bool:
         result = await self.session.execute(delete_statement)
