@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from fastapi import Depends, status
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 
-from jwt import encode, decode, PyJWTError
+from jose import jwt, JWTError
 from sqlalchemy import select
 from passlib.context import CryptContext
 
@@ -73,7 +73,7 @@ class AuthService(HashingMixin, BaseService):
             "expires_at": self._expiration_time()
         }
         
-        return encode(payload=payload,
+        return jwt.encode(payload,
                       key=config.token_key.get_secret_value(),
                       algorithm=token_algorithm)
     
@@ -123,7 +123,7 @@ async def get_current_user(token: str = Depends(oauth2_schema)) -> UserSchema | 
 
     try:
         # decode token using secret token key provided by config
-        payload = decode(jwt=token,
+        payload = jwt.decode(jwt=token,
                          key=config.token_key.get_secret_value(),
                          algorithms=[token_algorithm])
 
@@ -139,7 +139,7 @@ async def get_current_user(token: str = Depends(oauth2_schema)) -> UserSchema | 
             raise_with_log(status.HTTP_401_UNAUTHORIZED, "Token expired")
 
         return UserSchema(name=name, email=sub)
-    except PyJWTError:
+    except JWTError:
         raise_with_log(status.HTTP_401_UNAUTHORIZED, "Invalid credentials")
 
     return None
