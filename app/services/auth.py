@@ -123,7 +123,7 @@ async def get_current_user(token: str = Depends(oauth2_schema)) -> UserSchema | 
 
     try:
         # decode token using secret token key provided by config
-        payload = jwt.decode(jwt=token,
+        payload = jwt.decode(token=token,
                          key=config.token_key.get_secret_value(),
                          algorithms=[token_algorithm])
 
