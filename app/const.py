@@ -78,7 +78,7 @@ manual_tags: Final[List[str | Enum] | None] = ["Manuals"]
 manual_url: Final = "manuals"
 
 manual_params:   Final[Dict[str, Any]] = {
-    "prefix": "/",# + manual_url, 
+    "prefix": "", #"/" + manual_url, 
     "tags": manual_tags
     }
 
