@@ -10,6 +10,7 @@ from app.const import env_path
 class Settings(BaseSettings):
 
     dsn: str =  Field(default="sqlite+aiosqlite:///./database_aedb.db")
+    docs_access: bool = True
     
     allow_origins: List[str] = Field(default_factory=list)
     allow_credentials: bool = True
