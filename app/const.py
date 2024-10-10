@@ -53,7 +53,7 @@ auth_tags: Final[List[str | Enum] | None] = ["Authentication"]
 auth_url: Final = "token"
 
 auth_params:   Final[Dict[str, Any]] = {
-    "prefix": "/" + auth_url, 
+    "prefix": f"/{auth_url}", 
     "tags": auth_tags
     }
 
@@ -69,7 +69,7 @@ post_tags: Final[List[str | Enum] | None] = ["Posts"]
 post_url: Final = "posts"
 
 post_params:   Final[Dict[str, Any]] = {
-    "prefix": "/" + post_url, 
+    "prefix": f"/{post_url}", 
     "tags": post_tags
     }
 
@@ -78,7 +78,7 @@ manual_tags: Final[List[str | Enum] | None] = ["Manuals"]
 manual_url: Final = "manuals"
 
 manual_params:   Final[Dict[str, Any]] = {
-    "prefix": "", #"/" + manual_url, 
+    "prefix": f"/{manual_url}", 
     "tags": manual_tags
     }
 

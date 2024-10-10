@@ -8,13 +8,13 @@ from app.const import manual_params
 
 router = APIRouter(**manual_params)
 
-@router.get("/nested_manuals", response_model=List[Any])
+@router.get("/nested", response_model=List[Any])
 async def get_nested_manuals(
     session: Session = Depends(get_db_session)
 ) -> List[Any]:
     return await ManualService(session).get_nested_manuals()
 
-@router.get("/manuals", response_model=List[ManualSchema])
+@router.get("/", response_model=List[ManualSchema])
 async def get_manuals(
     session: Session = Depends(get_db_session)
 ) -> List[ManualSchema]:
@@ -81,7 +81,7 @@ async def delete_manual(
 ) -> bool:
     return await ManualService(session).delete_manual(manual_id)
 
-@router.delete("/manuals")
+@router.delete("/")
 async def delete_manuals(
     session: Session = Depends(get_db_session)
 ) -> bool:
