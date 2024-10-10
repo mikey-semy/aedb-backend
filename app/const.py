@@ -73,6 +73,15 @@ post_params:   Final[Dict[str, Any]] = {
     "tags": post_tags
     }
 
+# Manuals service constants
+manual_tags: Final[List[str | Enum] | None] = ["Manuals"]
+manual_url: Final = "manuals"
+
+manual_params:   Final[Dict[str, Any]] = {
+    "prefix": "/" + manual_url, 
+    "tags": manual_tags
+    }
+
 # Static params
 static_path_str: str = "/static"
 static_app: ASGIApp = StaticFiles(directory=static_path)

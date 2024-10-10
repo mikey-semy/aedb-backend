@@ -4,8 +4,9 @@ from sqlalchemy.orm import Session
 from app.schemas.manuals import ManualSchema, GroupSchema, CategorySchema
 from app.services.manuals import ManualService
 from app.database.session import get_db_session
+from app.const import manual_params
 
-router = APIRouter()
+router = APIRouter(**manual_params)
 
 @router.get("/nested_manuals", response_model=List[Any])
 async def get_nested_manuals(
