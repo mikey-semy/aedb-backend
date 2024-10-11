@@ -11,11 +11,12 @@ class Settings(BaseSettings):
 
     dsn: str =  Field(default="sqlite+aiosqlite:///./database_aedb.db")
     docs_access: bool = True
-    
+
     allow_origins: List[str] = Field(default_factory=list)
     allow_credentials: bool = True
     allow_methods: List[str] = ["*"]
     allow_headers: List[str] = ["*"]
+
 
     @property
     def cors_params(self) -> Dict[str, Any]:

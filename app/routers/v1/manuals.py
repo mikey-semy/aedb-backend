@@ -32,7 +32,7 @@ async def get_categories(
 ) -> List[CategorySchema]:
     return await ManualService(session).get_categories()
 
-@router.get("/search_manuals", response_model=List[ManualSchema])
+@router.get("/search", response_model=List[ManualSchema])
 async def search_manuals(
     q: str = Query(..., min_length=3),
     session: Session = Depends(get_db_session)):
@@ -50,7 +50,7 @@ async def search_categories(
     session: Session = Depends(get_db_session)):
     return await ManualService(session).search_categories(q)
 
-@router.put("/manual/{manual_id}")
+@router.put("/{manual_id}")
 async def put_manual(
     manual_id: int,
     manual: ManualSchema,
@@ -74,7 +74,7 @@ async def put_category(
 ) -> CategorySchema:
     return await ManualService(session).update_category(category_id, category)
 
-@router.delete("/manual/{manual_id}")
+@router.delete("/{manual_id}")
 async def delete_manual(
     manual_id: int,
     session: Session = Depends(get_db_session)
@@ -115,14 +115,14 @@ async def post_category(
 ) -> CategorySchema:
     return await ManualService(session).add_category(category)
 
-@router.post("/manual")
+@router.post("/")
 async def post_manual(
     manual: ManualSchema,
     session: Session = Depends(get_db_session)
 ) -> ManualSchema:
     return await ManualService(session).add_manual(manual)
 
-@router.post("/upload_manual")
+@router.post("/upload")
 async def create_upload_manuals(
     manual: UploadFile,
     session: Session = Depends(get_db_session)):
@@ -132,16 +132,19 @@ async def create_upload_manuals(
 async def add_groups(
     session: Session = Depends(get_db_session)
 ) -> None:
+    """Adds all groups from JSON file."""
     await ManualService(session).add_all_groups()
 
 @router.post("/add_categories")
 async def add_categories(
     session: Session = Depends(get_db_session)
 ) -> None:
+    """Adds all categories from JSON file."""
     await ManualService(session).add_all_categories()
 
-@router.post("/add_manuals")
+@router.post("/add_all")
 async def add_manuals(
     session: Session = Depends(get_db_session)
 ) -> None:
+    """Adds all manuals from JSON file."""
     await ManualService(session).add_all_manuals()

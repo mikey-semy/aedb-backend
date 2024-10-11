@@ -1,9 +1,12 @@
 from enum import Enum
 from typing import Final, Dict, Any, List
-from app.version import __version__
 from pathlib import Path
+from fastapi import APIRouter
 from fastapi.staticfiles import StaticFiles
 from starlette.types import ASGIApp
+
+from app.version import __version__
+from app.routers.v1 import auth, main, manuals, posts
 
 # Application params
 app_title: Final[str] = "AEDB"
@@ -17,6 +20,9 @@ app_params:   Final[Dict[str, Any]] = {
     "root_path": ""
     }
 
+# Router params
+api_prefix: str = f"/api/{__version__}"
+routers: List[APIRouter]= [auth, posts, main, manuals]
 
 # Uvicorn params
 host: Final = "0.0.0.0"
