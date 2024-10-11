@@ -26,7 +26,7 @@ app_params:   Final[Dict[str, Any]] = {
 
 # Router params
 api_prefix: str = f"/api/{__version__}"
-routers: List[APIRouter]= get_routers()
+routers: List[APIRouter] = get_routers()
 
 # Uvicorn params
 host: Final = "0.0.0.0"
