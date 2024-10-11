@@ -6,7 +6,11 @@ from fastapi.staticfiles import StaticFiles
 from starlette.types import ASGIApp
 
 from app.version import __version__
-from app.routers.v1 import auth, main, manuals, posts
+def get_routers():
+    from app.routers.v1 import auth, main, manuals, posts
+    return [auth, posts, main, manuals]
+
+routers: List[APIRouter] = []
 
 # Application params
 app_title: Final[str] = "AEDB"
@@ -22,7 +26,7 @@ app_params:   Final[Dict[str, Any]] = {
 
 # Router params
 api_prefix: str = f"/api/{__version__}"
-routers: List[APIRouter]= [auth, posts, main, manuals]
+routers: List[APIRouter]= get_routers()
 
 # Uvicorn params
 host: Final = "0.0.0.0"
