@@ -1,16 +1,14 @@
 from enum import Enum
 from typing import Final, Dict, Any, List
 from pathlib import Path
-from fastapi import APIRouter
+
 from fastapi.staticfiles import StaticFiles
 from starlette.types import ASGIApp
 
 from app.version import __version__
-def get_routers():
-    from app.routers.v1 import auth, main, manuals, posts
-    return [auth, posts, main, manuals]
 
-routers: List[APIRouter] = []
+# Routers
+api_prefix: str = f"/api/{__version__}"
 
 # Application params
 app_title: Final[str] = "AEDB"

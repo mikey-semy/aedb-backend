@@ -1,11 +1,10 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from app.routers.v1 import auth, main, manuals, posts
 from app.middlewares.docs_blocker import BlockDocsMiddleware
 from app.const import (
     api_prefix,
-    routers,
     app_params,
     uvicorn_params,
     static_params,
@@ -19,9 +18,11 @@ app = FastAPI(**app_params)
 app.mount(**static_params)
 app.mount(**media_params)
 
-for router in routers:
-    app.include_router(router.router, prefix=api_prefix)
-print(f'api_prefix: {api_prefix}')
+app.include_router(auth.router, prefix=api_prefix)
+app.include_router(posts.router, prefix=api_prefix)
+app.include_router(main.router, prefix=api_prefix)
+app.include_router(manuals.router, prefix=api_prefix)
+
 app.add_middleware(BlockDocsMiddleware)
 app.add_middleware(CORSMiddleware, **cors_params)
 
