@@ -7,8 +7,6 @@ from starlette.types import ASGIApp
 
 from app.version import __version__
 
-# Routers
-api_prefix: str = f"/api/{__version__}"
 
 # Application params
 app_title: Final[str] = "AEDB"
@@ -24,7 +22,6 @@ app_params:   Final[Dict[str, Any]] = {
 
 # Router params
 api_prefix: str = f"/api/{__version__}"
-routers: List[APIRouter] = get_routers()
 
 # Uvicorn params
 host: Final = "0.0.0.0"
