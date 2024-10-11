@@ -21,7 +21,7 @@ app.mount(**media_params)
 
 for router in routers:
     app.include_router(router.router, prefix=api_prefix)
-
+print(f'api_prefix: {api_prefix}')
 app.add_middleware(BlockDocsMiddleware)
 app.add_middleware(CORSMiddleware, **cors_params)
 
