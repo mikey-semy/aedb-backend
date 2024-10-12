@@ -27,7 +27,7 @@ async def get_manuals(
     return await ManualService(session).get_manuals()
 
 @router.get("/groups/{category_id}", response_model=List[GroupSchema])
-async def get_groups(
+async def get_groups_by_category(
     category_id: int,
     session: Session = Depends(get_db_session)
 ) -> List[GroupSchema]:
