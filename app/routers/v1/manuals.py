@@ -5,8 +5,7 @@ from app.schemas.manuals import (
     ManualSchema, 
     GroupSchema, 
     CategorySchema,
-    ManualNestedSchema,
-    CategoryNestedSchema
+    ManualNestedSchema
 )
 from app.services.manuals import ManualService
 from app.database.session import get_db_session
