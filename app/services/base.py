@@ -272,7 +272,7 @@ class GenericDataManager(BaseDataManager[T]):
         schemas: List[T] = []
         models = await self.get_all(statement)
         for model in models:
-            schemas.append(self.schema(**model.to_dict()))
+            schemas.append(self.schema(**model.to_dict))
         return schemas
     
     async def get_items(self, statement=None) -> List[T]:
