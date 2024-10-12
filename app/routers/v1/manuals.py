@@ -1,17 +1,23 @@
-from typing import List, Any
-from fastapi import APIRouter, Query, Depends, UploadFile, File
+from typing import List
+from fastapi import APIRouter, Query, Depends, UploadFile
 from sqlalchemy.orm import Session
-from app.schemas.manuals import ManualSchema, GroupSchema, CategorySchema
+from app.schemas.manuals import (
+    ManualSchema, 
+    GroupSchema, 
+    CategorySchema,
+    ManualNestedSchema,
+    CategoryNestedSchema
+)
 from app.services.manuals import ManualService
 from app.database.session import get_db_session
 from app.const import manual_params
 
 router = APIRouter(**manual_params)
 
-@router.get("/nested", response_model=List[Any])
+@router.get("/nested", response_model=List[ManualNestedSchema])
 async def get_nested_manuals(
     session: Session = Depends(get_db_session)
-) -> List[Any]:
+) -> List[ManualNestedSchema]:
     return await ManualService(session).get_nested_manuals()
 
 @router.get("/", response_model=List[ManualSchema])
@@ -19,6 +25,13 @@ async def get_manuals(
     session: Session = Depends(get_db_session)
 ) -> List[ManualSchema]:
     return await ManualService(session).get_manuals()
+
+@router.get("/groups/{category_id}", response_model=List[GroupSchema])
+async def get_groups(
+    category_id: int,
+    session: Session = Depends(get_db_session)
+) -> List[GroupSchema]:
+    return await ManualService(session).get_groups_by_category(category_id)
 
 @router.get("/groups", response_model=List[GroupSchema])
 async def get_groups(

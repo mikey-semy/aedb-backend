@@ -261,6 +261,20 @@ class GenericDataManager(BaseDataManager[T]):
             result.append(CategoryNestedSchema(**category_dict))
         return result
 
+    async def get_items_by_parent(self, category_id: int) -> List[T]:
+        """
+    Получает список элементов из базы данных с родительским id.
+
+    :param category_id: ID родительской категории
+    :return: Список элементов в виде схем
+    """
+        statement = select(self.model).where(self.model.category_id == category_id)
+        schemas: List[T] = []
+        models = await self.get_all(statement)
+        for model in models:
+            schemas.append(self.schema(**model.to_dict()))
+        return schemas
+    
     async def get_items(self, statement=None) -> List[T]:
         """
         Получает список элементов из базы данных.

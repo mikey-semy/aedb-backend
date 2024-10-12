@@ -1,12 +1,13 @@
 from typing import List, Any
 import json
+import uuid
 from fastapi import UploadFile
 from app.models.manuals import ManualModel, CategoryModel, GroupModel
-from app.schemas.manuals import ManualSchema, CategorySchema, GroupSchema
+from app.schemas.manuals import ManualSchema, CategorySchema, GroupSchema, CategoryNestedSchema
 from app.services.base import BaseService, GenericDataManager, T
 from app.utils.manuals import PDFCoverExtractor
 from app.const import media_path
-import uuid
+
 
 class ManualService(BaseService):
     """
@@ -106,7 +107,7 @@ class ManualService(BaseService):
         """Добавляет все группы из JSON-файла."""
         await self.add_all_items('app/data/manuals/groups.json', self.group_manager)
 
-    async def get_nested_manuals(self) -> List[Any]:
+    async def get_nested_manuals(self) -> List[CategoryNestedSchema]:
         """
         Получает список всех инструкций, вложенных в категории и группы.
 
@@ -130,6 +131,14 @@ class ManualService(BaseService):
         """
         return await self.category_manager.get_items()
 
+    async def get_groups_by_category(self, category_id) -> List[GroupSchema]:
+        """
+        Получает список всех групп с категорией id.
+
+        :return: Список групп
+        """
+        return await self.group_manager.get_items_by_parent(category_id)
+    
     async def get_groups(self) -> List[GroupSchema]:
         """
         Получает список всех групп.
