@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Any
 from fastapi import APIRouter, Query, Depends, UploadFile
 from sqlalchemy.orm import Session
 from app.schemas.manuals import (
@@ -13,10 +13,10 @@ from app.const import manual_params
 
 router = APIRouter(**manual_params)
 
-@router.get("/nested", response_model=List[ManualNestedSchema])
+@router.get("/nested", response_model=List[Any])
 async def get_nested_manuals(
     session: Session = Depends(get_db_session)
-) -> List[ManualNestedSchema]:
+) -> List[Any]:
     return await ManualService(session).get_nested_manuals()
 
 @router.get("/", response_model=List[ManualSchema])
