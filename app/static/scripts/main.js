@@ -79,7 +79,7 @@ function getManuals() {
         }
     };
 
-    const url_ = 'https://aedb.ru/manuals';
+    const url_ = 'https://aedb.online/manuals';
     console.log(url_);
     response.run(url_);
 };
