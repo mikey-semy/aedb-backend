@@ -14,6 +14,7 @@
 """
 import json
 from typing import Any, Dict, List
+
 from sqlalchemy.types import ARRAY, TypeDecorator, Text, JSON
 from sqlalchemy.orm import DeclarativeBase
 

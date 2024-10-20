@@ -1,12 +1,17 @@
 from datetime import datetime
+from typing import TYPE_CHECKING
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import ForeignKey, String, Text
+from sqlalchemy import MetaData, ForeignKey, String, Text
 
 from app.models.base import SQLModel
-    
+if TYPE_CHECKING:
+    from app.models.auth import UserModel  # Импортируем только для проверки типов
+
 class PostModel(SQLModel):
     __tablename__ = "posts"
-
+    
+    metadata = MetaData()
+    
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
     content: Mapped[str] = mapped_column("content", Text())

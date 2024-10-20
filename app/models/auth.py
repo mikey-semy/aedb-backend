@@ -1,11 +1,13 @@
 from typing import List
+from sqlalchemy import MetaData
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-
 from app.models.base import SQLModel
 from app.models.posts import PostModel
     
 class UserModel(SQLModel):
     __tablename__ = "users"
+    
+    metadata = MetaData()
     
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     email: Mapped[str] = mapped_column("email", unique=True, nullable=False)
@@ -13,7 +15,6 @@ class UserModel(SQLModel):
     hashed_password: Mapped[str] = mapped_column("hashed_password")
 
     posts: Mapped[List["PostModel"]] = relationship(
-        # default_factory=list,
         back_populates="author",
         lazy='joined',
         cascade="all, delete-orphan",
