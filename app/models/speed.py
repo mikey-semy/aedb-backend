@@ -15,7 +15,7 @@
 Этот модуль предназначен для использования в сочетании с SQLAlchemy ORM
 для выполнения операций с базой данных, связанных с инструкциями по эксплуатации.
 """
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import List
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from sqlalchemy import MetaData, String, ForeignKey, DateTime, Float, Integer, Boolean

@@ -32,8 +32,6 @@ class CategoryModel(SQLModel):
     """
     __tablename__ = "categories"
 
-    # metadata = MetaData()
-
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("category_name", String(100))
     logo_url: Mapped[str] = mapped_column("logo_url", default="/media/manuals/default-logo.png")
@@ -50,8 +48,6 @@ class GroupModel(SQLModel):
         category_id (int): ID категории, к которой относится группа.
     """
     __tablename__ = "groups"
-
-    metadata = MetaData()
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("group_name", String(100))
@@ -72,8 +68,6 @@ class ManualModel(SQLModel):
         group_id (int): ID группы, к которой относится инструкция.
     """
     __tablename__ = "manuals"
-
-    metadata = MetaData()
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     title: Mapped[str] = mapped_column("title", String(200))

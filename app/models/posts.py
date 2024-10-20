@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import TYPE_CHECKING
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import MetaData, ForeignKey, String, Text
+from sqlalchemy import ForeignKey, String, Text
 
 from app.models.base import SQLModel
 if TYPE_CHECKING:
@@ -9,8 +9,6 @@ if TYPE_CHECKING:
 
 class PostModel(SQLModel):
     __tablename__ = "posts"
-    
-    # metadata = MetaData()
     
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
