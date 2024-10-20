@@ -85,9 +85,9 @@ class AuthService(HashingMixin, BaseService):
         return expires_at.strftime("%Y-%m-%d %H:%M:%S")
     
 class AuthDataManager(BaseDataManager):
-    def add_user(self, user: UserModel) -> None:
-        """Add user to tadabase."""
-        self.add_one(user)
+    async def add_user(self, user: UserModel) -> None:
+        """Add user to database."""
+        await self.add_one(user)
     
     def get_user(self, email: str) -> UserSchema:
 
