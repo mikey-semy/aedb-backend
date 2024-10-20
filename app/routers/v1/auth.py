@@ -5,10 +5,29 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.const import auth_params
 from app.database.session import get_db_session
 
-from app.schemas.auth import TokenSchema
+from app.schemas.auth import TokenSchema, CreateUserSchema
 from app.services.auth import AuthService
 
 router = APIRouter(**auth_params)
+
+@router.post("/create")
+async def create_user(
+    name: str,
+    email: str,
+    password: str,
+    session: AsyncSession = Depends(get_db_session)
+    ) -> None:
+    """Create new user.
+
+    Raises:
+        HTTPException: 400 Bad Request
+
+    Returns:
+        None
+    """
+    AuthService(session).create_user(
+        CreateUserSchema(name=name, email=email, password=password)
+)
 
 @router.post("")
 async def authenticate(
@@ -25,3 +44,4 @@ async def authenticate(
         Access token.
     """
     return AuthService(session).authenticate(login)
+

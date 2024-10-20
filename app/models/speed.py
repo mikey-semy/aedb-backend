@@ -34,7 +34,20 @@ class ReelModel(SQLModel):
     Attributes:
         id (int): Уникальный идентификатор категории.
         name (str): Название моталки.
-        rools (relationship): формирующие ролики.
+        rolls (relationship): Формирующие ролики, относящиеся к этой категории.
+
+    Methods:
+        __init__(id: int, name: str) -> None: Инициализирует объект ReelModel.
+        __repr__() -> str: Возвращает строковое представление объекта ReelModel.
+        __str__() -> str: Возвращает строковое представление объекта ReelModel.
+
+    Raises:
+        ValueError: Если id или name не являются допустимыми значениями.
+
+    Examples:
+        >>> reel = ReelModel(id=1, name="Моталка 1")
+        >>> print(reel.name)
+        Моталка 1
     """
     __tablename__ = "reels"
 
@@ -50,9 +63,24 @@ class RollModel(SQLModel):
     Модель для представления формирующих роликов.
 
     Attributes:
-        id (int): Уникальный идентификатор группы.
+        id (int): Уникальный идентификатор формирующего ролика.
         name (str): Название формирующего ролика.
         reel_id (int): ID моталки, к которой относится формирующий ролик.
+        reel (relationship): Моталка, к которой относится формирующий ролик.
+        speeds (relationship): Параметры скорости, относящиеся к этому формирующему ролику.
+
+    Methods:
+        __init__(id: int, name: str, reel_id: int) -> None: Инициализирует объект RollModel.
+        __repr__() -> str: Возвращает строковое представление объекта RollModel.
+        __str__() -> str: Возвращает строковое представление объекта RollModel.
+
+    Raises:
+        ValueError: Если id, name или reel_id не являются допустимыми значениями.
+
+    Examples:
+        >>> roll = RollModel(id=1, name="Формирующий ролик 1", reel_id=1)
+        >>> print(roll.name)
+        Формирующий ролик 1
     """
     __tablename__ = "rolls"
 
@@ -61,7 +89,7 @@ class RollModel(SQLModel):
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("roll_name", String(100))
     reel_id: Mapped["int"] = mapped_column(ForeignKey(ReelModel.id, ondelete="CASCADE"))
-    
+        
     reel: Mapped["ReelModel"] = relationship("ReelModel", back_populates="rolls")
     speeds: Mapped[List["SpeedModel"]] = relationship("SpeedModel", back_populates="rolls")
 
@@ -70,9 +98,19 @@ class SpeedModel(SQLModel):
     Модель для представления параметров скорости формирующего ролика моталки.
 
     Attributes:
-        id (int): Уникальный идентификатор инструкции.
-
-        group_id (int): ID группы, к которой относится инструкция.
+        id (int): Уникальный идентификатор параметра скорости.
+        task (float): Задача, для которой определяется параметр скорости.
+        tspd (int): Текущая скорость.
+        fspd (bool): Флаг, указывающий на то, что скорость является фиксированной.
+        bmav (int): Базовая скорость.
+        bemf (float): Базовый электромагнитный момент.
+        amav (int): Активная скорость.
+        aemf (float): Активный электромагнитный момент.
+        memf (float): Максимальный электромагнитный момент.
+        corr (bool): Флаг, указывающий на то, что скорость является корректированной.
+        created_at (datetime): Дата и время создания параметра скорости.
+        updated_at (datetime): Дата и время последнего обновления параметра скорости.
+        roll (relationship): Формирующий ролик, к которому относится этот параметр скорости.
     """
     __tablename__ = "speeds"
 
