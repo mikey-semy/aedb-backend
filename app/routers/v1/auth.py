@@ -25,7 +25,7 @@ async def create_user(
     Returns:
         None
     """
-    AuthService(session).create_user(
+    await AuthService(session).create_user(
         CreateUserSchema(name=name, email=email, password=password)
 )
 
