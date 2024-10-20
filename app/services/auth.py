@@ -41,14 +41,14 @@ class HashingMixin:
     
 class AuthService(HashingMixin, BaseService):
 
-    def create_user(self, user: CreateUserSchema) -> None:
+    async def create_user(self, user: CreateUserSchema) -> None:
         
         user_model = UserModel(
             name=user.name,
             email=user.email,
             hashed_password=self.bcrypt(user.password)
         )
-        AuthDataManager(self.session, UserSchema).add_user(user_model)
+        await AuthDataManager(self.session, UserSchema).add_user(user_model)
         
     def authenticate(
             self, login: OAuth2PasswordRequestForm = Depends()
