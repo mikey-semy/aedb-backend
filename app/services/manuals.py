@@ -88,9 +88,9 @@ class ManualService(BaseService):
             items = json.load(file)
         for item in items:
 
-            if item.get('file_url'):
+            # if item.get('file_url'):
 
-                item['cover_image_url'] = PDFCoverExtractor.create_url(item['file_url'])
+            #     item['cover_image_url'] = PDFCoverExtractor.create_url(item['file_url'])
 
             new_item = manager.model(**item)
             await manager.add_item(new_item)
