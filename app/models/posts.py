@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 class PostModel(SQLModel):
     __tablename__ = "posts"
     
-    metadata = MetaData()
+    # metadata = MetaData()
     
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))

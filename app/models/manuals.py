@@ -32,7 +32,7 @@ class CategoryModel(SQLModel):
     """
     __tablename__ = "categories"
 
-    metadata = MetaData()
+    # metadata = MetaData()
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("category_name", String(100))

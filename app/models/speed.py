@@ -51,7 +51,7 @@ class ReelModel(SQLModel):
     """
     __tablename__ = "reels"
 
-    metadata = MetaData()
+    # metadata = MetaData()
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("reel_name", String(100))

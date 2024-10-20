@@ -7,7 +7,7 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
-
+from app.models.base import SQLModel
 from app.models.auth import UserModel
 from app.models.posts import PostModel
 from app.models.manuals import CategoryModel, GroupModel, ManualModel
@@ -31,13 +31,15 @@ if config.config_file_name is not None:
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = [
-    UserModel.metadata,
-    PostModel.metadata,
-    CategoryModel.metadata,
-    GroupModel.metadata,
-    ManualModel.metadata,
-    ]
+
+target_metadata = SQLModel.metadata
+# target_metadata = [
+#     UserModel.metadata,
+#     PostModel.metadata,
+#     CategoryModel.metadata,
+#     GroupModel.metadata,
+#     ManualModel.metadata,
+#     ]
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

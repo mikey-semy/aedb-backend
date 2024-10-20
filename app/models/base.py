@@ -14,7 +14,7 @@
 """
 import json
 from typing import Any, Dict, List
-
+from sqlalchemy import MetaData
 from sqlalchemy.types import ARRAY, TypeDecorator, Text, JSON
 from sqlalchemy.orm import DeclarativeBase
 
@@ -25,6 +25,7 @@ class SQLModel(DeclarativeBase):
     Предоставляет удобные методы, которые можно использовать для
     преобразования модели в соответствующую схему.
     """
+    metadata = MetaData()
     @classmethod
     def schema(cls) -> str:
         """
