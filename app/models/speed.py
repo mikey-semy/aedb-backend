@@ -17,11 +17,10 @@
 """
 from datetime import datetime
 from typing import List
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-from sqlalchemy import MetaData, String, ForeignKey, DateTime, Float, Integer, Boolean
-
 import pytz
 
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import String, ForeignKey
 
 from app.models.base import SQLModel
 
@@ -29,10 +28,10 @@ moscow_tz = pytz.timezone('Europe/Moscow')
 
 class ReelModel(SQLModel):
     """
-    Модель для представления категории инструкций.
+    Модель для представления моталки.
 
     Attributes:
-        id (int): Уникальный идентификатор категории.
+        id (int): Уникальный идентификатор моталки.
         name (str): Название моталки.
         rolls (relationship): Формирующие ролики, относящиеся к этой категории.
 
@@ -51,8 +50,6 @@ class ReelModel(SQLModel):
     """
     __tablename__ = "reels"
 
-    # metadata = MetaData()
-
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("reel_name", String(100))
 
@@ -60,7 +57,7 @@ class ReelModel(SQLModel):
 
 class RollModel(SQLModel):
     """
-    Модель для представления формирующих роликов.
+    Модель для представления формирующих роликов моталки.
 
     Attributes:
         id (int): Уникальный идентификатор формирующего ролика.
@@ -83,8 +80,6 @@ class RollModel(SQLModel):
         Формирующий ролик 1
     """
     __tablename__ = "rolls"
-
-    metadata = MetaData()
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     name: Mapped[str] = mapped_column("roll_name", String(100))
@@ -113,8 +108,6 @@ class SpeedModel(SQLModel):
         roll (relationship): Формирующий ролик, к которому относится этот параметр скорости.
     """
     __tablename__ = "speeds"
-
-    metadata = MetaData()
 
     id: Mapped[int] = mapped_column("id", primary_key=True, index=True)
     task: Mapped[float] = mapped_column("task", nullable=False)
