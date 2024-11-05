@@ -2,7 +2,7 @@
 .gitpod.yml
 lib
 deploy
-venv
+.venv
 docs
 __pycache__
 *.pyc
