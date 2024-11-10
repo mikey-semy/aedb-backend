@@ -53,6 +53,13 @@ templates_path:         Path    =   app_path / templates_folder_name
 static_path:            Path    =   app_path / static_folder_name
 media_path:             Path    =   app_path / media_folder_name
 
+# Main service constants
+main_tags: Final[List[str | Enum] | None] = ["Main"]
+
+main_params:   Final[Dict[str, Any]] = {
+    "tags": main_tags
+    }
+
 # Authentication service constants
 auth_tags: Final[List[str | Enum] | None] = ["Authentication"]
 auth_url: Final = "token"
