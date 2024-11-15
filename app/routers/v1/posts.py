@@ -15,14 +15,14 @@ router = APIRouter(**post_params)
 @router.get("/", response_model=PostSchema)
 async def get_post(
     post_id: int,
-    user: UserSchema = Depends(get_current_user),
+    _user: UserSchema = Depends(get_current_user),
     session: AsyncSession = Depends(get_db_session)
 ) -> PostSchema:
     return PostService(session).get_post(post_id)
 
 @router.get("/", response_model=List[PostSchema])
 async def get_posts(
-    user: UserSchema = Depends(get_current_user),
+    _user: UserSchema = Depends(get_current_user),
     session: AsyncSession = Depends(get_db_session)
 ) -> List[PostSchema]:
 
