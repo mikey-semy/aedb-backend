@@ -1,57 +1,21 @@
 from typing import TypeVar, Generic, Type, Any, List
 import logging
 from sqlalchemy import select, delete
-from sqlalchemy.orm import joinedload
 from sqlalchemy.sql.expression import Executable
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.exc import SQLAlchemyError
 
-from app.schemas.auth import (
-    CreateUserSchema,
-    UserSchema,
-    TokenSchema
-)
-
+from app.models.base import SQLModel
 from app.schemas.manuals import (
     BaseSchema,
     ManualSchema,
     CategorySchema,
-    GroupSchema,
-    ManualNestedSchema,
-    CategoryNestedSchema,
-    GroupNestedSchema
-)
+    GroupSchema
+    )
 
-from app.schemas.posts import PostSchema
+M = TypeVar("M", bound=SQLModel)
+T = TypeVar("T", bound=BaseSchema)
 
-from app.models.auth import UserModel
-
-from app.models.manuals import (
-    ManualModel,
-    CategoryModel,
-    GroupModel
-)
-
-from app.models.posts import PostModel
-
-T = TypeVar('T', bound=BaseSchema)
-
-T = TypeVar("T",
-            ManualSchema,
-            CategorySchema,
-            GroupSchema,
-            CreateUserSchema,
-            UserSchema,
-            TokenSchema,
-            PostSchema
-            )
-
-M = TypeVar("M",
-            ManualModel,
-            CategoryModel,
-            GroupModel,
-            UserModel,
-            PostModel
-            )
 class SessionMixin:
     """
     Миксин для предоставления экземпляра сессии базы данных.
@@ -123,22 +87,44 @@ class BaseDataManager(SessionMixin, Generic[T]):
         await self.session.refresh(model_to_update)
         return self.schema(**model_to_update.to_dict)
 
-    #async def delete_one(self, delete_statement: Executable) -> bool:
-        #result = await self.session.execute(delete_statement)
-        #return result.rowcount > 0
     async def delete_one(self, delete_statement: Executable) -> bool:
+        """
+        Удаляет одну запись из базы данных.
+
+        Args:
+            delete_statement (Executable): SQL-запрос для удаления.
+
+        Returns:
+            bool: True, если запись удалена, False в противном случае.
+        """
         try:
+            delete_statement = delete_statement.limit(1)
             result = await self.session.execute(delete_statement)
-            await self.session.commit()  # Фиксация изменений
+            await self.session.commit()
             return result.rowcount > 0
-        except Exception as e:
-            await self.session.rollback()  # Откат при ошибке
-            logging.error(f"Ошибка при удалении: {e}")
+        except SQLAlchemyError as e:
+            await self.session.rollback()
+            logging.error("Ошибка при удалении: %s", e)
             return False
 
     async def delete_all(self, delete_statement: Executable) -> bool:
-        result = await self.session.execute(delete_statement)
-        return result.rowcount > 0
+        """
+        Удаляет все записи из базы данных, соответствующие заданному запросу.
+
+        Args:
+            delete_statement (Executable): SQL-запрос для удаления.
+
+        Returns:
+            bool: True, если записи удалены, False в противном случае.
+        """
+        try:
+            result = await self.session.execute(delete_statement)
+            await self.session.commit()
+            return result.rowcount > 0
+        except SQLAlchemyError as e:
+            await self.session.rollback()
+            logging.error("Ошибка при удалении: %s", e)
+            return False
 
     async def get_one(self, select_statement: Executable) -> Any | None:
         """
@@ -236,44 +222,18 @@ class GenericDataManager(BaseDataManager[T]):
         return await self.add_one(new_item)
 
     async def get_item(self, item_id: int) -> T | None:
+        """
+        Получает объект модели по заданному идентификатору.
+
+        Args:
+            item_id (int): Идентификатор объекта для получения.
+
+        Returns:
+            T | None: Объект модели или None, если объект не найден.
+        """
         statement = select(self.model).where(self.model.id == item_id)
         schema: T = await self.get_one(statement)
         return schema
-
-    async def get_nested_items(self, statement=None) -> List[Any]:
-        if statement is None:
-            statement = select(CategoryModel).options(
-                            joinedload(CategoryModel.groups)
-                            .joinedload(GroupModel.manuals)
-                        )
-        categories = await self.get_all(statement)
-        result: List[Any] = []
-        for category in categories:
-            category_dict = category.to_dict
-            category_dict['groups'] = [
-                GroupNestedSchema(
-                    **group.to_dict,
-                    manuals=[
-                        ManualNestedSchema(**manual.to_dict) for manual in group.manuals
-                    ]
-                ) for group in category.groups
-            ]      
-            result.append(CategoryNestedSchema(**category_dict))
-        return result
-
-    async def get_items_by_parent(self, category_id: int) -> List[T]:
-        """
-    Получает список элементов из базы данных с родительским id.
-
-    :param category_id: ID родительской категории
-    :return: Список элементов в виде схем
-    """
-        statement = select(self.model).where(self.model.category_id == category_id)
-        schemas: List[T] = []
-        models = await self.get_all(statement)
-        for model in models:
-            schemas.append(self.schema(**model.to_dict))
-        return schemas
     
     async def get_items(self, statement=None) -> List[T]:
         """
@@ -291,7 +251,15 @@ class GenericDataManager(BaseDataManager[T]):
         return schemas
   
     async def search_items(self, q: str) -> List[T]:
+        """
+        Выполняет поиск объектов модели по заданной строке.
 
+        Args:
+            q (str): Строка для поиска.
+
+        Returns:
+            List[T]: Список найденных объектов модели.
+        """
         if hasattr(M, 'title'):
             statement = select(self.model).where(self.model.title.ilike(f"%{q}%"))
         elif hasattr(M, 'name'):
@@ -303,6 +271,16 @@ class GenericDataManager(BaseDataManager[T]):
     async def update_item(self,
                               item_id: int,
                               updated_item: T) -> T | None:
+        """
+        Обновляет объект модели по заданному идентификатору.
+
+        Args:
+            item_id (int): Идентификатор объекта для обновления.
+            updated_item (T): Обновлённый объект модели.
+
+        Returns:
+            T | None: Обновлённый объект модели или None, если объект не найден.
+        """
         old_item = await self.get_item(item_id)
         schema: T = await self.update_one(old_item, updated_item)
         return schema

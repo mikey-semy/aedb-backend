@@ -64,7 +64,6 @@ class ManualModel(SQLModel):
         id (int): Уникальный идентификатор инструкции.
         title (str): Название инструкции.
         file_url (str): URL для скачивания/открытия файла инструкции.
-        cover_image_url (str): URL изображения обложки инструкции.
         group_id (int): ID группы, к которой относится инструкция.
     """
     __tablename__ = "manuals"

@@ -2,9 +2,22 @@ from typing import List, Any
 import json
 import uuid
 from fastapi import UploadFile
+
+from sqlalchemy import select
+from sqlalchemy.orm import joinedload
 from app.models.manuals import ManualModel, CategoryModel, GroupModel
-from app.schemas.manuals import ManualSchema, CategorySchema, GroupSchema, CategoryNestedSchema
-from app.services.base import BaseService, GenericDataManager, T
+from app.schemas.manuals import (
+    ManualSchema,
+    CategorySchema,
+    GroupSchema,
+    CategoryNestedSchema,
+    ManualListItemSchema,
+    ManualNestedSchema,
+    CategoryNestedSchema,
+    GroupNestedSchema
+)
+
+from app.services.base import CategoryDataManager, BaseService, GenericDataManager, T
 from app.utils.manuals import PDFCoverExtractor
 from app.const import media_path
 
@@ -107,13 +120,56 @@ class ManualService(BaseService):
         """Добавляет все группы из JSON-файла."""
         await self.add_all_items('app/data/manuals/groups.json', self.group_manager)
 
+    async def get_list_manuals(self) -> List[ManualListItemSchema]:
+        """
+        Получает плоский список всех инструкций.
+
+        :return: Список инструкций
+        """
+        statement = (
+            select(ManualModel, CategoryModel, GroupModel)
+            .join(GroupModel, ManualModel.group_id == GroupModel.id)
+            .join(CategoryModel, GroupModel.category_id == CategoryModel.id)
+        )
+        result = await self.session.execute(statement)
+        manuals_list = []
+        for manual, category, group in result:
+            manual_item = ManualListItemSchema(
+                category_name=category.name,
+                group_name=group.name,
+                manual_name=manual.title,
+                manual_url=manual.file_url,
+            )
+            manuals_list.append(manual_item)
+
+        return manuals_list
+
     async def get_nested_manuals(self) -> List[CategoryNestedSchema]:
         """
         Получает список всех инструкций, вложенных в категории и группы.
 
         :return: Список инструкций
         """
-        return await self.manual_manager.get_nested_items()
+    
+        statement = select(CategoryModel).options(
+                            joinedload(CategoryModel.groups)
+                            .joinedload(GroupModel.manuals)
+                        )
+        category_manager = CategoryDataManager(self.session)
+        categories = await category_manager.get_all(statement)
+        result: List[Any] = []
+        for category in categories:
+            category_dict = category.to_dict
+            category_dict['groups'] = [
+                GroupNestedSchema(
+                    **group.to_dict,
+                    manuals=[
+                        ManualNestedSchema(**manual.to_dict) for manual in group.manuals
+                    ]
+                ) for group in category.groups
+            ]      
+            result.append(CategoryNestedSchema(**category_dict))
+        return result
     
     async def get_manuals(self) -> List[ManualSchema]:
         """
@@ -131,13 +187,17 @@ class ManualService(BaseService):
         """
         return await self.category_manager.get_items()
 
-    async def get_groups_by_category(self, category_id) -> List[GroupSchema]:
+    async def get_groups_by_category(self, category_id: int) -> List[GroupSchema]:
         """
-        Получает список всех групп с категорией id.
+        Получает список элементов из базы данных с родительским id.
 
-        :return: Список групп
+        :param category_id: ID родительской категории
+        :return: Список элементов в виде схем
         """
-        return await self.group_manager.get_items_by_parent(category_id)
+        statement = select(GroupModel).where(GroupModel.category_id == category_id)
+        groups = await self.group_manager.get_all(statement)
+    
+        return [GroupSchema(**group.to_dict) for group in groups]
     
     async def get_groups(self) -> List[GroupSchema]:
         """

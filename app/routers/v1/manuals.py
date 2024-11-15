@@ -6,6 +6,7 @@ from app.schemas.manuals import (
     ManualSchema,
     GroupSchema,
     CategorySchema,
+    ManualListItemSchema
 )
 from app.services.manuals import ManualService
 from app.services.auth import get_current_user
@@ -13,6 +14,13 @@ from app.database.session import get_db_session
 from app.const import manual_params
 
 router = APIRouter(**manual_params)
+
+@router.get("/list", response_model=List[ManualListItemSchema])
+async def get_list_manuals(
+    # _user: UserSchema = Depends(get_current_user),
+    session: Session = Depends(get_db_session),
+) -> List[ManualListItemSchema]:
+    return await ManualService(session).get_list_manuals()
 
 @router.get("/nested", response_model=List[Any])
 async def get_nested_manuals(

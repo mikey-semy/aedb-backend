@@ -67,3 +67,18 @@ class CategoryNestedSchema(BaseSchema):
     name: str
     logo_url: str
     groups: List[GroupNestedSchema]
+
+class ManualListItemSchema(BaseSchema):
+    """
+    Схема для представления элемента списка инструкций.
+
+    Attributes:
+        category_name: Название категории
+        group_name: Название группы
+        manual_name: Название инструкции.
+        manual_url: Ссылка на инструкцию.
+    """
+    category_name: str
+    group_name: str
+    manual_name: str
+    manual_url: str
