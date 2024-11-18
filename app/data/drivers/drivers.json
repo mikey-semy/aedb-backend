@@ -1,0 +1,5449 @@
+{
+  "converters": [
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "12ПСУ",
+      "cabinet": "пр.350 AV(500-220)",
+      "unit": "Конвейер №1 ",
+      "converter": "КТЭ",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "12ПСУ",
+      "cabinet": "пр.351 AV(500-440)",
+      "unit": "Конвейер №2 ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "12ПСУ",
+      "cabinet": "пр.352 AV(500-440)",
+      "unit": "Подъемно-поворотный стол ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "пр.206 AV",
+      "unit": "Зазор гибочных роликов Коил-Бокс ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8018-6DV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "пр.202 AV",
+      "unit": "Входящие линейки Коил-Бокс ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8025-6DV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "пр.211 AV",
+      "unit": "Линейки летучих ножниц",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8025-6DV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "рез.211,206,202",
+      "unit": "Резерв2: 211,206,202",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8025-6DV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "пр.201 AV",
+      "unit": "Входящий рольганг Коил-Бокс ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8075-6DV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "пр.209 AV",
+      "unit": "Верхний тянущий ролик Коил-Бокс ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8075-6FV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "пр.210 AV",
+      "unit": "Нижний тянущий ролик Коил-Бокс ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8075-6FV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "пр.208 AV",
+      "unit": "Люлька №2 Коил-Бокс ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8081-6DV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "пр.204 AV (яч.75)",
+      "unit": "Верхний гибочный ролик Коил-Бокс ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6FV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "пр.205 AV (яч.77)",
+      "unit": "Нижний гибочный ролик Коил-Бокс ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6FV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "пр.207 AV (яч.123)",
+      "unit": "Люлька №1 Коил-Бокс ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6FV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "рез.205,209,210,207,204",
+      "unit": "Резерв1: 205,209,210,207,204",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6FV62-0AA0-Z S01"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "2UZ-1",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "2UZ-2",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "3UZ-1",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "3UZ-2",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "4UZ-1",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "4UZ-2",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "5UZ-1",
+      "unit": "Отводящий рольганг",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "5UZ-2",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "6UZ-1",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "6UZ-2",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "7UZ-1",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "7UZ-2",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "1UZ-1",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B4450-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "2ЕР",
+      "cabinet": "1UZ-2",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B4450-CE"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF11/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "CU320-2 PN 6SL3040-1MA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF11/U1 Базовый модуль питания AC/DC",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": " 6SL3130-1TE24-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF11/U2 Рольганг перед ЛПМ. Ролик 1",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF11/U3 Рольганг перед ЛПМ. Ролик 2",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF11/U4 Рольганг перед ЛПМ. Ролик 3",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF11/U5 Рольганг перед ЛПМ. Ролик 4",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF11/U6 Рольганг перед ЛПМ. Ролик 5",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF12/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU320-2 PN 6SL3040-1MA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF12/U1 Базовый модуль питания AC/DC",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3130-1TE24-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF12/U2 Рольганг перед ЛПМ. Ролик 6",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF12/U3 Рольганг перед ЛПМ. Ролик 7",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF12/U4 Рольганг перед ЛПМ. Ролик 8",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF12/U5 Рольганг перед ЛПМ. Ролик 9",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF12/U6 Рольганг перед ЛПМ. Ролик 10",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF13/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU320-2 PN 6SL3040-1MA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF13/U1 Базовый модуль питания AC/DC",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3130-1TE24-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF13/U2 Рольганг перед ЛПМ. Ролик 11",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF13/U3 Рольганг перед ЛПМ. Ролик 12",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF13/U4 Рольганг перед ЛПМ. Ролик 13",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF13/U5 Рольганг перед ЛПМ. Ролик 14",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF13/U6 Рольганг перед ЛПМ. Ролик 15",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF14/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU320-2 PN 6SL3040-1MA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF14/U1 Базовый модуль питания AC/DC",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3130-1TE24-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF14/U2 1-й ролик ЛПМ",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF14/U3 Рольганг перед ЛПМ. Ролик 16",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF14/U4 Рольганг перед ЛПМ. Ролик 17",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF14/U5 Рольганг перед ЛПМ. Ролик 18",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF14/U6 Шнек",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "  6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF15/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU320-2 PN 6SL3040-1MA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF15/U1 Базовый модуль питания AC/DC",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3130-1TE24-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF15/U2 Рольганг за ЛПМ. Ролик 1",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF15/U3 Рольганг за ЛПМ. Ролик 2",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF15/U4 Рольганг за ЛПМ. Ролик 3",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF15/U5 Рольганг за ЛПМ. Ролик 4",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF15/U6 Рольганг за ЛПМ. Ролик 5",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF16/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU320-2 PN 6SL3040-1MA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF16/U1 Базовый модуль питания AC/DC",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3130-1TE24-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF16/U2 Рольганг за ЛПМ. Ролик 6",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF16/U3 Рольганг за ЛПМ. Ролик 7",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF16/U4 Рольганг за ЛПМ. Ролик 8",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF16/U5 Рольганг за ЛПМ. Ролик 9",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF16/U6 Рольганг за ЛПМ. Ролик 10",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF17/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU320-2 PN 6SL3040-1MA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF17/U1 Базовый модуль питания AC/DC",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3130-1TE24-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF17/U2 11-й ролик ЛПМ",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF17/U3 Рольганг за ЛПМ. Ролик 11",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF17/U4 Рольганг за ЛПМ. Ролик 12",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF17/U5 Тележка уборки окалины",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF17/U6 Резерв",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3120-1TE21-8AD0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF18/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU310-2PN 6SL3040-1LA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF18/U1 9-й ролик ЛПМ",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3210-1PE31-1UL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF18/U2 Задающий ролик перед ЛПМ",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3210-1PE31-5UL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF19/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU310-2PN 6SL3040-1LA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF19/U1 10-й ролик ЛПМ",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3210-1PE31-1UL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF19/U2 Задающий ролик за ЛПМ",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3210-1PE31-5UL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF20/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU310-2PN 6SL3040-1LA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF20/U1 2-й ролик ЛПМ Силовой модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3310-1TE33-8AA3"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF20/U1 2-й ролик ЛПМ Тормозной модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3300-1AE32-5AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF21/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU310-2PN 6SL3040-1LA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF21/U1 3-й ролик ЛПМ Силовой модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3310-1TE33-1AA3"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF21/U1 3-й ролик ЛПМ Тормозной модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3300-1AE32-5AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF22/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU310-2PN 6SL3040-1LA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF22/U1 4-й ролик ЛПМ Силовой модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3310-1TE35-0AA3"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF22/U1 4-й ролик ЛПМ Тормозной модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3300-1AE32-5AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF23/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU310-2PN 6SL3040-1LA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF23/U1 5-й ролик ЛПМ Силовой модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3310-1TE33-8AA3"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF23/U1 5-й ролик ЛПМ Тормозной модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3300-1AE32-5AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF24/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU310-2PN 6SL3040-1LA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF24/U1 6-й ролик ЛПМ Силовой модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3310-1TE32-6AA3"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF24/U1 6-й ролик ЛПМ Тормозной модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3300-1AE32-5AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF25/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU310-2PN 6SL3040-1LA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF25/U1 7-й ролик ЛПМ Силовой модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3310-1TE32-6AA3"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF25/U1 7-й ролик ЛПМ Тормозной модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3300-1AE32-5AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF26/А1 Модуль управления",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": "CU310-2PN 6SL3040-1LA01-0AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF26/U1 8-й ролик ЛПМ Силовой модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3310-1TE32-6AA3"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "ЛПМ-4",
+      "location": "2ЭП",
+      "cabinet": "AUF26/U1 8-й ролик ЛПМ Тормозной модуль",
+      "unit": null,
+      "converter": "Sinamics S120",
+      "converter_type": " 6SL3300-1AE32-5AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "пр.44AU",
+      "unit": "Привод упаковочного комплекса. ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "пр.1AU",
+      "unit": "Рольганг перед роликовой печью №1. ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "пр.11AU1",
+      "unit": "Рольганг за роликовой печью №1. ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "пр.11AU2",
+      "unit": "Рольганг за роликовой печью №1.",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "пр.9AU1",
+      "unit": "Привод пода роликовой печи №1.",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "пр.9AU2",
+      "unit": "Привод пода роликовой печи №1. ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "пр.9AU3",
+      "unit": "Привод пода роликовой печи №1.",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "пр.54-А, Б, В, Г AV",
+      "unit": "Рабочий рольганг перед клетью \"Кварто-2\" ",
+      "converter": "Simoreg",
+      "converter_type": "CM 6RA7000-0MV62-0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "пр.58-А, Б, В AV",
+      "unit": "Рабочий рольганг за клетью \"Кварто-2\" ",
+      "converter": "Simoreg",
+      "converter_type": "CM 6RA7000-0MV62-0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "СД 1АПМ",
+      "unit": "Возбудитель СД 1АПМ",
+      "converter": "Simoreg",
+      "converter_type": "CM 6RA7000-0MV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "СД 2АПМ",
+      "unit": "Возбудитель СД 2АПМ",
+      "converter": "Simoreg",
+      "converter_type": "CM 6RA7000-0MV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "1Г1 1АПМ",
+      "unit": "Возбудитель (генератор)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "1Г2 1АПМ",
+      "unit": "Возбудитель (генератор)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "2Г1 2АПМ",
+      "unit": "Возбудитель (генератор)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "2Г2 2АПМ",
+      "unit": "Возбудитель (генератор)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "1Д 1АПМ",
+      "unit": "Возбудитель (двигатель)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7081-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "2Д 1АПМ",
+      "unit": "Возбудитель (двигатель)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7081-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "3ЕР",
+      "cabinet": "4Д 2АПМ",
+      "unit": "Возбудитель (двигатель)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7087-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "пр.1",
+      "unit": "ЛПМ-№3 Ролик №1",
+      "converter": "Omron",
+      "converter_type": "3G3FV-A4150-CUE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "пр.9",
+      "unit": "ЛПМ-№3 Ролик №9",
+      "converter": "Omron",
+      "converter_type": "3G3FV-A4150-CUE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "пр.3",
+      "unit": "ЛПМ-№3 Ролик №3",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B411K-CUE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "пр.4",
+      "unit": "ЛПМ-№3 Ролик №4",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B411K-CUE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "пр.5",
+      "unit": "ЛПМ-№3 Ролик №5",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B411K-CUE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "пр.6",
+      "unit": "ЛПМ-№3 Ролик №6",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B411K-CUE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "пр.7",
+      "unit": "ЛПМ-№3 Ролик №7",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B411K-CUE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "пр.8",
+      "unit": "ЛПМ-№3 Ролик №8",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B411K-CUE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "пр.2",
+      "unit": "ЛПМ-№3 Ролик №2",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B418K-CUE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "2ПОР пр.81",
+      "unit": "Отводящий рольганг",
+      "converter": "Omron",
+      "converter_type": "3G3RV-B411K-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "3ПОР пр.82",
+      "unit": "Отводящий рольганг",
+      "converter": "Omron",
+      "converter_type": "3G3RV-B411K-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "4ПОР пр.83",
+      "unit": "Отводящий рольганг",
+      "converter": "Omron",
+      "converter_type": "3G3RV-B411K-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "5ПОР пр.84",
+      "unit": "Отводящий рольганг",
+      "converter": "Omron",
+      "converter_type": "3G3RV-B411K-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "1ППР1 пр.77",
+      "unit": "Подающий рольганг Секция 1",
+      "converter": "Omron",
+      "converter_type": "3G3RV-B4750-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "1ППР2 пр.77",
+      "unit": "Подающий рольганг Секция 2",
+      "converter": "Omron",
+      "converter_type": "3G3RV-B4750-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "2ППР1 пр.78",
+      "unit": "Подающий рольганг Секция 1",
+      "converter": "Omron",
+      "converter_type": "3G3RV-B4750-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "2ППР2 пр.78",
+      "unit": "Подающий рольганг Секция 2",
+      "converter": "Omron",
+      "converter_type": "3G3RV-B4750-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "1ПОР1 пр.79",
+      "unit": "Отводящий рольганг Секция 1",
+      "converter": "Omron",
+      "converter_type": "3G3RV-B4750-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "4ЕР",
+      "cabinet": "1ПОР2 пр.79",
+      "unit": "Отводящий рольганг Секция 2",
+      "converter": "Omron",
+      "converter_type": "3G3RV-B4750-E"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП",
+      "cabinet": "пр.419AV",
+      "unit": "Рольганг на выходе из печи №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП",
+      "cabinet": "пр.405AV1",
+      "unit": "Рольганг перед роликовой печью №2. ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП",
+      "cabinet": "пр.405AV2",
+      "unit": "Рольганг перед роликовой печью №2. ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП",
+      "cabinet": "пр.407AV5",
+      "unit": "Механизм роликов пода печи №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4011+CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП",
+      "cabinet": "пр.407AV6",
+      "unit": "Механизм роликов пода печи №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4011+CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП",
+      "cabinet": "пр.407AV7",
+      "unit": "Механизм роликов пода печи №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4011+CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП",
+      "cabinet": "пр.407AV8",
+      "unit": "Механизм роликов пода печи №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4011+CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП",
+      "cabinet": "пр.407AV9",
+      "unit": "Механизм роликов пода печи №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4011+CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП",
+      "cabinet": "пр.407AV10",
+      "unit": "Механизм роликов пода печи №2",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4011+CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "пр.407AV1",
+      "unit": "Механизм роликов пода печи №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4011+CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "пр.407AV2",
+      "unit": "Механизм роликов пода печи №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4011+CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "пр.407AV3",
+      "unit": "Механизм роликов пода печи №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4011+CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "пр.407AV4",
+      "unit": "Механизм роликов пода печи №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4011+CIMR-F7Z4110"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ1 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7023-4EC61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ2 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7024-7ED61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ3 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7024-7ED61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ4 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7024-7ED61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ5 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7024-7ED61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ6 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7024-7ED61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ7 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7024-7ED61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ8 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7024-7ED61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ9 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7024-7ED61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ10 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7024-7ED61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ11 ",
+      "unit": "Привод РЗМ.",
+      "converter": "Simovert",
+      "converter_type": "6SE7024-7ED61-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "ЧП №1 ",
+      "unit": "Частотный преобразователь №1 Вентилятор ГКП",
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE24-5AL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "ЧП №2",
+      "unit": "Частотный преобразователь №2  Вентилятор ГКП",
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE24-5AL1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ10 ",
+      "unit": "РП №2 Вентилятор 1, 2 ",
+      "converter": "Sinamics G120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "4ЭП (2 этаж)",
+      "cabinet": "UZ11 ",
+      "unit": "РП №2 Вентилятор 3, 4 ",
+      "converter": "Sinamics G120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AU1 (AF1, AF2)",
+      "unit": "Модуль питания преобразователей роликов ПЗУ ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AU2 (AF4, AF5, AF7)",
+      "unit": "Модуль питания №1 преобразователей роликов УКО ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AU3 (AF3, AF6, AF8)",
+      "unit": "Модуль питания №2 преобразователей роликов УКО ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AUR ",
+      "unit": "Резервный модуль питания преобразователей роликов (AF1, AF2), (AF4, AF5, AF7), (AF3, AF6, AF8).",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF1 Резерв горячий U6",
+      "unit": "Ролики ПЗУ.Верхний задающий ролик ПЗУ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF3",
+      "unit": "Верхние ролики УКО",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF4 Резерв горячий U7",
+      "unit": "Верхние ролики УКО",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF5",
+      "unit": "Нижние ролики УКО",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF6",
+      "unit": "Нижние ролики УКО",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF7",
+      "unit": "Нижние ролики УКО",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF8 Резерв горячий U7",
+      "unit": "Нижние ролики УКО",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF2 Резерв холодный U5",
+      "unit": "Ролики ПЗУ.Нижний задающий ролик ПЗУ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF1 Резерв горячий U6",
+      "unit": "Ролики ПЗУ.Верхний задающий ролик ПЗУ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF2 Резерв холодный U5",
+      "unit": "Ролики ПЗУ.Нижний задающий ролик ПЗУ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF2 ",
+      "unit": "Ролики ПЗУ.Нижний задающий ролик ПЗУ. Резерв холодный U5.",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР",
+      "cabinet": "Шкаф AF1 ",
+      "unit": "Ролики ПЗУ.Верхний задающий ролик ПЗУ. Резерв горячий U6.",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS31.A12+MG81Y61CLG-A001 ",
+      "unit": "Система консистентной смазки PG2 , Блок #1 & #2 Местная панель управления",
+      "converter": "Прочее",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A0 ",
+      "unit": "Главная входная линия 2 (питание2: Uн 380В, Iн 630А)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A0 ",
+      "unit": "Входная линия Вспомогательная цепь ( Электропитание ИБП питание3: Uн 220В, Iн 22А), ( Сервисная линия питание4: Uн 220В, Iн 40А).",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A1 ",
+      "unit": "Выпрямитель2 Устройство Выпрямления",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A1 ",
+      "unit": "Выпрямитель1 Устройство Выпрямления",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A45+MF11A02DCB-M203 ",
+      "unit": "Холодильника #1 Кластерный привод дисков",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A46+MF11A02DCB-M204 ",
+      "unit": "Холодильника #1 Кластерный привод дисков",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A10+MF11A02DCB-M105 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A11+MF11A02DCB-M106 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A12+MF11A02DCB-M107 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A13+MF11A02DCB-M108 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A14+MF11A02DCB-M109 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A15+MF11A02DCB-M110 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A16+MF11A02DCB-M111 ",
+      "unit": "Холодильника #1 Привод дисков - секция #2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A17+MF11A02DCB-M112 ",
+      "unit": "Холодильника #1 Привод дисков - секция #2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A30+MF11A02DCB-M125 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A31+MF11A02DCB-M126 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A32+MF11A02DCB-M127 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A33+MF11A02DCB-M128 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A34+MF11A02DCB-M129 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A35+MF11A02DCB-M130 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A36+MF11A02DCB-M131 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A37+MF11A02DCB-M132 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A38+MF11A02DCB-M133 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A39+MF11A02DCB-M134 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A40+MF11A02DCB-M135 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A41+MF11A02DCB-M136 ",
+      "unit": "Холодильника #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14 ",
+      "unit": "Холодильник #1 Щит управления моторами",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A51 ",
+      "unit": "Резервный инвертор 30 kW",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A2+MF11A01TOP-M101 ",
+      "unit": "Шлеппер на входе холодильника #1 Секция #1 - Цепи шлеппера",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A3+MF11A01TOP-M102 ",
+      "unit": "Шлеппер на входе холодильника #1 Секция #1 - Цепной подъемник",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A4+MF11A01TOP-M201 ",
+      "unit": "Шлеппер на входе холодильника #1 Секция #2 - Цепи шлеппера",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A5+MF11A01TOP-M202 ",
+      "unit": "Шлеппер на входе холодильника #1 Секция #2 - Цепной подъемник",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A47+MF11A03TOP-M101 ",
+      "unit": "Шлеппер на выходе холодильника #1 Секция #1 - Цепи шлеппера",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A48+MF11A03TOP-M102 ",
+      "unit": "Шлеппер на выходе холодильника #1 Секция #1 - Цепной подъемник",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A49+MF11A03TOP-M201 ",
+      "unit": "Шлеппер на выходе холодильника #1 Секция #2 - Цепи шлеппера",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A50+MF11A03TOP-M202 ",
+      "unit": "Шлеппер на выходе холодильника #1 Секция #2 - Цепной подъемник",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A43+MF11A02DCB-M201 ",
+      "unit": "Холодильника #1 Кластерный привод дисков",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A44+MF11A02DCB-M202 ",
+      "unit": "Холодильника #1 Кластерный привод дисков",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A6+MF11A02DCB-M101 ",
+      "unit": "Холодильник #1 Привод дисков - секция #1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A7+MF11A02DCB-M102 ",
+      "unit": "Холодильник #1 Привод дисков - секция #1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A8+MF11A02DCB-M103 ",
+      "unit": "Холодильник #1 Привод дисков - секция #1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A9+MF11A02DCB-M104 ",
+      "unit": "Холодильник #1 Привод дисков - секция #1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A42+MF11A02DCB-M137 ",
+      "unit": "Холодильник #1 Привод дисков - секция #1и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A52 ",
+      "unit": "Резервный инвертор 3 kW",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A18+MF11A02DCB-M113 ",
+      "unit": "Холодильник #1 Привод дисков - секция #2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A19+MF11A02DCB-M114 ",
+      "unit": "Холодильник #1 Привод дисков - секция #2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A20+MF11A02DCB-M115 ",
+      "unit": "Холодильник #1 Привод дисков - секция #2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A21+MF11A02DCB-M116 ",
+      "unit": "Холодильник #1 Привод дисков - секция #2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A22+MF11A02DCB-M117 ",
+      "unit": "Холодильник #1 Привод дисков - секция #2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A23+MF11A02DCB-M118 ",
+      "unit": "Холодильник #1 Привод дисков - секция #2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A24+MF11A02DCB-M119 ",
+      "unit": "Холодильник #1 Привод дисков - секция #2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A25+MF11A02DCB-M120 ",
+      "unit": "Холодильник #1 Привод дисков - секция #2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A26+MF11A02DCB-M121 ",
+      "unit": "Холодильник #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A27+MF11A02DCB-M122 ",
+      "unit": "Холодильник #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A28+MF11A02DCB-M123",
+      "unit": "Холодильник #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "5ЕР-А",
+      "cabinet": "Шкаф =MA01E10+MCS14.A29+MF11A02DCB-M124 ",
+      "unit": "Холодильник #1 Привод дисков - секция #1 и2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (1 этаж)",
+      "cabinet": "пр.835AV",
+      "unit": "Зазор моталки №3 ",
+      "converter": "Omron",
+      "converter_type": "3G3RV-A4040-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (1 этаж)",
+      "cabinet": "пр.855AV",
+      "unit": "Зазор моталки №4 ",
+      "converter": "Omron",
+      "converter_type": "3G3RV-A4040-E"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (1 этаж)",
+      "cabinet": "пр.839 AV(500-440)",
+      "unit": "Тянущие ролики моталки №3 ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (1 этаж)",
+      "cabinet": "пр.840 AV(500-440)",
+      "unit": "Тянущие ролики моталки №3 ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (1 этаж)",
+      "cabinet": "пр.859 AV(500-440)",
+      "unit": "Тянущие ролики моталки №4 ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (1 этаж)",
+      "cabinet": "пр.860 AV(500-440)",
+      "unit": "Тянущие ролики моталки №4 ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (2 этаж)",
+      "cabinet": "пр.834 AV1",
+      "unit": "Формирующий ролик №1",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (2 этаж)",
+      "cabinet": "пр.834 AV2",
+      "unit": "Формирующий ролик №2",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (2 этаж)",
+      "cabinet": "пр.834 AV3",
+      "unit": "Формирующий ролик №3",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (2 этаж)",
+      "cabinet": "пр.834 AV4",
+      "unit": "Формирующий ролик №4",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (2 этаж)",
+      "cabinet": "пр.854 AV1",
+      "unit": "Формирующий ролик №1 ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (2 этаж)",
+      "cabinet": "пр.854 AV2",
+      "unit": "Формирующий ролик №2 ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (2 этаж)",
+      "cabinet": "пр.854 AV3",
+      "unit": "Формирующий ролик №3 ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (2 этаж)",
+      "cabinet": "пр.854 AV4",
+      "unit": "Формирующий ролик №4 ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (2 этаж)",
+      "cabinet": "пр.832 AV",
+      "unit": "Барабан моталки №3 ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7096-4GV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "5ЭМП (2 этаж)",
+      "cabinet": "пр.852 AV",
+      "unit": "Барабан моталки №4 ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7096-4GV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЕР",
+      "cabinet": "пр.203 AV",
+      "unit": "Рольганг ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЕР",
+      "cabinet": "пр.212 AV",
+      "unit": "Рольганг ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЕР",
+      "cabinet": "пр.215 AV",
+      "unit": "Рольганг",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЕР",
+      "cabinet": "пр.№213",
+      "unit": "Отжимной ролик ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6FV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЕР",
+      "cabinet": "пр.№214",
+      "unit": "Отжимной ролик ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6FV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЕР",
+      "cabinet": "пр.№216",
+      "unit": "Отжимной ролик ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6FV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЕР",
+      "cabinet": "пр.№217",
+      "unit": "Отжимной ролик ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6FV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЕР",
+      "cabinet": "220 AS",
+      "unit": "Резерв ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6FV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЭМП",
+      "cabinet": "пр.827AV",
+      "unit": "Механические линейки перед мот.№3 ",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B4300-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЭМП",
+      "cabinet": "пр.830AV",
+      "unit": "Пневмолинейки перед мот.№3 ",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B4300-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЭМП",
+      "cabinet": "пр.850AV",
+      "unit": "Пневмолинейки перед мот.№4 ",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B4300-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЭМП",
+      "cabinet": "пр.821AV (8UZ-1)",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЭМП",
+      "cabinet": "пр.822AV (8UZ-2)",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЭМП",
+      "cabinet": "823AV (9UZ-1)",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЭМП",
+      "cabinet": "824AV (9UZ-2)",
+      "unit": "Отводящий рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B416K-CE"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЭМП",
+      "cabinet": "пр.897",
+      "unit": "Конвейер №4 ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "6ЭМП",
+      "cabinet": "пр.899",
+      "unit": "Конвейер №3",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №1 Рольганг №52 Ролик №2",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №3 Рольганг №52 Ролик №3",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №4 Рольганг №52 Ролик №4",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №2 Рольганг №52 Ролик №6",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №7 Рольганг №52 Ролик №7",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB2 Секция №1 Рольганг №52 Ролик №8",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB2 Секция №3 Рольганг №52 Ролик №10",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB2 Секция №4 Рольганг №52 Ролик №11",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB2 Секция №6 Рольганг №52 Ролик №12",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB2 Секция №2 Рольганг №52 Ролик №14",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB3 Секция №1 Рольганг №53 Ролик №2",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB3 Секция №3 Рольганг №53 Ролик №3",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB3 Секция №5 Рольганг №53 Ролик №5",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB3 Секция №6 Рольганг №53 Ролик №6",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB4 Секция №1 Рольганг №53 Ролик №8",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB4 Секция №3 Рольганг №53 Ролик №9",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB4 Секция №5 Рольганг №53 Ролик №11",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB3 Секция №2 Резерв Рольганга №53",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №5 Резерв Рольганга №52",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD32-2DA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB5 Рольганг №52. Ролики № 1, 5, 9, 12",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD38-8FA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB8 Рольганг №53. Ролики № 1, 4, 7, 10",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD38-8FA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB11 Резерв шк.AB5, шк.AB8",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD38-8FA1"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №1 Рольганг №52 Ролик №2",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №3 Рольганг №52 Ролик №3",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №4 Рольганг №52 Ролик №4",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №2 Рольганг №52 Ролик №6",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №7 Рольганг №52 Ролик №7",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB2 Секция №1 Рольганг №52 Ролик №8",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB2 Секция №3 Рольганг №52 Ролик №10",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB2 Секция №4 Рольганг №52 Ролик №11",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB2 Секция №6 Рольганг №52 Ролик №12",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB2 Секция №2 Рольганг №52 Ролик №14",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB3 Секция №1 Рольганг №53 Ролик №2",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB3 Секция №3 Рольганг №53 Ролик №3",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB3 Секция №5 Рольганг №53 Ролик №5",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB3 Секция №6 Рольганг №53 Ролик №6",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB4 Секция №1 Рольганг №53 Ролик №8",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB4 Секция №3 Рольганг №53 Ролик №9",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB4 Секция №5 Рольганг №53 Ролик №11",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB3 Секция №2 Резерв Рольганга №53",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB1 Секция №5 Резерв Рольганга №52",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7028-6EC85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB5 Рольганг №52. Ролики № 1, 5, 9, 12",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7032-2EE85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB8 Рольганг №53. Ролики № 1, 4, 7, 10",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7032-2EE85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "7ЕР",
+      "cabinet": "шк.AB11 Резерв шк.AB5, шк.AB8",
+      "unit": "Рольганги стана 2800 52, 53",
+      "converter": "Simovert",
+      "converter_type": "6SE7032-2EE85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "8ЕР",
+      "cabinet": "AS-A(15-420)",
+      "unit": "Привод выборки зазоров ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7013-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "8ЕР",
+      "cabinet": "пр.57-АS1(600-420)",
+      "unit": "Нажимное устройство чистовой клети \"КВАРТО\" ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7085-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "8ЕР",
+      "cabinet": "пр.57-AS2(600-420)",
+      "unit": "Нажимное устройство чистовой клети \"КВАРТО\" ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7085-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "8ЕР",
+      "cabinet": "пр.57-AS3 резервный(600-420)",
+      "unit": "Нажимное устройство чистовой клети \"КВАРТО\" ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7085-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "8ЕР",
+      "cabinet": "пр.59 AS (600-420)",
+      "unit": "Рольганг отводящий ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7085-6DV62-0-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ДН и ККН",
+      "cabinet": "UZ-3",
+      "unit": "Привод станины ККН ",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B4185-CUE"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ДН и ККН",
+      "cabinet": "UZ-4",
+      "unit": "Привод станины ДН ",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B4185-CUE"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ДН и ККН",
+      "cabinet": "мех.№137 UZ-9",
+      "unit": "Передвижение манипулятора",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B4185-CUE"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ДН и ККН",
+      "cabinet": "UZ-1",
+      "unit": "Кромкокрошительные ножницы. Левая станина ",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B430K-CUE"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ДН и ККН",
+      "cabinet": "UZ-2",
+      "unit": "Кромкокрошительные ножницы. Правая станина ",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B430K-CUE"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ДН и ККН",
+      "cabinet": "UZ-5",
+      "unit": "Дисковые ножницы ",
+      "converter": "Omron",
+      "converter_type": "3G3FV-B430K-CUE"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ДН и ККН",
+      "cabinet": "UZ-6",
+      "unit": "Первая секция рольганга 153 ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B4550-CUE"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ДН и ККН",
+      "cabinet": "UZ-7",
+      "unit": "Вторая секция рольганга 153 ",
+      "converter": "Omron",
+      "converter_type": "3G3HV-B4550-CUE"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ДН и ККН",
+      "cabinet": "UZ-8",
+      "unit": "Рольганг перед дисковыми ножницами №133 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-AC4A0675AAA"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "пр.298 AV (500-440)",
+      "unit": "Рольганг ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "1ЕР",
+      "cabinet": "ТЭДК-12-11-298",
+      "unit": "Рольганг перед Койл-Боксом",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "+ALE1",
+      "unit": "Электрошкаф выпрямителя основной (Активный интерфейсный модуль с активным модулем\nпитания формата «шасси» и с управляющим модулем). Для приводов 59,60,63,Р",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "+ALE2",
+      "unit": "Электрошкаф выпрямителя резервный (Активный интерфейсный модуль с активным модулем\nпитания формата «шасси» и с управляющим модулем). Для приводов 59,60,63,Р",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф +ALE1 ",
+      "unit": "Электрошкаф выпрямителя основной (Активный интерфейсный модуль с активным модулем\nпитания формата «шасси» и с управляющим модулем). Для приводов 59,60,63,Р",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф +ALE2 ",
+      "unit": "Электрошкаф выпрямителя резервный (Активный интерфейсный модуль с активным модулем\nпитания формата «шасси» и с управляющим модулем). Для приводов 59,60,63,Р",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "пр.64 (Шкаф 64AS)",
+      "unit": "Рольганг 3-х роликовый ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "пр.64 (Шкаф 64AS)",
+      "unit": "Рольганг 3-х роликовый ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A10+MF11A01VRN-M106",
+      "unit": " Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A11+MF11A01VRN-M107 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A12+MF11A01VRN-M108 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A13+MF11A01VRN-M109 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A14+MF11A01VRN-M110 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A15+MF11A01VRN-M111 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A16+MF11A01VRN-M112 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A17+MF11A01VRN-M113 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A18+MF11A01VRN-M114 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A19+MF11A01VRN-M115 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A20+MF11A01VRN-M116 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A21+MF11A01VRN-M117 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A22+MF11A01VRN-M118 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A23+MF11A01VRN-M119 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A24+MF11A01VRN-M120 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A25+MF11A01VRN-M121 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A26+MF11A01VRN-M122 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A27+MF11A01VRN-M123 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A28+MF11A01VRN-M124 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A29+MF11A01VRN-M125 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A30+MF11A01VRN-M126 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A31+MF11A01VRN-M127 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A32+MF11A01VRN-M128 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A33+MF11A01VRN-M129 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A35 ",
+      "unit": "Резервный ивертор 14 kW",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A4+ME51B03RRN-M101 ",
+      "unit": "Измерительный ролик на выходе ножниц привод нижнего ролика",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A5+MF11A01VRN-M101 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A6+MF11A01VRN-M102 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A7+MF11A01VRN-M103 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A8+MF11A01VRN-M104 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A9+MF11A01VRN-M105 ",
+      "unit": "Рольганг на входе холодильника #1 привод роликов",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф 64AS пр.64 ",
+      "unit": "Рольганг 3-х роликовый ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A2+ME51B01TRN-M101 ",
+      "unit": "Тянущий ролик на входе ножниц привод верхнего ролика",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A34 ",
+      "unit": "Резервный ивертор 40 kW",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A3+ME51B01TRN-M201 ",
+      "unit": "Тянущий ролик на входе ножниц привод нижнего ролика",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф +МЕ1 пр.59 ",
+      "unit": "Рольганг отводящий (электрошкаф преобразователя 1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф +МЕ1 пр.60 ",
+      "unit": "Рольганг отводящий (электрошкаф преобразователя 1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф +МЕ2  пр.63 ",
+      "unit": "Рольганг отводящий (электрошкаф преобразователя 2)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф +МЕ2 рез.пр.59, 60, 63, 64  ",
+      "unit": "Резерв рольганга отводящего (электрошкаф преобразователя 2)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A1 ",
+      "unit": "Выпрямитель 1. Устройство выпрямления U1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A1 ",
+      "unit": "Выпрямитель 1. Устройство выпрямления U1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A1 ",
+      "unit": "Выпрямитель 1. Устройство выпрямления U1",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A1 ",
+      "unit": "Выпрямитель 2. Устройство выпрямления U2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A1 ",
+      "unit": "Выпрямитель 2. Устройство выпрямления U2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A1 ",
+      "unit": "Выпрямитель 2. Устройство выпрямления U2",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "пр.7Р AV(320-460)",
+      "unit": "Рольганг резервный ",
+      "converter": "КТЭ",
+      "converter_type": "320/460-2Р"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "пр.69 AV(500-440)",
+      "unit": "Рольганг отводящий ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A1",
+      "unit": "Выпрямитель. Переключатель передачи 1",
+      "converter": "Прочее",
+      "converter_type": "Рубильник, предохранители, реактор."
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A1 ",
+      "unit": "Выпрямитель. Переключатель передачи 2",
+      "converter": "Прочее",
+      "converter_type": "Рубильник, предохранители, реактор."
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A0 ",
+      "unit": "Главная входная линия 2 Питание 2",
+      "converter": "Прочее",
+      "converter_type": "Силовые автоматы, контактора"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12.A0 ",
+      "unit": "Входная линия. Вспомогательная цепь (Электропитание ИБП Питание 3. Сервисная линия Питание 4)",
+      "converter": "Прочее",
+      "converter_type": "Электроаппаратура"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "М/з№1 ст.2800",
+      "cabinet": "Шкаф =MA01E10+MCS12 ",
+      "unit": "Делит. Ножницы и входной рольганг хол.#1. Щит управления моторами",
+      "converter": "Прочее",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1",
+      "cabinet": "пр.2147 AV-1(100-220)",
+      "unit": "Сталкиватель слябов ",
+      "converter": "КТЭ",
+      "converter_type": "100/220-532"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1",
+      "cabinet": "пр.2147 AV-2(100-220)",
+      "unit": "Сталкиватель слябов ",
+      "converter": "КТЭ",
+      "converter_type": "100/220-532"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1",
+      "cabinet": "пр.2150 AV-1(100-220)",
+      "unit": "Сталкиватель слябов ",
+      "converter": "КТЭ",
+      "converter_type": "100/220-532"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1",
+      "cabinet": "пр.2150 AV-2(100-220)",
+      "unit": "Сталкиватель слябов ",
+      "converter": "КТЭ",
+      "converter_type": "100/220-532"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1",
+      "cabinet": "пр.2156 AV-1(800-220)",
+      "unit": "Толкатель печи № 1 2ряд  (яч.4)",
+      "converter": "КТЭ",
+      "converter_type": "800/220-132"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1",
+      "cabinet": "пр.2156 AV-2(800-220)",
+      "unit": "Толкатель печи № 1 1ряд  (яч.31)",
+      "converter": "КТЭ",
+      "converter_type": "800/220-132"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A5+MG81A31TOP-M113 (A5-U1)",
+      "unit": "Холод. #3 с устро. Разгр. На листоук. #3 секция #1 - смещение балки ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A9+MG81A31TOP-M213 (A9-U1)",
+      "unit": "Холод. #3 с устро. Разгр. На листоук. #3 секция #2 - смещение балки ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A14 (A14-U1)",
+      "unit": "Резервный инвертор 4 kW",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A10+MG81A32IMF-M101 ",
+      "unit": "Листоукладчик #3 подъемник рольганга #1 (A10-U1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A11+MG81A32IMF-M201 ",
+      "unit": "Листоукладчик #3 подъемник рольганга #2 (A11-U1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A2+MG81A31TOP-M101 ",
+      "unit": "Холод. #3 с устро. Разгр. На листоук. #3 секция #1 - цепи шлеппера (A2-U1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A3+MG81A31TOP-M102 ",
+      "unit": "Холод. #3 с устро. Разгр. На листоук. #3 секция #1 - входной подъемник (A3-U1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A4+MG81A31TOP-M112 ",
+      "unit": "Холод. #3 с устро. Разгр. На листоук. #3 секция #1 - выходной подъемник (A4-U1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A6+MG81A31TOP-M201",
+      "unit": "Холод. #3 с устро. Разгр. На листоук. #3 секция #2 - цепи шлеппера (A6-U1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A7+MG81A31TOP-M202 ",
+      "unit": "Холод. #3 с устро. Разгр. На листоук. #3 секция #2 - входной подъемник (A7-U1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A8+MG81A31TOP-M212 ",
+      "unit": "Холод. #3 с устро. Разгр. На листоук. #3 секция #2 - выходной подъемник (A8-U1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A13",
+      "unit": "Резервный инвертор 30 kW (A13-U1)",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "(A1-U1)",
+      "unit": "Выпрямитель1 ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "(A1-U2)",
+      "unit": "Выпрямитель2 ",
+      "converter": "Sinamics S120",
+      "converter_type": null
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31 ",
+      "unit": "Штабелер Щит управления моторами (питание1: Uн 380В, Iн 630А; питание2: Uн 380В, Iн 630А; питание: Uн 220В, Iн 40А)",
+      "converter": "Прочее",
+      "converter_type": "Силовые переключатели"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A0 ",
+      "unit": "Главная входная линия 2 (питание2: Uн 380В, Iн 630А)",
+      "converter": "Прочее",
+      "converter_type": "Силовые переключатели"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ПСУ-11",
+      "cabinet": "Шкаф =MA01E10+MCS31.A0 ",
+      "unit": "Входная линия Вспомогательная цепь (питание3: Uн 220В, Iн 40А)",
+      "converter": "Прочее",
+      "converter_type": "Силовые переключатели"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1Г",
+      "cabinet": "пр.415 AV(100-440)",
+      "unit": "Сталкиватель слябов ",
+      "converter": "КТЭ",
+      "converter_type": "100/440-531"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1Г",
+      "cabinet": "пр.2160 AV-2(800-220)",
+      "unit": "Толкатель печи № 2 3 ряд  (яч.14)",
+      "converter": "КТЭ",
+      "converter_type": "800/220-132"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1Г",
+      "cabinet": "пр.2160 AV-1(800-220)",
+      "unit": "Толкатель печи № 2 4 ряд  (яч.23)",
+      "converter": "КТЭ",
+      "converter_type": "800/220-132"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1Г",
+      "cabinet": "пр.2164 AV-2(800-220)",
+      "unit": "Толкатель печи № 3 5 ряд  (яч.26)",
+      "converter": "КТЭ",
+      "converter_type": "800/220-132"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1Г",
+      "cabinet": "пр.2164 AV-1(800-220)",
+      "unit": "Толкатель печи № 3 6 ряд  (яч.21)",
+      "converter": "КТЭ",
+      "converter_type": "800/220-132"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1Г",
+      "cabinet": "пр.2168 AV-2(800-220)",
+      "unit": "Толкатель печи № 4 7 ряд  (яч.28)",
+      "converter": "КТЭ",
+      "converter_type": "800/220-132"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1Г",
+      "cabinet": "пр.2168 AV-1(800-220)",
+      "unit": "Толкатель печи № 4 8 ряд  (яч.19)",
+      "converter": "КТЭ",
+      "converter_type": "800/220-132"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1Г",
+      "cabinet": "пр.430 AV-2(800-220)",
+      "unit": "Толкатель печи № 5 9 ряд  (яч.10)",
+      "converter": "КТЭ",
+      "converter_type": "800/220-132"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Методические печи",
+      "location": "ПСУ-1Г",
+      "cabinet": "пр.430 AV-1(800-220)",
+      "unit": "Толкатель печи № 5 10 ряд  (яч.17)",
+      "converter": "КТЭ",
+      "converter_type": "800/220-132"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "ПСУ20",
+      "cabinet": "пр.61(рольганг)",
+      "unit": "Рольганг №61",
+      "converter": "Micromaster 440",
+      "converter_type": "6SE6440-2UD37-5FA1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "ПСУ20",
+      "cabinet": "пр.61(рольганг)",
+      "unit": "Рольганг №61",
+      "converter": "Simovert",
+      "converter_type": "6SE7031-7EE85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.311 AV1",
+      "unit": "Петледержатель (возбудитель)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7028-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.312 AV1",
+      "unit": "Петледержатель (возбудитель)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7028-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.313 AV1",
+      "unit": "Петледержатель (возбудитель)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7028-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.314 AV1",
+      "unit": "Петледержатель (возбудитель)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7028-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.315 AV1",
+      "unit": "Петледержатель (возбудитель)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7028-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.6КПУ",
+      "unit": "Возбудитель летучих ножниц ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7075-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.311 AV2",
+      "unit": "Петледержатель (якорь)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7081-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.312 AV2",
+      "unit": "Петледержатель (якорь)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7081-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.313 AV2",
+      "unit": "Петледержатель (якорь)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7081-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.314 AV2",
+      "unit": "Петледержатель (якорь)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7081-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.315 AV2",
+      "unit": "Петледержатель (якорь)",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7081-6DS22-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.6КПУ-1",
+      "unit": "Летучие ножницы ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7096-4MV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.6КПУ-2",
+      "unit": "Летучие ножницы ",
+      "converter": "Simoreg",
+      "converter_type": "DC 6RA7096-4MV62-0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "7 КПУ AV(500-440)",
+      "unit": "Возбудитель ",
+      "converter": "В-ТПЕ",
+      "converter_type": "В-ТПЕ-500-400"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "8 КПУ AV(500-440)",
+      "unit": "Возбудитель",
+      "converter": "В-ТПЕ",
+      "converter_type": "В-ТПЕ-500-400"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "9 КПУ AV(500-440)",
+      "unit": "Возбудитель ",
+      "converter": "В-ТПЕ",
+      "converter_type": "В-ТПЕ-500-400"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "10 КПУ AV(500-440)",
+      "unit": "Возбудитель ",
+      "converter": "В-ТПЕ",
+      "converter_type": "В-ТПЕ-500-400"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "11 КПУ AV(500-440)",
+      "unit": "Возбудитель ",
+      "converter": "В-ТПЕ",
+      "converter_type": "В-ТПЕ-500-400"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "12 КПУ AV(500-440)",
+      "unit": "Возбудитель",
+      "converter": "В-ТПЕ",
+      "converter_type": "В-ТПЕ-500-400"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "14 КПУ резерв AV (500-440)",
+      "unit": "Возбудитель ",
+      "converter": "В-ТПЕ",
+      "converter_type": "В-ТПЕ-500-400"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.305-А AV(500-440)",
+      "unit": "Нажимное устройство 1 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.305-Б AV(500-440)",
+      "unit": "Нажимное устройство 1 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.306-А AV(500-440)",
+      "unit": "Нажимное устройство 2 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.306-Б AV(500-440)",
+      "unit": "Нажимное устройство 2 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.307-А AV(500-440)",
+      "unit": "Нажимное устройство 3 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.307-Б AV(500-440)",
+      "unit": "Нажимное устройство 3 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.308-А AV(500-440)",
+      "unit": "Нажимное устройство 4 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.308-Б AV(500-440)",
+      "unit": "Нажимное устройство 4 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.309-А AV(500-440)",
+      "unit": "Нажимное устройство 5 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.309-Б AV(500-440)",
+      "unit": "Нажимное устройство 5 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.310-А AV(500-440)",
+      "unit": "Нажимное устройство 6 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.310-Б AV(500-440)",
+      "unit": "Нажимное устройство 6 клети ",
+      "converter": "КТЭ",
+      "converter_type": "500/440-131"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.7 КПУ AV(10000)",
+      "unit": "Главный привод 1 клети ",
+      "converter": "М-2Т2ПП",
+      "converter_type": "М-2Т2ПП-10к/5к-1,05к"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.8 КПУ AV(10000)",
+      "unit": "Главный привод 2 клети ",
+      "converter": "М-2Т2ПП",
+      "converter_type": "М-2Т2ПП-10к/5к-1,05к"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.9 КПУ AV(10000)",
+      "unit": "Главный привод 3 клети ",
+      "converter": "М-2Т2ПП",
+      "converter_type": "М-2Т2ПП-10к/5к-1,05к"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.10 КПУ AV(10000)",
+      "unit": "Главный привод 4 клети ",
+      "converter": "М-2Т2ПП",
+      "converter_type": "М-2Т2ПП-10к/5к-1,05к"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.11 КПУ AV(10000)",
+      "unit": "Главный привод 5 клети ",
+      "converter": "М-2Т2ПП",
+      "converter_type": "М-2Т2ПП-10к/5к-1,05к"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.12 КПУ AV(10000)",
+      "unit": "Главный привод 6 клети ",
+      "converter": "М-2Т2ПП",
+      "converter_type": "М-2Т2ПП-10к/5к-1,05к"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 1700",
+      "location": "ПТП ст.1700",
+      "cabinet": "пр.14 КПУ AV(10000)",
+      "unit": "Главный привод резерв",
+      "converter": "М-2Т2ПП",
+      "converter_type": "М-2Т2ПП-10к/5к-1,05к"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ПТП ст.2800",
+      "cabinet": "+2231AU",
+      "unit": "Вертикальная клеть (возбуждение)",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8025-6DS22-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ПТП ст.2800",
+      "cabinet": "+31AU32",
+      "unit": "Вертикальная клеть (возбуждение)",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8025-6DS22-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ПТП ст.2800",
+      "cabinet": "+2231AU",
+      "unit": "Вертикальная клеть (возбуждение)",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8025-6DS22-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ПТП ст.2800",
+      "cabinet": "+2231AU",
+      "unit": "Вертикальная клеть (управление силовыми модулями в шкафу +2231АК) МВ яч. №17",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8000-0MV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ПТП ст.2800",
+      "cabinet": "+31AU32",
+      "unit": "Резерв вертикальной клети (управление силовыми модулями в шкафу +31АК32)",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8000-0MV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ПТП ст.2800",
+      "cabinet": "+2232AU",
+      "unit": "Вертикальная клеть (управление силовыми модулями в шкафу +2232АК) МВ яч. №19",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8000-0MV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "+162AU",
+      "unit": "Рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3RX-A4550-E1F"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "+145AU1",
+      "unit": "Рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3RX-A4550-E1F"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "+145AU2",
+      "unit": "Рольганг ",
+      "converter": "Omron",
+      "converter_type": "3G3RX-A4550-E1F"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": null,
+      "unit": "Рольганг клеймителя №174",
+      "converter": "Omron",
+      "converter_type": "3G3RX-B4750-E1F"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.172",
+      "unit": "Рольганг качающийся секция №1 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z4030"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.172",
+      "unit": "Рольганг качающийся секция №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z4030"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.173",
+      "unit": "Рольганг за ножницами ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z4030"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.166",
+      "unit": "Рольганг перед ножницами секция №1 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z4045"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.114",
+      "unit": "Транспортер устройства уборки обрези ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z4045"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.№105",
+      "unit": "Механизм перемещения тележки смены кассет ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z45P5"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.№107",
+      "unit": "Механизм регулировки бокового зазора ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z45P5"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.№116",
+      "unit": "Рольганг приемный устройства уборки обрези ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z45P5"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.№120",
+      "unit": "Механизм перемещения тележки упора передвижного ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z45P5"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "6QF",
+      "unit": "Резервный преобразователь ",
+      "converter": "Omron",
+      "converter_type": "CIMR-E7Z45P5"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.166",
+      "unit": "Рольганг перед ножницами секция №2 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4055"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.166",
+      "unit": "Рольганг перед ножницами секция №3 ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4055"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "мех.№119",
+      "unit": "Механизм качания рольганга качающегося ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4055"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "12QF",
+      "unit": "Резервный преобразователь ",
+      "converter": "Omron",
+      "converter_type": "CIMR-F7Z4055"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "100UZ1",
+      "unit": "Инвертор ",
+      "converter": "Simovert",
+      "converter_type": "6SE7037-0TJ60"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "100UZ2",
+      "unit": "Инвертор ",
+      "converter": "Simovert",
+      "converter_type": "6SE7037-0TJ60"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "100AU1",
+      "unit": "Выпрямитель-рекуператор ",
+      "converter": "Simovert",
+      "converter_type": "6SE7041-0EH85-1AA0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Линия резки",
+      "location": "ЭП221 (НПР)",
+      "cabinet": "100AU2",
+      "unit": "Выпрямитель-рекуператор ",
+      "converter": "Simovert",
+      "converter_type": "6SE7041-0EH85-1AA0"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2223",
+      "unit": "Рольганг перед вертикальной клетью 3 сек ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2226",
+      "unit": "Манипулятор перед вертикальной клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+2242AV",
+      "unit": "Манипулятор перед черновой клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+2243AV",
+      "unit": "Манипулятор перед черновой клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+2252AV",
+      "unit": "Манипулятор за черновой клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр +2253AV",
+      "unit": "Манипулятор за черновой клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+1AV-R",
+      "unit": "РЕЗЕРВ манипуляторов ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-Р-1 (2227,2226)",
+      "unit": "Манипулятор перед вертикальной клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2227",
+      "unit": "Манипулятор перед вертикальной клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2228-1",
+      "unit": "Станинные ролики перед вертикальной клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2228-2",
+      "unit": "Станинные ролики перед вертикальной клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2239-1",
+      "unit": "Станинные ролики за вертикальной клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-Р-2 (2223,2228,2239)",
+      "unit": "Станинные ролики за вертикальной клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2239-2",
+      "unit": "Станинные ролики за вертикальной клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8085-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-63-11-2224AV1",
+      "unit": "Рольганг перед вертикальной клетью 4 сек ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-63-11-Р-1 (2224AV1,2224AV2)",
+      "unit": "Рольганг перд вертикальной клетью 4 сек ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-63-11-2224AV2",
+      "unit": "Рольганг перд вертикальной клетью 4 сек ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+2241AV1",
+      "unit": "Рольганг рабочий перед черновой клетью 2 сек ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+2241 AV2",
+      "unit": "Рольганг рабочий перед черновой клетью 2 сек ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+2AV-R",
+      "unit": "РЕЗЕРВ рольганга перед черновой клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+2254 AV1",
+      "unit": "Рольганг рабочий за черновой клетью",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+2254 AV2",
+      "unit": "Рольганг рабочий за черновой клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+3AV-R",
+      "unit": "РЕЗЕРВ рольганга за черновой клетью",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2233",
+      "unit": "Нажимное устройство вертикальной клети ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-63-11-Р-2 (2233,2234)",
+      "unit": "Нажимное устройство вертикальной клети ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2234",
+      "unit": "Нажимное устройство вертикальной клети ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+2247AV",
+      "unit": "Нажимное устройство черновой клети ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8091-6FV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+2248AV",
+      "unit": "Нажимное устройство черновой клети",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8091-6FV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "пр.+4AV-R",
+      "unit": "РЕЗЕРВ нажимного устройства черновой клети ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8091-6FV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2244",
+      "unit": "Станинные ролики перед черновой клетью ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2251",
+      "unit": "Станинные ролики за ченовой клетью",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2240 AV1",
+      "unit": "Рольганг рабочий перед черновой клетью 1сек ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЛПЦ-1",
+      "production_line": "Стан 2800",
+      "location": "ЭТП-1",
+      "cabinet": "ТЭДК-12-11-2240 AV2",
+      "unit": "Рольганг рабочий перед черновой клетью 2 сек ",
+      "converter": "Sinamics DCM",
+      "converter_type": "6RA8087-6DV62-0AA0-Z"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №1 MCC1.2 -1FR1",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №2 MCC1.2 -1FR2",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №3 MCC1.2 -1FR3",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №4 MCC1.2 -1FR4",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №5 MCC1.2 -1FR5",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №6 MCC1.2 -1FR6",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №7 MCC1.2 -1FR7",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №8 MCC1.2 -1FR8",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №9 MCC1.2 -1FR9",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №10 MCC1.2 -1FR10",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №11 MCC1.2 -1FR11",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №12 MCC1.2 -1FR12",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №13 MCC1.2 -1FR13",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - входной рольганг №14 MCC1.2 -1FR14",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рез. привод на входные рольганги MCC1.2 -1FR15.2",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг №1 MCC1.3 -2FR1",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг №2 MCC1.3 -2FR2",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг №3 MCC1.3 -2FR3",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг №4 MCC1.3 -2FR4",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг №5 MCC1.3 -2FR5",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг №6 MCC1.3 -2FR6",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг №7 MCC1.3 -2FR7",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг №8 MCC1.3 -2FR8",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  рез. привод на рольганги MCC1.3 -2FR9.2",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  рез. привод на рольганги MCC1.3 -2FR14-2",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №1 MCC1.4 -3FR1",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №2 MCC1.4 -3FR2",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №3 MCC1.4 -3FR3",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №4 MCC1.4 -3FR4",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №5 MCC1.4 -3FR5",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №6 MCC1.4 -3FR6",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №7 MCC1.4 -3FR7",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №8 MCC1.4 -3FR8",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №9 MCC1.4 -3FR9",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №10 MCC1.4 -3FR10",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №11 MCC1.4 -3FR11",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №12 MCC1.4 -3FR12",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №13 MCC1.4 -3FR13",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  рез. привод на рольганги на выходе MCC1.4 -3FR14.2",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE14-3UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №1 MCC1.5 -4FR1",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №2 MCC1.5 -4FR2",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №3 MCC1.5 -4FR3",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №4 MCC1.5 -4FR4",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №5 MCC1.5 -4FR5",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №6 MCC1.5 -4FR6",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №7 MCC1.5 -4FR7",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №8 MCC1.5 -4FR8",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №9 MCC1.5 -4FR9",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №10 MCC1.5 -4FR10",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №11 MCC1.5 -4FR11",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - рольганг на выходе №12 MCC1.5 -4FR12",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  рез. привод на рольганги на выходе MCC1.5 -4FR13.2",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE18-8UF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  турбина №1 MCC2.2 -2FR10",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE27-0AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  турбина №2 MCC2.2 -2FR11",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE27-0AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  турбина №3 MCC2.2 -2FR12",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE27-0AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  турбина №4 MCC2.2 -2FR13",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE27-0AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  турбина №5 MCC2.2 -2FR14",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE27-0AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  турбина №6 MCC2.2 -2FR15",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE27-0AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  турбина №7 MCC2.2 -2FR16",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE27-0AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  турбина №8 MCC2.2 -2FR17",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE27-0AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  турбина резерв MCC2.2 -2FR18.2",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE27-0AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - щетка диам. 700 мм №1 MCC2.4 -2FR20",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE17-5AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка - щетка диам. 700 мм №2 MCC2.4 -2FR21",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE17-5AF1"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  очистка камеры - подъемник щетки №1 MCC2.4 -2FR30",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE13-2UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  очистка камеры - подъемник щетки №2 MCC2.4 -2FR31",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE13-2UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  очистка камеры - продувка №1  MCC2.4 -2FR32",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE13-2UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Дробеструйка",
+      "location": "2ЭП",
+      "cabinet": "Дробеструйка -  очистка камеры - продувка №2  MCC2.4 -2FR33",
+      "unit": null,
+      "converter": "Sinamics G120C",
+      "converter_type": "Sinamics G120С 6SL3210-1KE13-2UF2"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "Частотный преобразователь №1 \nМеханизм перемещения загрузочной тележки",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE23-8AL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "Частотный преобразователь №2\nМеханизм перемещения загрузочной тележки",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE23-8AL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "Частотный преобразователь №3\nМеханизм перемещения загрузочной тележки",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE23-8AL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "Частотный преобразователь №1 \nМеханизм перемещения машины БЗВ",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE23-8AL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "Частотный преобразователь №2 \nМеханизм перемещения машины БЗВ",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE23-8AL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "Частотный преобразователь №3 \nМеханизм перемещения машины БЗВ",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE23-8AL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "Частотный преобразователь №1 \nМеханизм перемещения заслонки",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE23-8AL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "Частотный преобразователь №2\nМеханизм перемещения заслонки",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE23-8AL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "Частотный преобразователь №1 \nПодъем вил",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE31-8AL0"
+    },
+    {
+      "mill_shop": "ЦОМ-1",
+      "production_line": "Термоотделение",
+      "location": "2ЭП",
+      "cabinet": "Частотный преобразователь №2 \nПодъем вил",
+      "unit": null,
+      "converter": "Sinamics G120",
+      "converter_type": "6SL3210-1PE31-8AL0"
+    }
+  ]
+}
