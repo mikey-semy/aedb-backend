@@ -7,16 +7,17 @@ ENV PYTHONUNBUFFERED=1
 
 # RUN apk update && apk add --no-cache postgresql-client build-base postgresql-dev libpq-dev poppler-utils
 # RUN apk update && apk add postgresql-client build-base postgresql-dev libpq-dev poppler-utils
-RUN apk update && \
-    apk add --no-cache \
-    postgresql-client \
-    postgresql-dev \
-    libpq-dev \
-    poppler-utils \
+RUN apk add --no-cache --virtual .build-deps \
     gcc \
+    python3-dev \
     musl-dev \
-    python3-dev
-    
+    postgresql-dev \
+    && apk add --no-cache \
+    postgresql-client \
+    libpq \
+    poppler-utils
+
+
 RUN pip install --upgrade pip
 COPY requirements.txt /temp/requirements.txt
 RUN pip install -r /temp/requirements.txt
