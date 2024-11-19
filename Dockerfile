@@ -5,9 +5,18 @@ WORKDIR /usr/src/app
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-RUN apk update && apk add --no-cache postgresql-client build-base postgresql-dev libpq-dev poppler-utils
+# RUN apk update && apk add --no-cache postgresql-client build-base postgresql-dev libpq-dev poppler-utils
 # RUN apk update && apk add postgresql-client build-base postgresql-dev libpq-dev poppler-utils
-
+RUN apk update && \
+    apk add --no-cache \
+    postgresql-client \
+    postgresql-dev \
+    libpq-dev \
+    poppler-utils \
+    gcc \
+    musl-dev \
+    python3-dev
+    
 RUN pip install --upgrade pip
 COPY requirements.txt /temp/requirements.txt
 RUN pip install -r /temp/requirements.txt
