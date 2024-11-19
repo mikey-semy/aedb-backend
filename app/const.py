@@ -75,6 +75,23 @@ token_type: Final = "bearer"
 token_algorithm: Final = "HS256"
 token_expire_minutes: Final = 60
 
+# Storage service constants
+storage_tags: Final[List[str | Enum] | None] = ["Storage"]
+storage_url: Final = "storage"
+
+storage_params:   Final[Dict[str, Any]] = {
+    "prefix": f"/{storage_url}", 
+    "tags": storage_tags
+    }
+
+# Converters service constants
+converters_tags: Final[List[str | Enum] | None] = ["Converters"]
+converters_url: Final = "converters"
+
+converters_params:   Final[Dict[str, Any]] = {
+    "prefix": f"/{converters_url}", 
+    "tags": converters_tags
+    }
 
 # Posts service constants
 post_tags: Final[List[str | Enum] | None] = ["Posts"]
