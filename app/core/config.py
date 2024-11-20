@@ -8,7 +8,16 @@ from pydantic_settings import (
 from app.const import env_path
 
 class Settings(BaseSettings):
-
+    
+    aws_service_name: str = 's3'
+    aws_region: str
+    aws_endpoint: str
+    aws_bucket_name: str
+    aws_access_key_id: str
+    aws_secret_access_key: str
+    
+    
+    
     dsn: str =  Field(default="sqlite+aiosqlite:///./database_aedb.db")
     docs_access: bool = True
 
@@ -16,7 +25,6 @@ class Settings(BaseSettings):
     allow_credentials: bool = True
     allow_methods: List[str] = ["*"]
     allow_headers: List[str] = ["*"]
-
 
     @property
     def cors_params(self) -> Dict[str, Any]:
@@ -26,6 +34,9 @@ class Settings(BaseSettings):
             "allow_methods": self.allow_methods,
             "allow_headers": self.allow_headers,
         }
+        
+    
+    
     
     model_config = SettingsConfigDict(
         env_file=env_path,
