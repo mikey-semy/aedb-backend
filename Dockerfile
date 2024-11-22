@@ -16,7 +16,7 @@ RUN apk add --no-cache --virtual .build-deps \
     postgresql-client \
     libpq \
     poppler-utils
-
+    && apk del .build-deps
 
 RUN pip install --upgrade pip
 COPY requirements.txt /temp/requirements.txt

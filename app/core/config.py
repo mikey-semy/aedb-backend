@@ -16,8 +16,6 @@ class Settings(BaseSettings):
     aws_access_key_id: str
     aws_secret_access_key: str
     
-    
-    
     dsn: str =  Field(default="sqlite+aiosqlite:///./database_aedb.db")
     docs_access: bool = True
 
