@@ -18,7 +18,7 @@ from app.schemas.manuals import (
 )
 
 from app.services.base import CategoryDataManager, BaseService, GenericDataManager, T
-from app.utils.manuals import PDFCoverExtractor
+
 from app.const import media_path
 
 
@@ -100,11 +100,6 @@ class ManualService(BaseService):
         with open(file_path, 'r', encoding='utf-8') as file:
             items = json.load(file)
         for item in items:
-
-            # if item.get('file_url'):
-
-            #     item['cover_image_url'] = PDFCoverExtractor.create_url(item['file_url'])
-
             new_item = manager.model(**item)
             await manager.add_item(new_item)
 
