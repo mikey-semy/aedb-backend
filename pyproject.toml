@@ -6,8 +6,11 @@ authors = ["MikhailTo <toshkin.mikhail@yandex.ru>"]
 readme = "README.md"
 package-mode = false
 
+[virtualenvs]
+in-project = true
+
 [tool.poetry.dependencies]
-python = "^3.13"
+python = "^3.12.3"
 fastapi = "^0.115.5"
 SQLAlchemy = "^2.0.36"
 aioboto3 = "^13.2.0"
@@ -22,6 +25,8 @@ passlib = "^1.7.4"
 loguru = "^0.7.2"
 python-multipart = "^0.0.17"
 pandas = "^2.2.3"
+six = "^1.16.0"
+asyncpg = "^0.30.0"
 
 
 [build-system]
