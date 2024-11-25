@@ -19,8 +19,6 @@ from app.schemas.manuals import (
 
 from app.services.base import CategoryDataManager, BaseService, GenericDataManager, T
 
-from app.const import media_path
-
 
 class ManualService(BaseService):
     """
@@ -36,21 +34,6 @@ class ManualService(BaseService):
         self.manual_manager = GenericDataManager(session, ManualSchema, ManualModel)
         self.category_manager = GenericDataManager(session, CategorySchema, CategoryModel)
         self.group_manager = GenericDataManager(session, GroupSchema, GroupModel)
-
-    async def upload_file(self, file: UploadFile) -> ManualSchema:
-        file_content = await file.read()
-        file_name = file.filename
-        file_url = await self.save_file(file_content, file_name)
-        return ManualSchema(title=file_name, file_url=file_url)
-
-    async def save_file(self, file_content: bytes, file_name: str) -> str:
-        unique_filename = f"{uuid.uuid4()}_{file_name}"
-        file_path = f"media/manuals/{unique_filename}"
-        with open(file_path, "wb") as f:
-            f.write(file_content)
-        result_path = media_path / "manuals" / unique_filename
-        print(f"result_path: {result_path}")
-        return f"media/manuals/{unique_filename}"
 
     async def add_item(self, item: T, manager: GenericDataManager) -> T:
         """

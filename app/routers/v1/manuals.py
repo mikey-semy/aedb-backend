@@ -1,5 +1,5 @@
 from typing import List, Any
-from fastapi import APIRouter, Query, Depends, UploadFile
+from fastapi import APIRouter, Query, Depends
 from sqlalchemy.orm import Session
 from app.schemas.auth import UserSchema
 from app.schemas.manuals import (
@@ -160,14 +160,6 @@ async def post_manual(
     session: Session = Depends(get_db_session),
 ) -> ManualSchema:
     return await ManualService(session).add_manual(manual)
-
-@router.post("/upload")
-async def create_upload_manuals(
-    manual: UploadFile,
-    _user: UserSchema = Depends(get_current_user),
-    session: Session = Depends(get_db_session),
-    ):
-    return await ManualService(session).upload_file(manual)
 
 @router.post("/add_groups")
 async def add_groups(

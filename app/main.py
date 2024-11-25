@@ -7,8 +7,7 @@ from app.middlewares.docs_blocker import BlockDocsMiddleware
 from app.const import (
     app_params,
     uvicorn_params,
-    static_params,
-    media_params
+    static_params
 )
 from app.version import __version__
 from app.core.config import cors_params
@@ -16,7 +15,6 @@ from app.core.config import cors_params
 app = FastAPI(**app_params)
 
 app.mount(**static_params)
-app.mount(**media_params)
 
 app.include_router(all_routers)
 

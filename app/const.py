@@ -43,7 +43,7 @@ env_file_name:          Path    =   Path('.env')
 app_folder_name:        Path    =   Path('app')
 templates_folder_name:  Path    =   Path('templates')
 static_folder_name:     Path    =   Path('static')
-media_folder_name:      Path    =   Path('media')
+
 
 # Paths
 main_path:              Path    =   Path(__file__).resolve().parents[1]
@@ -51,7 +51,7 @@ env_path:               Path    =   main_path / env_file_name
 app_path:               Path    =   main_path / app_folder_name
 templates_path:         Path    =   app_path / templates_folder_name
 static_path:            Path    =   app_path / static_folder_name
-media_path:             Path    =   app_path / media_folder_name
+
 
 # Main service constants
 main_tags: Final[List[str | Enum] | None] = ["Main"]
@@ -120,15 +120,4 @@ static_params: Final[Dict[str, Any]] = {
     "path": static_path_str, 
     "app": static_app, 
     "name": static_name
-}
-
-# Media params
-media_path_str: str = "/media"
-media_app: ASGIApp = StaticFiles(directory=media_path)
-media_name: str = "media"
-
-media_params: Final[Dict[str, Any]] = {
-    "path": media_path_str, 
-    "app": media_app, 
-    "name": media_name
 }
