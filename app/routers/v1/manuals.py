@@ -46,14 +46,14 @@ async def get_groups_by_category(
 
 @router.get("/groups", response_model=List[GroupSchema])
 async def get_groups(
-    _user: UserSchema = Depends(get_current_user),
+    # _user: UserSchema = Depends(get_current_user),
     session: Session = Depends(get_db_session),
 ) -> List[GroupSchema]:
     return await ManualService(session).get_groups()
 
 @router.get("/categories", response_model=List[CategorySchema])
 async def get_categories(
-    _user: UserSchema = Depends(get_current_user),
+    # _user: UserSchema = Depends(get_current_user),
     session: Session = Depends(get_db_session),
 ) -> List[CategorySchema]:
     return await ManualService(session).get_categories()
