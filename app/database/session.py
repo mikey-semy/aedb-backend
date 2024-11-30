@@ -22,6 +22,10 @@ from sqlalchemy.ext.asyncio import (
     )
 from sqlalchemy import URL
 from app.core.config import config
+from aiologger import Logger
+
+
+logger = Logger.with_default_handlers()
 
 class DatabaseSession():
     """
@@ -38,7 +42,7 @@ class DatabaseSession():
         self.dsn = settings.dsn
 
 
-    def __get_dsn(self, dsn: str) -> str:
+    def __get_dsn(self) -> str:
         """
         Получает dsn.
 
@@ -48,9 +52,11 @@ class DatabaseSession():
         Returns:
             str: url dsn.
         """
-        return dsn
+        if not self.dsn:
+            raise ValueError("DSN не установлен. Проверьте конфигурацию.")
+        return self.dsn
 
-    def __create_dsn(self, dsn_params: Dict[str, str]) -> URL:
+    async def __create_dsn(self, dsn_params: Dict[str, str]) -> URL:
         """
         Создает объект SQLAlchemy dsn (data source name) для подключения к базе данных.
         
@@ -81,11 +87,13 @@ class DatabaseSession():
         Возвращает:
             URL: Объект SQLAlchemy URL.
         """
-        dsn = URL.create(**dsn_params)
+        try:
+            return URL.create(**dsn_params)
+        except Exception as e:
+            await logger.error("Ошибка при создании DSN: %s", e)
+            raise
 
-        return dsn
-
-    def __create_async_engine(self, dsn: str) -> AsyncEngine:
+    async def __create_async_engine(self, dsn: str) -> AsyncEngine:
         """
         Создает асинхронный движок SQLAlchemy.
 
@@ -96,11 +104,14 @@ class DatabaseSession():
         Returns:
             AsyncEngine: Асинхронный движок SQLAlchemy.
         """
-        async_engine = create_async_engine(dsn, echo=True)
+        try:
+            async_engine = create_async_engine(dsn, echo=True)
+            return async_engine
+        except Exception as e:
+            await logger.error(f"Ошибка при создании асинхронного движка: %s", e)
+            raise
 
-        return async_engine
-
-    def __precreate_async_session_factory(self, async_engine: AsyncEngine) -> AsyncSession:
+    async def __precreate_async_session_factory(self, async_engine: AsyncEngine) -> AsyncSession:
         """
         Предварительно создает фабрику асинхронных сессий для операций с базой данных.
 
@@ -111,31 +122,35 @@ class DatabaseSession():
         Returns:
             AsyncSession: Фабрика асинхронных сессий.
         """
-        async_session_factory = async_sessionmaker(
-            autocommit=False,
-            autoflush=False,
-            expire_on_commit=False,
-            class_=AsyncSession,
-            bind=async_engine,
-        )
-        return async_session_factory
+        try:
+            async_session_factory = async_sessionmaker(
+                autocommit=False,
+                autoflush=False,
+                expire_on_commit=False,
+                class_=AsyncSession,
+                bind=async_engine,
+            )
+            return async_session_factory
+        except Exception as e:
+            await logger.error(f"Ошибка при предварительном создании фабрики асинхронных сессий: %s", e)
+            raise
 
 
-    def create_async_session_factory(self) -> AsyncSession:
+    async def create_async_session_factory(self) -> AsyncSession:
         """
         Создает настроенную фабрику сессий.
 
         Returns:
             AsyncSession: Фабрика асинхронных сессий.
         """
-
-        dsn = self.__get_dsn(self.dsn)
-
-        async_engine = self.__create_async_engine(dsn)
-
-        session_factory = self.__precreate_async_session_factory(async_engine)
-
-        return session_factory
+        try:
+            dsn = self.__get_dsn()
+            async_engine = self.__create_async_engine(dsn)
+            session_factory = self.__precreate_async_session_factory(async_engine)
+            return session_factory
+        except Exception as e:
+            await logger.error(f"Ошибка при создании фабрики асинхронных сессий: %s", e)
+            raise
 
 
 class SessionContextManager():
@@ -158,33 +173,49 @@ class SessionContextManager():
         Returns:
             SessionContextManager: Экземпляр текущего контекстного менеджера.
         """
-        self.session = self.session_factory()
-        return self
+        try:
+            self.session = await self.session_factory()
+            return self
+        except Exception as e:
+            await logger.error("Ошибка при входе в контекстный менеджер: %s", e)
+            raise
 
-    async def __aexit__(self, *args: object) -> None:
+    async def __aexit__(self, exc_type, exc_val, exc_tb) -> None:
         """
         Асинхронный метод выхода из контекстного менеджера.
 
         Args:
-            *args: Аргументы, передаваемые при выходе из контекста.
+            exc_type: Тип исключения, если оно возникло.
+            exc_val: Значение исключения, если оно возникло.
+            exc_tb: Объект трассировки, если исключение возникло.
         """
-        await self.rollback()
+        if exc_type:
+            await self.rollback()
+        else:
+            await self.commit()
 
     async def commit(self) -> None:
         """
         Асинхронно фиксирует изменения в базе данных и закрывает сессию.
         """
-        await self.session.commit()
-        await self.session.close()
-        self.session = None
+        try:
+            await self.session.commit()
+            await self.session.close()
+            self.session = None
+        except Exception as e:
+            await logger.error("Ошибка при фиксации изменений: %s", e)
+            await self.rollback()
 
     async def rollback(self) -> None:
         """
         Асинхронно откатывает изменения в базе данных и закрывает сессию.
         """
-        await self.session.rollback()
-        await self.session.close()
-        self.session = None
+        try:
+            await self.session.rollback()
+            await self.session.close()
+            self.session = None
+        except Exception as e:
+            await logger.error("Ошибка при откате изменений: %s", e)
 
 
 async def get_db_session():

@@ -1,12 +1,13 @@
 from typing import List, Any
-from fastapi import APIRouter, Query, Depends
+from fastapi import APIRouter, Query, Depends, UploadFile, File
 from sqlalchemy.orm import Session
 from app.schemas.auth import UserSchema
 from app.schemas.manuals import (
     ManualSchema,
     GroupSchema,
     CategorySchema,
-    ManualListItemSchema
+    ManualListItemSchema,
+    ManualFileSchema
 )
 from app.services.manuals import ManualService
 from app.services.auth import get_current_user
@@ -153,13 +154,14 @@ async def post_category(
 ) -> CategorySchema:
     return await ManualService(session).add_category(category)
 
-@router.post("/")
+@router.post("/add")
 async def post_manual(
-    manual: ManualSchema,
+    manual: ManualFileSchema,
+    file: UploadFile = File(...),
     _user: UserSchema = Depends(get_current_user),
     session: Session = Depends(get_db_session),
 ) -> ManualSchema:
-    return await ManualService(session).add_manual(manual)
+    return await ManualService(session).add_manual(manual, file)
 
 @router.post("/add_groups")
 async def add_groups(

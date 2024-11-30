@@ -4,7 +4,7 @@ from pathlib import Path
 
 from fastapi.staticfiles import StaticFiles
 from starlette.types import ASGIApp
-
+from app.core.config import config
 from app.version import __version__
 
 
@@ -33,6 +33,19 @@ uvicorn_params:   Final[Dict[str, Any]] = {
     "proxy_headers": True,
     # "forwarded-allow-ips": "*"
     }
+
+# AWS S3 params
+aws_access_key_id: Final = config.aws_access_key_id
+aws_secret_access_key: Final = config.aws_secret_access_key
+aws_region: Final = config.aws_region
+endpoint_url: Final = config.aws_endpoint
+
+s3_params:   Final[Dict[str, Any]] = {
+    "aws_access_key_id": aws_access_key_id,
+    "aws_secret_access_key": aws_secret_access_key,
+    "region_name": aws_region,
+    "endpoint_url": endpoint_url
+}
 
 # Paths params
 

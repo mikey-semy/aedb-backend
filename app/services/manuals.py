@@ -1,7 +1,6 @@
 from typing import List, Any
 import json
-import uuid
-from fastapi import UploadFile
+from fastapi import Depends, UploadFile
 
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
@@ -14,8 +13,11 @@ from app.schemas.manuals import (
     ManualListItemSchema,
     ManualNestedSchema,
     CategoryNestedSchema,
-    GroupNestedSchema
+    GroupNestedSchema,
+    ManualFileSchema
 )
+from aioboto3 import Session
+from app.cloud.session import get_s3_session
 
 from app.services.base import CategoryDataManager, BaseService, GenericDataManager, T
 
@@ -46,13 +48,19 @@ class ManualService(BaseService):
         new_item = manager.model(**item.model_dump())
         return await manager.add_item(new_item)
 
-    async def add_manual(self, manual: ManualSchema) -> ManualSchema:
+
+    async def add_manual(self,
+                         manual: ManualFileSchema, 
+                         file: UploadFile,
+                         session: Session = Depends(get_s3_session)
+                         ) -> ManualSchema:
         """
         Добавляет новую инструкцию.
 
         :param manual: Инструкция для добавления
         :return: Добавленная инструкция
         """
+        
         return await self.add_item(manual, self.manual_manager)
 
     async def add_category(self, category: CategorySchema) -> CategorySchema:

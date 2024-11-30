@@ -27,6 +27,7 @@ python-multipart = "^0.0.17"
 pandas = "^2.2.3"
 six = "^1.16.0"
 asyncpg = "^0.30.0"
+aiologger = "^0.7.0"
 
 
 [build-system]

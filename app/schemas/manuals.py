@@ -1,4 +1,5 @@
 from typing import Optional, List
+from fastapi import UploadFile
 from app.schemas.base import BaseSchema
 
 
@@ -51,6 +52,25 @@ class ManualSchema(BaseSchema):
     class Config:
         from_attributes = True
 
+class ManualFileSchema(BaseSchema):
+    """
+    Схема для представления инструкции, загруженной из файла.
+
+    Attributes:
+        id: Уникальный идентификатор инструкции.
+        title: Название инструкции.
+        file: Файл инструкции.
+        category_id: ID категории, к которой относится инструкция.
+        group_id: ID группы, к которой относится инструкция.
+    """
+    id: Optional[int] = None
+    title: str
+    file: UploadFile
+    category_id: int
+    group_id: int
+    class Config:
+        from_attributes = True
+        
 class ManualNestedSchema(BaseSchema):
     id: Optional[int] = None
     title: str
