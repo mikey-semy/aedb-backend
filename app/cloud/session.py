@@ -1,8 +1,23 @@
+"""
+Модуль для работы с Amazon S3 с использованием aioboto3.
+
+Этот модуль предоставляет классы и функции для управления сессиями S3,
+создания асинхронных клиентов и обработки ошибок.
+
+Основные компоненты:
+- S3Session: Класс для настройки и создания асинхронного клиента S3.
+- SessionContextManager: Контекстный менеджер для управления жизненным циклом сессий S3.
+- get_s3_session: Асинхронный генератор для получения сессии S3.
+
+Модуль использует асинхронные возможности aioboto3 для эффективной работы с S3
+в асинхронных приложениях.
+"""
 from typing import Any, AsyncGenerator
 from aioboto3 import Session
 from botocore.exceptions import ClientError
 from aiologger import Logger
 from app.core.config import config
+
 
 class S3Session():
     """
@@ -11,9 +26,11 @@ class S3Session():
     
     def __init__(self, settings: Any = config) -> None:
         """
-        Инициализация S3Session.
+        Инициализирует экземпляр S3Session.
 
-        :param settings: Конфигурация AWS, содержащая параметры доступа.
+        Args:
+            settings (Any): Объект конфигурации. 
+                По умолчанию используется глобальный объект config.
         """
         self.region_name=settings.aws_region
         self.endpoint_url=settings.aws_endpoint
@@ -25,7 +42,8 @@ class S3Session():
         """
         Получение параметров для создания клиента S3.
 
-        :return: Словарь с параметрами для клиента S3.
+        Returns:
+            dict: Словарь с параметрами для клиента S3.
         """
         return {
             "region_name": self.region_name,
@@ -38,8 +56,11 @@ class S3Session():
         """
         Создание асинхронного клиента S3.
 
-        :return: Асинхронный клиент S3.
-        :raises ClientError: Если возникла ошибка при создании клиента.
+        Returns:
+            Any: Асинхронный клиент S3.
+        
+        Raises:
+            ClientError: Если возникла ошибка при создании клиента.
         """
         try:
             session = Session()
@@ -50,10 +71,13 @@ class S3Session():
     
 class SessionContextManager:
     """
-    Инициализация SessionContextManager.
+    Контекстный менеджер для управления сессиями S3.
     """
     
     def __init__(self):
+        """
+        Инициализирует экземпляр SessionContextManager.
+        """
         self.s3_session = S3Session(config)
         self.session = None
         self.logger = Logger.with_default_handlers(name="SessionContextManagerLogger")
@@ -62,7 +86,8 @@ class SessionContextManager:
         """
         Вход в контекстный менеджер.
 
-        :return: Экземпляр SessionContextManager с активной сессией S3.
+        Returns:
+            SessionContextManager: Экземпляр SessionContextManager с активной сессией S3.
         """
         self.session = await self.s3_session.create_async_session_factory()
         return self
@@ -71,9 +96,10 @@ class SessionContextManager:
         """
         Выход из контекстного менеджера.
 
-        :param exc_type: Тип исключения, если оно возникло.
-        :param exc_val: Значение исключения, если оно возникло.
-        :param exc_tb: Объект трассировки, если исключение возникло.
+        Args:
+            exc_type: Тип исключения, если оно возникло.
+            exc_val: Значение исключения, если оно возникло.
+            exc_tb: Объект трассировки, если исключение возникло.
         """
         await self.close_client()
         
@@ -85,17 +111,20 @@ class SessionContextManager:
         """
         if self.session :
             self.session = None
-    
-    async def get_s3_session(self) -> AsyncGenerator[Any, None]:
-        """
-        Получение асинхронной сессии S3.
 
-        :yield: Асинхронный клиент S3.
-        :raises ClientError: Если возникла ошибка при получении сессии.
-        """
-        try:
-            async with self as session_manager:
-                yield session_manager.session
-        except Exception as e:
-            await self.logger.error(f"Ошибка при получении сессии S3: {e}")
+async def get_s3_session() -> AsyncGenerator[Any, None]:
+    """
+    Получение асинхронной сессии S3.
+
+    Yields:
+        Any: Асинхронный клиент S3.
+    
+    Raises:
+        Exception: Если возникла ошибка при получении сессии.
+    """
+    try:
+        async with SessionContextManager() as session_manager:
+            yield session_manager.session
+    except Exception as e:
+            await SessionContextManager().logger.error(f"Ошибка при получении сессии S3: {e}")
             raise

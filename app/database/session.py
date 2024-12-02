@@ -13,19 +13,18 @@
 в асинхронных приложениях.
 """
 
-from typing import Dict, Any
+from typing import Dict, Any, AsyncGenerator
 from sqlalchemy.ext.asyncio import (
     AsyncSession,
     AsyncEngine,
     async_sessionmaker,
     create_async_engine
     )
+from sqlalchemy.exc import OperationalError
 from sqlalchemy import URL
-from app.core.config import config
 from aiologger import Logger
+from app.core.config import config
 
-
-logger = Logger.with_default_handlers()
 
 class DatabaseSession():
     """
@@ -40,9 +39,9 @@ class DatabaseSession():
         """
 
         self.dsn = settings.dsn
+        self.logger = Logger.with_default_handlers(name="DatabaseSessionLogger")
 
-
-    def __get_dsn(self) -> str:
+    async def __get_dsn(self) -> str:
         """
         Получает dsn.
 
@@ -53,6 +52,7 @@ class DatabaseSession():
             str: url dsn.
         """
         if not self.dsn:
+            await self.logger.error("DSN не установлен. Проверьте конфигурацию.")
             raise ValueError("DSN не установлен. Проверьте конфигурацию.")
         return self.dsn
 
@@ -90,7 +90,7 @@ class DatabaseSession():
         try:
             return URL.create(**dsn_params)
         except Exception as e:
-            await logger.error("Ошибка при создании DSN: %s", e)
+            await self.logger.error("Ошибка при создании DSN: %s", e)
             raise
 
     async def __create_async_engine(self, dsn: str) -> AsyncEngine:
@@ -108,7 +108,7 @@ class DatabaseSession():
             async_engine = create_async_engine(dsn, echo=True)
             return async_engine
         except Exception as e:
-            await logger.error(f"Ошибка при создании асинхронного движка: %s", e)
+            await self.logger.error(f"Ошибка при создании асинхронного движка: {e}")
             raise
 
     async def __precreate_async_session_factory(self, async_engine: AsyncEngine) -> AsyncSession:
@@ -132,7 +132,7 @@ class DatabaseSession():
             )
             return async_session_factory
         except Exception as e:
-            await logger.error(f"Ошибка при предварительном создании фабрики асинхронных сессий: %s", e)
+            await self.logger.error("Ошибка при предварительном создании фабрики асинхронных сессий: %s", e)
             raise
 
 
@@ -149,7 +149,7 @@ class DatabaseSession():
             session_factory = self.__precreate_async_session_factory(async_engine)
             return session_factory
         except Exception as e:
-            await logger.error(f"Ошибка при создании фабрики асинхронных сессий: %s", e)
+            await self.logger.error("Ошибка при создании фабрики асинхронных сессий: %s", e)
             raise
 
 
@@ -165,6 +165,7 @@ class SessionContextManager():
         self.db_session = DatabaseSession(config)
         self.session_factory = self.db_session.create_async_session_factory()
         self.session = None
+        self.logger = Logger.with_default_handlers(name="SessionContextManagerLogger")
 
     async def __aenter__(self) -> 'SessionContextManager':
         """
@@ -177,7 +178,7 @@ class SessionContextManager():
             self.session = await self.session_factory()
             return self
         except Exception as e:
-            await logger.error("Ошибка при входе в контекстный менеджер: %s", e)
+            await self.logger.error("Ошибка при входе в контекстный менеджер: %s", e)
             raise
 
     async def __aexit__(self, exc_type, exc_val, exc_tb) -> None:
@@ -202,8 +203,8 @@ class SessionContextManager():
             await self.session.commit()
             await self.session.close()
             self.session = None
-        except Exception as e:
-            await logger.error("Ошибка при фиксации изменений: %s", e)
+        except OperationalError as e:
+            await self.logger.error("Ошибка при фиксации изменений: %s", e)
             await self.rollback()
 
     async def rollback(self) -> None:
@@ -214,16 +215,22 @@ class SessionContextManager():
             await self.session.rollback()
             await self.session.close()
             self.session = None
-        except Exception as e:
-            await logger.error("Ошибка при откате изменений: %s", e)
+        except OperationalError as e:
+            await self.logger.error("Ошибка при откате изменений: %s", e)
 
 
-async def get_db_session():
+async def get_db_session() -> AsyncGenerator[Any, None]:
     """
     Асинхронный генератор для получения сессии базы данных.
 
     Yields:
         AsyncSession: Асинхронная сессия базы данных.
+    Raises 
+        Exception: Если возникла ошибка при получении сессии.
     """
-    async with SessionContextManager() as session_manager:
-        yield session_manager.session
+    try:
+        async with SessionContextManager() as session_manager:
+            yield session_manager.session
+    except Exception as e:
+            await SessionContextManager().logger.error(f"Ошибка при получении сессии S3: {e}")
+            raise

@@ -1,33 +1,35 @@
-#!!! переписать
 import os
-from typing import List, Any
-from functools import wraps
-from aioboto3 import Session
+from typing import List
 import aiofiles
 from botocore.exceptions import ClientError
-from app.core.config import config
+from app.cloud.session import S3Session
 
-class S3Session():
+
+class SessionMixin:
+    def __init__(self, session: S3Session):
+        self.session = session
+        
+class BaseService(SessionMixin):
+    """
+    Базовый класс для сервисов приложения.
+    """
     
-    def __init__(self, settings: Any = config) -> None:
-        self.s3=None
-        self.bucket_name=settings.aws_bucket_name
-        self.service_name=settings.aws_service_name
-        self.region_name=settings.aws_region
-        self.endpoint_url=settings.aws_endpoint
-        self.access_key_id=settings.aws_access_key_id
-        self.secret_access_key=settings.aws_secret_access_key
+class S3Service(SessionMixin):
     
-    async def create_client(self):
-        session = Session()
-        self.s3 = await session.client(
-            service_name=self.service_name,
-            region_name=self.region_name,
-            endpoint_url=self.endpoint_url,
-            aws_access_key_id=self.access_key_id,
-            aws_secret_access_key=self.secret_access_key
-        ).__aenter__()
-    
+    async def create_bucket(self, bucket_name: str) -> None:
+        """
+        Создание бакета в S3.
+        args:
+        bucket_name: str - имя бакета для создания
+        return: None
+        """
+        try:
+            await self.session.create_bucket(Bucket=bucket_name)
+        except ClientError as e:
+            raise ValueError(f'Ошибка при создании бакета: {e}') from e
+        except Exception as e:
+            raise RuntimeError(f'Ошибка при создании бакета: {e}') from e
+        
     async def bucket_exists(self, bucket_name: str) -> bool:
         """
         Проверка существования бакета.
@@ -36,7 +38,7 @@ class S3Session():
         return: bool
         """
         try:
-            await self.s3.head_bucket(Bucket=bucket_name)
+            await self.session.head_bucket(Bucket=bucket_name)
             return True
         except ClientError as e:
             if e.response['Error']['Code'] == '404':
@@ -57,7 +59,7 @@ class S3Session():
             raise FileNotFoundError(f'Файл {file_path} не найден')
         try:
             async with aiofiles.open(file=file_path, mode='rb') as file:
-                await self.s3.upload_fileobj(
+                await self.session.upload_fileobj(
                     Fileobj=file,
                     Bucket=bucket_name,
                     Key=file_key,
@@ -69,6 +71,7 @@ class S3Session():
             raise ValueError(f'Ошибка при открытии файла: {e}') from e
         except Exception as e:
             raise RuntimeError(f'Ошибка при загрузке файла: {e}') from e
+        
     async def get_link_file(self, bucket_name: str, file_key: str) -> str:
         """
         Получение ссылки на файл в S3.
@@ -84,6 +87,7 @@ class S3Session():
             raise ValueError(f'Ошибка при получении ссылки на файл: {e}') from e
         except Exception as e:
             raise RuntimeError(f'Ошибка при получении ссылки на файл: {e}') from e
+        
     async def download_file(self, bucket_name: str, file_key: str, file_path: str) -> None:
         """
         Скачивание файл-подобного объекта из S3.
@@ -95,7 +99,7 @@ class S3Session():
         """
         try:
             async with aiofiles.open(file=file_path, mode='wb') as file:
-                await self.s3.download_fileobj(
+                await self.session.download_fileobj(
                     Bucket=bucket_name,
                     Key=file_key,
                     Fileobj=file
@@ -107,10 +111,11 @@ class S3Session():
         except Exception as e:
             raise RuntimeError(f'Ошибка при скачивании файла: {e}') from e
     
-    async def upload_multiple_files(self,
-                                     bucket_name: str, 
-                                     file_paths: List[str], 
-                                     file_keys: List[str]
+    async def upload_multiple_files(
+        self,
+        bucket_name: str,
+        file_paths: List[str],
+        file_keys: List[str]
     ) -> List[str]:
         """
         Загрузка нескольких файлов в S3.
@@ -136,10 +141,11 @@ class S3Session():
         except Exception as e:
             raise RuntimeError(f'Ошибка при загрузке файлов: {e}') from e
      
-    async def download_multiple_files(self,
-                                      bucket_name: str, 
-                                      file_keys: List[str], 
-                                      file_paths: List[str]
+    async def download_multiple_files(
+        self,
+        bucket_name: str,
+        file_keys: List[str],
+        file_paths: List[str]
     ) -> List[str]:
         """
         Скачивание нескольких файлов из S3.
@@ -171,7 +177,7 @@ class S3Session():
         return: List[str] - список ключей файлов в S3
         """
         try:
-            response = await self.s3.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
+            response = await self.session.list_objects_v2(Bucket=bucket_name, Prefix=prefix)
             files = []
             for obj in response.get('Contents', []):
                 files.append(obj['Key'])
@@ -203,7 +209,7 @@ class S3Session():
         except Exception as e:
             raise RuntimeError(f'Ошибка при скачивании файлов: {e}') from e
 
-    async def delete_file(self, bucket_name: str,file_key: str) -> bool:
+    async def delete_file(self, bucket_name: str, file_key: str) -> bool:
         """
         Удаление файла из бакета. 
         args:
@@ -212,7 +218,7 @@ class S3Session():
         return: None
         """
         try:
-            await self.s3.delete_object(
+            await self.session.delete_object(
                     Bucket=bucket_name,
                     Key=file_key
                 )
@@ -222,27 +228,4 @@ class S3Session():
         except Exception as e:
             raise RuntimeError(f'Ошибка при удалении файла из бакета: {e}') from e
 
-    async def create_bucket(self, 
-                             bucket_name: str) -> None:
-        """
-        Создание бакета в S3.
-        args:
-        bucket_name: str - имя бакета для создания
-        return: None
-        """
-        try:
-            await self.s3.create_bucket(Bucket=bucket_name)
-        except ClientError as e:
-            raise ValueError(f'Ошибка при создании бакета: {e}') from e
-        except Exception as e:
-            raise RuntimeError(f'Ошибка при создании бакета: {e}') from e
     
-    def s3_client_decorator(self, aws_access_key_id, aws_secret_access_key, region_name, endpoint_url):
-        """Декоратор для автоматического создания и закрытия S3Client."""
-        def decorator(func):
-            @wraps(func)
-            async def wrapper(*args, **kwargs):
-                async with S3Session(aws_access_key_id, aws_secret_access_key, region_name, endpoint_url) as s3_client:
-                    return await func(s3_client, *args, **kwargs)
-            return wrapper
-        return decorator

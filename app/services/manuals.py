@@ -18,7 +18,6 @@ from app.schemas.manuals import (
 )
 from aioboto3 import Session
 from app.cloud.session import get_s3_session
-
 from app.services.base import CategoryDataManager, BaseService, GenericDataManager, T
 
 
