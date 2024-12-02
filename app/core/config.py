@@ -1,5 +1,5 @@
 from typing import Dict, List, Any
-from pydantic import Field
+from pydantic import Field, SecretStr
 from pydantic_settings import (
     BaseSettings,
     SettingsConfigDict,
@@ -9,6 +9,8 @@ from app.const import env_path
 
 class Settings(BaseSettings):
     
+    token_key: SecretStr = Field(default=..., env='TOKEN_KEY')
+
     aws_service_name: str = 's3'
     aws_region: str
     aws_endpoint: str
