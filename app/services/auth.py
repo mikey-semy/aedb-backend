@@ -50,20 +50,17 @@ class AuthService(HashingMixin, BaseService):
         )
         await AuthDataManager(self.session, UserSchema).add_user(user_model)
         
-    async def authenticate(
-            self, login: OAuth2PasswordRequestForm = Depends()
-    ):
+    async def authenticate(self, login: OAuth2PasswordRequestForm = Depends()):
         user = await AuthDataManager(self.session, UserSchema).get_user(login.username)
-
+    
         if user.hashed_password is None:
             raise_with_log(status.HTTP_401_UNAUTHORIZED, "Incorrect password")
-        else:
-            if not self.verify(user.hashed_password, login.password):
-                raise_with_log(status.HTTP_401_UNAUTHORIZED, "Incorrect password")
-            else:
-                access_token = self._create_access_token(user.name, user.email)
-                return TokenSchema(access_token=access_token, token_type=token_type)
-        return None
+            
+        if not self.verify(user.hashed_password, login.password):
+            raise_with_log(status.HTTP_401_UNAUTHORIZED, "Incorrect password")
+            
+        access_token = self._create_access_token(user.name, user.email)
+        return TokenSchema(access_token=access_token, token_type=token_type)
     
     def _create_access_token(self, name: str, email: str) -> str:
         
