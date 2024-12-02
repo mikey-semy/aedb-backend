@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 
 
 from fastapi import Depends, status
@@ -81,7 +81,7 @@ class AuthService(HashingMixin, BaseService):
     def _expiration_time() -> str:
         """Get token expiration time."""
 
-        expires_at = datetime.now(datetime.datetime.UTC) + timedelta(minutes=token_expire_minutes)
+        expires_at = datetime.now(timezone.utc) + timedelta(minutes=token_expire_minutes)
         return expires_at.strftime("%Y-%m-%d %H:%M:%S")
     
 class AuthDataManager(BaseDataManager):
@@ -148,4 +148,4 @@ async def get_current_user(token: str = Depends(oauth2_schema)) -> UserSchema | 
 def is_expired(expires_at: str) -> bool:
     """Return :obj:`True` if token has expired."""
     
-    return datetime.strptime(expires_at, "%Y-%m-%d %H:%M:%S") < datetime.now(datetime.UTC)
+    return datetime.strptime(expires_at, "%Y-%m-%d %H:%M:%S") < datetime.now(timezone.utc)
