@@ -9,7 +9,7 @@ from app.const import env_path
 
 class Settings(BaseSettings):
     
-    token_key: SecretStr = Field(default=..., env='TOKEN_KEY')
+    token_key: SecretStr
 
     aws_service_name: str = 's3'
     aws_region: str
