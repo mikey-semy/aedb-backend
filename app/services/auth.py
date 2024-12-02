@@ -50,10 +50,10 @@ class AuthService(HashingMixin, BaseService):
         )
         await AuthDataManager(self.session, UserSchema).add_user(user_model)
         
-    def authenticate(
+    async def authenticate(
             self, login: OAuth2PasswordRequestForm = Depends()
     ):
-        user = AuthDataManager(self.session, UserSchema).get_user(login.username)
+        user = await AuthDataManager(self.session, UserSchema).get_user(login.username)
 
         if user.hashed_password is None:
             raise_with_log(status.HTTP_401_UNAUTHORIZED, "Incorrect password")
@@ -89,9 +89,9 @@ class AuthDataManager(BaseDataManager):
         """Add user to database."""
         await self.add_one(user)
     
-    def get_user(self, email: str) -> UserSchema:
+    async def get_user(self, email: str) -> UserSchema:
 
-        model = self.get_one(select(UserModel).where(UserModel.email == email))
+        model = await self.get_one(select(UserModel).where(UserModel.email == email))
 
         if not isinstance(model, UserModel):
             raise_with_log(status.HTTP_404_NOT_FOUND, "User not found")
