@@ -43,5 +43,5 @@ async def authenticate(
     Returns:
         Access token.
     """
-    return AuthService(session).authenticate(login)
+    return await AuthService(session).authenticate(login)
 
