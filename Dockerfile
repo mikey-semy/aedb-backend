@@ -22,7 +22,8 @@ RUN curl -sSL https://install.python-poetry.org | python3 - \
 
 COPY pyproject.toml poetry.lock ./
 
-RUN poetry install --no-dev --no-interaction \
+RUN poetry config installer.max-workers 10 && \
+    poetry install --no-dev --no-interaction --no-cache \
     && apk del .build-deps
 
 EXPOSE 8000
