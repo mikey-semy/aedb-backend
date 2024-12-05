@@ -69,7 +69,6 @@ auth_params:   Final[Dict[str, Any]] = {
     "tags": auth_tags
     }
 
-
 # Token constants
 token_type: Final = "bearer"
 token_algorithm: Final = "HS256"

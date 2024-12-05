@@ -1,13 +1,9 @@
 from datetime import datetime, timezone, timedelta
-
-
 from fastapi import Depends, status
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
-
 from jose import jwt, JWTError
 from sqlalchemy import select
 from passlib.context import CryptContext
-
 from app.schemas.auth import UserSchema, CreateUserSchema, TokenSchema
 from app.services.base import BaseService, BaseDataManager
 from app.models.auth import UserModel

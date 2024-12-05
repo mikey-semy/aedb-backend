@@ -301,3 +301,8 @@ class GenericDataManager(BaseDataManager[T]):
         """
         statement = delete(self.model)
         return await self.delete_all(statement)
+    
+    async def get_by_name(self, name: str):
+        statement = select(self.model).where(self.model.name == name)
+        result = await self.session.execute(statement)
+        return result.scalar_one_or_none()

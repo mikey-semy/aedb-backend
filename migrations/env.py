@@ -11,6 +11,14 @@ from app.models.base import SQLModel
 from app.models.auth import UserModel
 from app.models.posts import PostModel
 from app.models.manuals import CategoryModel, GroupModel, ManualModel
+from app.models.converters import (
+    MillShopModel,
+    ProductionLineModel,
+    LocationModel,
+    CabinetModel,
+    ConverterModel,
+    UnitModel
+)
 from app.core.config import config as settings
 
 # this is the Alembic Config object, which provides
