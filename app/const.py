@@ -92,6 +92,15 @@ converters_params:   Final[Dict[str, Any]] = {
     "tags": converters_tags
     }
 
+# Sensors service constants
+sensors_tags: Final[List[str | Enum] | None] = ["Sensors"]
+sensors_url: Final = "sensors"
+
+sensors_params:   Final[Dict[str, Any]] = {
+    "prefix": f"/{sensors_url}", 
+    "tags": sensors_tags
+    }
+
 # Posts service constants
 post_tags: Final[List[str | Enum] | None] = ["Posts"]
 post_url: Final = "posts"
