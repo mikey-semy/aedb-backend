@@ -20,7 +20,7 @@ async def get_converters() -> List[ConverterSchema]:
 async def get_converters_paginated(
     page: int = Query(default=1, ge=1),
     page_size: int = Query(default=10, ge=1, le=100),
-    _user: UserSchema = Depends(get_current_user),
+    # _user: UserSchema = Depends(get_current_user),
     session: Session = Depends(get_db_session)
 ) -> dict:
     return await ConverterService(session).get_converters_paginated(page, page_size)
