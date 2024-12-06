@@ -37,7 +37,7 @@ class ConverterService(BaseService):
         converters = result.scalars().all()
 
         # Получаем общее количество
-        count_stmt = select(ConverterModel).select_from(ConverterModel)
+        count_stmt = select(func.count()).select_from(ConverterModel)
         total = await self.session.scalar(count_stmt)
 
         return {
