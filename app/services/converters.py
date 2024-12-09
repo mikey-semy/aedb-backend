@@ -22,16 +22,10 @@ class ConverterService(BaseService):
         self.cabinet_manager = GenericDataManager(session, CabinetSchema, CabinetModel)
         self.converter_manager = GenericDataManager(session, ConverterSchema, ConverterModel)
         self.unit_manager = GenericDataManager(session, UnitSchema, UnitModel)
-
-
-    async def get_converters(self) -> List[ConverterSchema]:
-        """
-        Возвращает весь списпок преобразователей частоты.
-        """
-        return await ConvertersDataManager(self.session).get_converters()
-    
+   
     async def get_converters_paginated(self, page: int, page_size: int) -> dict:
         offset = (page - 1) * page_size
+        
         statement = select(ConverterModel).offset(offset).limit(page_size)
         result = await self.session.execute(statement)
         converters = result.scalars().all()
@@ -50,12 +44,12 @@ class ConverterService(BaseService):
         
     async def add_all_converters(self) -> None:
         """Добавляет все данные последовательно"""
-        await self.add_mill_shops('app/data/drivers/drivers.json')
-        await self.add_production_lines('app/data/drivers/drivers.json')
-        await self.add_locations('app/data/drivers/drivers.json')
-        await self.add_cabinets('app/data/drivers/drivers.json')
+        # await self.add_mill_shops('app/data/drivers/drivers.json')
+        # await self.add_production_lines('app/data/drivers/drivers.json')
+        # await self.add_locations('app/data/drivers/drivers.json')
+        # await self.add_cabinets('app/data/drivers/drivers.json')
         await self.add_converters('app/data/drivers/drivers.json')
-        await self.add_units('app/data/drivers/drivers.json')
+        # await self.add_units('app/data/drivers/drivers.json')
         
     async def add_mill_shops(self, file_path: str) -> None:
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -150,75 +144,3 @@ class ConverterService(BaseService):
                     converter_id=converter[0].id
                 )
                 await self.unit_manager.add_item(new_unit)
-                
-class ConvertersDataManager(BaseDataManager):
-    """
-    Менеджер данных для работы с преобразователями частоты.
-    """
-    def __init__(self, session: AsyncSession):
-        super().__init__(session, ConverterSchema)
-    
-    async def get_converters(self) -> List[ConverterSchema]:
-        """
-        Возвращает весь список преобразователей частоты.
-        """
-        schemas: List[ConverterSchema] = list()
-        statement = select(ConverterModel)
-        for model in await self.get_all(statement):
-            schemas.append(ConverterSchema(**model.to_dict()))
-        return schemas
-
-    async def add_all_converters(self) -> None:
-        """Добавляет все данные последовательно"""
-        await self.add_all_converters()
-    
-    async def delete_converter(self, converter_id: int) -> bool:
-        """Удаляет преобразователь по ID."""
-        return await self.converter_manager.delete_item(converter_id)
-
-    async def delete_cabinet(self, cabinet_id: int) -> bool:
-        """Удаляет шкаф по ID."""
-        return await self.cabinet_manager.delete_item(cabinet_id)
-
-    async def delete_production_line(self, production_line_id: int) -> bool:
-        """Удаляет производственную линию по ID."""
-        return await self.production_line_manager.delete_item(production_line_id)
-
-    async def delete_location(self, location_id: int) -> bool:
-        """Удаляет локацию по ID."""
-        return await self.location_manager.delete_item(location_id)
-
-    async def delete_unit(self, unit_id: int) -> bool:
-        """Удаляет единицу измерения по ID."""
-        return await self.unit_manager.delete_item(unit_id)
-
-    async def delete_all_converters(self) -> bool:
-        """Удаляет все преобразователи."""
-        return await self.converter_manager.delete_items()
-
-    async def delete_all_cabinets(self) -> bool:
-        """Удаляет все шкафы."""
-        return await self.cabinet_manager.delete_items()
-
-    async def delete_all_production_lines(self) -> bool:
-        """Удаляет все производственные линии."""
-        return await self.production_line_manager.delete_items()
-
-    async def delete_all_locations(self) -> bool:
-        """Удаляет все локации."""
-        return await self.location_manager.delete_items()
-
-    async def delete_all_units(self) -> bool:
-        """Удаляет все единицы измерения."""
-        return await self.unit_manager.delete_items()
-
-    async def delete_all_data(self) -> dict:
-        """Удаляет все данные из всех таблиц."""
-        results = {
-            "converters": await self.delete_all_converters(),
-            "cabinets": await self.delete_all_cabinets(),
-            "production_lines": await self.delete_all_production_lines(),
-            "locations": await self.delete_all_locations(),
-            "units": await self.delete_all_units(),
-        }
-        return results

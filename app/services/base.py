@@ -6,6 +6,14 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import SQLAlchemyError
 
 from app.models.base import SQLModel
+from app.schemas.converters import ( 
+    CabinetSchema, 
+    LocationSchema, 
+    ProductionLineSchema, 
+    UnitSchema, 
+    ConverterSchema, 
+    MillShopSchema 
+    )
 from app.schemas.manuals import (
     BaseSchema,
     ManualSchema,
@@ -195,7 +203,13 @@ class CategoryDataManager(BaseDataManager[CategorySchema]):
         super().__init__(session, CategorySchema)
 
 
-
+class ConvertersDataManager(BaseDataManager):
+    """
+    Менеджер данных для работы с преобразователями частоты.
+    """
+    def __init__(self, session: AsyncSession):
+        super().__init__(session, ConverterSchema)
+        
 class GenericDataManager(BaseDataManager[T]):
     """
     Обобщенный менеджер данных для работы с различными типами схем и моделей.
