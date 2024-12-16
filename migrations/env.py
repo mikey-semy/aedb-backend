@@ -41,13 +41,7 @@ if config.config_file_name is not None:
 # target_metadata = mymodel.Base.metadata
 
 target_metadata = SQLModel.metadata
-# target_metadata = [
-#     UserModel.metadata,
-#     PostModel.metadata,
-#     CategoryModel.metadata,
-#     GroupModel.metadata,
-#     ManualModel.metadata,
-#     ]
+
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
@@ -81,9 +75,9 @@ def run_migrations_offline() -> None:
 
 def do_run_migrations(connection: Connection) -> None:
     context.configure(
-    connection=connection, 
-    target_metadata=target_metadata,
-    compare_type=True
+        connection=connection, 
+        target_metadata=target_metadata,
+        compare_type=True
     )
 
     with context.begin_transaction():
